@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25DB1F25-6979-45EC-B866-0D77E7C54A7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hlp.Sped.Services.Implementation</RootNamespace>
+    <AssemblyName>Hlp.Sped.Services.Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\Hlp.Sped.Infrastructure\NInject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConexoesService.cs" />
+    <Compile Include="Contabil\AberturaService.cs" />
+    <Compile Include="Contabil\BalancetesDiariosService.cs" />
+    <Compile Include="Contabil\DemonstracoesContabeisService.cs" />
+    <Compile Include="Contabil\HistoricosContabeisService.cs" />
+    <Compile Include="Contabil\DadosArquivoContabilService.cs" />
+    <Compile Include="Contabil\EmpresasService.cs" />
+    <Compile Include="Contabil\LancamentosService.cs" />
+    <Compile Include="Contabil\PlanoContasService.cs" />
+    <Compile Include="Contabil\SaldosPeriodicosService.cs" />
+    <Compile Include="Fiscal\ApuracaoServices.cs" />
+    <Compile Include="Fiscal\ConhecimentoTransporteService.cs" />
+    <Compile Include="Fiscal\CuponsFiscaisService.cs" />
+    <Compile Include="Fiscal\DadosArquivoFiscalService.cs" />
+    <Compile Include="Fiscal\DadosGeraisService.cs" />
+    <Compile Include="Files\SpedFileWriterService.cs" />
+    <Compile Include="Fiscal\EmpresasService.cs" />
+    <Compile Include="Fiscal\InventarioService.cs" />
+    <Compile Include="Fiscal\Lorenzon\InventarioLorenzonService.cs" />
+    <Compile Include="Fiscal\Lorenzon\ParticipantesLorenzonService.cs" />
+    <Compile Include="Fiscal\NotasFiscaisEnergiaAguaGasService.cs" />
+    <Compile Include="Fiscal\NotasFiscaisMercadoriasService.cs" />
+    <Compile Include="Fiscal\NotasFiscaisServComunicacaoService.cs" />
+    <Compile Include="Fiscal\OutrasInformacoesService.cs" />
+    <Compile Include="Fiscal\ParticipantesService.cs" />
+    <Compile Include="Fiscal\ProdutosService.cs" />
+    <Compile Include="Fiscal\UnidadesService.cs" />
+    <Compile Include="PisCofins\ConsolidacaoNotasFiscaisService.cs" />
+    <Compile Include="PisCofins\CuponsFiscaisService.cs" />
+    <Compile Include="PisCofins\DadosArquivoPisCofinsService.cs" />
+    <Compile Include="PisCofins\DadosGeraisService.cs" />
+    <Compile Include="PisCofins\DocumentosFiscaisMercadoriasService.cs" />
+    <Compile Include="PisCofins\NotasFiscaisEnergiaAguaGasService.cs" />
+    <Compile Include="PisCofins\NotasFiscaisMercadoriasService.cs" />
+    <Compile Include="PisCofins\NotasFiscaisServicoService.cs" />
+    <Compile Include="PisCofins\ParticipantesService.cs" />
+    <Compile Include="PisCofins\ProdutosService.cs" />
+    <Compile Include="PisCofins\UnidadesService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
+      <Project>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</Project>
+      <Name>Hlp.Sped.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Repository.Interfaces\Hlp.Sped.Repository.Interfaces.csproj">
+      <Project>{DDCEE3ED-E677-4940-9CC5-8725526ADFEF}</Project>
+      <Name>Hlp.Sped.Repository.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Services.Interface\Hlp.Sped.Services.Interfaces.csproj">
+      <Project>{81EDAD84-B122-4758-A803-A5208F157E72}</Project>
+      <Name>Hlp.Sped.Services.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

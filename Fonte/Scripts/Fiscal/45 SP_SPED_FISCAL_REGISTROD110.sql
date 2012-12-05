@@ -1,0 +1,36 @@
+CREATE PROCEDURE SP_SPED_FISCAL_REGISTROD110 (
+    CD_EMPRESA VARCHAR(3),
+    NR_SEQNF VARCHAR(7))
+RETURNS (
+    COD_ITEM VARCHAR(60),
+    VL_SERV NUMERIC(15,2),
+    VL_OUT NUMERIC(15,2))
+AS
+BEGIN
+
+    -- PESQUISAR INFORMAÇÕES DA TABELA NOTAITEM
+    -- TODOS OS DADOS AQUI SÃO FAKE, ENTÃO A LÓGICA NÃO É
+    -- NECESSARIAMENTE O QUE SERÁ DEFINIDO COMO VERSÃO FINAL
+    
+
+    FOR SELECT
+            '0000007' AS COD_ITEM,
+            1.01 AS VL_SERV,
+            1.02 AS VL_OUT
+        FROM   RDB$DATABASE
+        UNION
+        SELECT
+            '0000013' AS COD_ITEM,
+            2.01 AS VL_SERV,
+            2.02 AS VL_OUT
+        FROM   RDB$DATABASE
+        INTO
+            :COD_ITEM,
+            :VL_SERV,
+            :VL_OUT
+    DO
+    BEGIN
+        SUSPEND;
+    END
+
+END

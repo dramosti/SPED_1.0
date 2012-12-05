@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hlp.Sped.Domain.Models</RootNamespace>
+    <AssemblyName>Hlp.Sped.Domain.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexao.cs" />
+    <Compile Include="Contabil\Registro0000.cs" />
+    <Compile Include="Contabil\Registro0001.cs" />
+    <Compile Include="Contabil\Registro0007.cs" />
+    <Compile Include="Contabil\Registro0020.cs" />
+    <Compile Include="Contabil\Registro0150.cs" />
+    <Compile Include="Contabil\Registro0180.cs" />
+    <Compile Include="Contabil\Registro0990.cs" />
+    <Compile Include="Contabil\Registro9001.cs" />
+    <Compile Include="Contabil\Registro9900.cs" />
+    <Compile Include="Contabil\Registro9990.cs" />
+    <Compile Include="Contabil\Registro9999.cs" />
+    <Compile Include="Contabil\RegistroI001.cs" />
+    <Compile Include="Contabil\RegistroI010.cs" />
+    <Compile Include="Contabil\RegistroI012.cs" />
+    <Compile Include="Contabil\RegistroI015.cs" />
+    <Compile Include="Contabil\RegistroI020.cs" />
+    <Compile Include="Contabil\RegistroI030.cs" />
+    <Compile Include="Contabil\RegistroI050.cs" />
+    <Compile Include="Contabil\RegistroI051.cs" />
+    <Compile Include="Contabil\RegistroI052.cs" />
+    <Compile Include="Contabil\RegistroI075.cs" />
+    <Compile Include="Contabil\RegistroI100.cs" />
+    <Compile Include="Contabil\RegistroI150.cs" />
+    <Compile Include="Contabil\RegistroI151.cs" />
+    <Compile Include="Contabil\RegistroI155.cs" />
+    <Compile Include="Contabil\RegistroI200.cs" />
+    <Compile Include="Contabil\RegistroI250.cs" />
+    <Compile Include="Contabil\RegistroI300.cs" />
+    <Compile Include="Contabil\RegistroI310.cs" />
+    <Compile Include="Contabil\RegistroI350.cs" />
+    <Compile Include="Contabil\RegistroI355.cs" />
+    <Compile Include="Contabil\RegistroI500.cs" />
+    <Compile Include="Contabil\RegistroI510.cs" />
+    <Compile Include="Contabil\RegistroI550.cs" />
+    <Compile Include="Contabil\RegistroI555.cs" />
+    <Compile Include="Contabil\RegistroI990.cs" />
+    <Compile Include="Contabil\RegistroJ001.cs" />
+    <Compile Include="Contabil\RegistroJ005.cs" />
+    <Compile Include="Contabil\RegistroJ100.cs" />
+    <Compile Include="Contabil\RegistroJ150.cs" />
+    <Compile Include="Contabil\RegistroJ800.cs" />
+    <Compile Include="Contabil\RegistroJ900.cs" />
+    <Compile Include="Contabil\RegistroJ930.cs" />
+    <Compile Include="Contabil\RegistroJ990.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Fiscal\Lorenzon\RegistroH005Lorenzon.cs" />
+    <Compile Include="Fiscal\Registro0400.cs" />
+    <Compile Include="Fiscal\Registro0500.cs" />
+    <Compile Include="Fiscal\Registro1010.cs" />
+    <Compile Include="Fiscal\Registro1110.cs" />
+    <Compile Include="Fiscal\Registro1200.cs" />
+    <Compile Include="Fiscal\Registro1210.cs" />
+    <Compile Include="Fiscal\Registro1400.cs" />
+    <Compile Include="Fiscal\Registro1600.cs" />
+    <Compile Include="Fiscal\Registro1700.cs" />
+    <Compile Include="Fiscal\Registro1710.cs" />
+    <Compile Include="Fiscal\RegistroC400.cs" />
+    <Compile Include="Fiscal\RegistroC405.cs" />
+    <Compile Include="Fiscal\RegistroC410.cs" />
+    <Compile Include="Fiscal\RegistroC420.cs" />
+    <Compile Include="Fiscal\RegistroC425.cs" />
+    <Compile Include="Fiscal\RegistroC460.cs" />
+    <Compile Include="Fiscal\RegistroC470.cs" />
+    <Compile Include="Fiscal\RegistroC490.cs" />
+    <Compile Include="Fiscal\RegistroC510.cs" />
+    <Compile Include="Fiscal\RegistroD110.cs" />
+    <Compile Include="Fiscal\RegistroD120.cs" />
+    <Compile Include="Fiscal\RegistroD130.cs" />
+    <Compile Include="Fiscal\RegistroE116.cs" />
+    <Compile Include="PisCofins\Registro0400.cs" />
+    <Compile Include="PisCofins\Registro0500.cs" />
+    <Compile Include="PisCofins\RegistroC120.cs" />
+    <Compile Include="PisCofins\RegistroC170.cs" />
+    <Compile Include="PisCofins\RegistroC180.cs" />
+    <Compile Include="PisCofins\RegistroC181.cs" />
+    <Compile Include="PisCofins\RegistroC185.cs" />
+    <Compile Include="PisCofins\RegistroC190.cs" />
+    <Compile Include="PisCofins\RegistroC191.cs" />
+    <Compile Include="PisCofins\RegistroC195.cs" />
+    <Compile Include="PisCofins\RegistroC199.cs" />
+    <Compile Include="PisCofins\RegistroC380.cs" />
+    <Compile Include="PisCofins\RegistroC381.cs" />
+    <Compile Include="PisCofins\RegistroC385.cs" />
+    <Compile Include="PisCofins\RegistroC481.cs" />
+    <Compile Include="PisCofins\RegistroC485.cs" />
+    <Compile Include="PisCofins\RegistroC501.cs" />
+    <Compile Include="PisCofins\RegistroC505.cs" />
+    <Compile Include="Fiscal\RegistroE530.cs" />
+    <Compile Include="Fiscal\RegistroG001.cs" />
+    <Compile Include="Fiscal\RegistroG990.cs" />
+    <Compile Include="Fiscal\Registro0000.cs" />
+    <Compile Include="Fiscal\Registro0005.cs" />
+    <Compile Include="Fiscal\Registro0100.cs" />
+    <Compile Include="Fiscal\Registro0150.cs" />
+    <Compile Include="Fiscal\Registro0190.cs" />
+    <Compile Include="Fiscal\Registro0200.cs" />
+    <Compile Include="Fiscal\Registro0220.cs" />
+    <Compile Include="Fiscal\Registro0450.cs" />
+    <Compile Include="Fiscal\Registro0990.cs" />
+    <Compile Include="Fiscal\Registro1001.cs" />
+    <Compile Include="Fiscal\Registro1100.cs" />
+    <Compile Include="Fiscal\Registro1105.cs" />
+    <Compile Include="Fiscal\Registro1990.cs" />
+    <Compile Include="Fiscal\Registro9001.cs" />
+    <Compile Include="Fiscal\Registro9900.cs" />
+    <Compile Include="Fiscal\Registro9990.cs" />
+    <Compile Include="Fiscal\Registro9999.cs" />
+    <Compile Include="Fiscal\RegistroC001.cs" />
+    <Compile Include="Fiscal\RegistroC100.cs" />
+    <Compile Include="Fiscal\RegistroC110.cs" />
+    <Compile Include="Fiscal\RegistroC113.cs" />
+    <Compile Include="Fiscal\RegistroC120.cs" />
+    <Compile Include="Fiscal\RegistroC140.cs" />
+    <Compile Include="Fiscal\RegistroC141.cs" />
+    <Compile Include="Fiscal\RegistroC160.cs" />
+    <Compile Include="Fiscal\RegistroC170.cs" />
+    <Compile Include="Fiscal\RegistroC190.cs" />
+    <Compile Include="Fiscal\RegistroC500.cs" />
+    <Compile Include="Fiscal\RegistroC590.cs" />
+    <Compile Include="Fiscal\RegistroC990.cs" />
+    <Compile Include="Fiscal\RegistroD001.cs" />
+    <Compile Include="Fiscal\RegistroD100.cs" />
+    <Compile Include="Fiscal\RegistroD190.cs" />
+    <Compile Include="Fiscal\RegistroD500.cs" />
+    <Compile Include="Fiscal\RegistroD590.cs" />
+    <Compile Include="Fiscal\RegistroD990.cs" />
+    <Compile Include="Fiscal\RegistroE001.cs" />
+    <Compile Include="Fiscal\RegistroE100.cs" />
+    <Compile Include="Fiscal\RegistroE110.cs" />
+    <Compile Include="Fiscal\RegistroE111.cs" />
+    <Compile Include="Fiscal\RegistroE500.cs" />
+    <Compile Include="Fiscal\RegistroE510.cs" />
+    <Compile Include="Fiscal\RegistroE520.cs" />
+    <Compile Include="Fiscal\RegistroE990.cs" />
+    <Compile Include="Fiscal\RegistroH001.cs" />
+    <Compile Include="Fiscal\RegistroH005.cs" />
+    <Compile Include="Fiscal\RegistroH010.cs" />
+    <Compile Include="Fiscal\RegistroH990.cs" />
+    <Compile Include="PisCofins\Registro0110.cs" />
+    <Compile Include="PisCofins\Registro0140.cs" />
+    <Compile Include="PisCofins\Registro0150.cs" />
+    <Compile Include="PisCofins\Registro0190.cs" />
+    <Compile Include="PisCofins\Registro0200.cs" />
+    <Compile Include="PisCofins\Registro1001.cs" />
+    <Compile Include="PisCofins\Registro1990.cs" />
+    <Compile Include="PisCofins\RegistroA001.cs" />
+    <Compile Include="PisCofins\Registro0000.cs" />
+    <Compile Include="PisCofins\Registro0001.cs" />
+    <Compile Include="PisCofins\Registro0100.cs" />
+    <Compile Include="PisCofins\Registro0990.cs" />
+    <Compile Include="PisCofins\Registro9001.cs" />
+    <Compile Include="PisCofins\Registro9900.cs" />
+    <Compile Include="PisCofins\Registro9990.cs" />
+    <Compile Include="PisCofins\Registro9999.cs" />
+    <Compile Include="PisCofins\RegistroA010.cs" />
+    <Compile Include="PisCofins\RegistroA100.cs" />
+    <Compile Include="PisCofins\RegistroA170.cs" />
+    <Compile Include="PisCofins\RegistroA990.cs" />
+    <Compile Include="PisCofins\RegistroC001.cs" />
+    <Compile Include="PisCofins\RegistroC010.cs" />
+    <Compile Include="PisCofins\RegistroC100.cs" />
+    <Compile Include="PisCofins\RegistroC400.cs" />
+    <Compile Include="PisCofins\RegistroC405.cs" />
+    <Compile Include="PisCofins\RegistroC500.cs" />
+    <Compile Include="PisCofins\RegistroC990.cs" />
+    <Compile Include="PisCofins\RegistroD001.cs" />
+    <Compile Include="PisCofins\RegistroD990.cs" />
+    <Compile Include="PisCofins\RegistroF001.cs" />
+    <Compile Include="PisCofins\RegistroF990.cs" />
+    <Compile Include="PisCofins\RegistroM001.cs" />
+    <Compile Include="PisCofins\RegistroM990.cs" />
+    <Compile Include="PisCofins\RegistroP001.cs" />
+    <Compile Include="PisCofins\RegistroP990.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fiscal\Registro0001.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

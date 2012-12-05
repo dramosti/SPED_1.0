@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81EDAD84-B122-4758-A803-A5208F157E72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hlp.Sped.Services.Interfaces</RootNamespace>
+    <AssemblyName>Hlp.Sped.Services.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contabil\IBalancetesDiariosService.cs" />
+    <Compile Include="Contabil\IDemonstracoesContabeisService.cs" />
+    <Compile Include="Contabil\IHistoricosContabeisService.cs" />
+    <Compile Include="Contabil\IAberturaService.cs" />
+    <Compile Include="Contabil\IDadosArquivoContabilService.cs" />
+    <Compile Include="Contabil\IEmpresasService.cs" />
+    <Compile Include="Contabil\ILancamentosService.cs" />
+    <Compile Include="Contabil\IPlanoContasService.cs" />
+    <Compile Include="Contabil\ISaldosPeriodicosService.cs" />
+    <Compile Include="Fiscal\IApuracaoServices.cs" />
+    <Compile Include="Fiscal\IConhecimentoTransporteService.cs" />
+    <Compile Include="Fiscal\ICuponsFiscaisService.cs" />
+    <Compile Include="Fiscal\IEmpresasService.cs" />
+    <Compile Include="Fiscal\IInventarioService.cs" />
+    <Compile Include="Fiscal\INotasFiscaisEnergiaAguaGasService.cs" />
+    <Compile Include="Fiscal\INotasFiscaisServComunicacaoService.cs" />
+    <Compile Include="Fiscal\IOutrasInformacoesService.cs" />
+    <Compile Include="Fiscal\Lorenzon\IInventarioLorenzonService.cs" />
+    <Compile Include="Fiscal\Lorenzon\IParticipantesLorenzonService.cs" />
+    <Compile Include="IConexoesService.cs" />
+    <Compile Include="Fiscal\IDadosArquivoFiscalService.cs" />
+    <Compile Include="Fiscal\IDadosGeraisService.cs" />
+    <Compile Include="Fiscal\INotasFiscaisMercadoriasService.cs" />
+    <Compile Include="Fiscal\IParticipantesService.cs" />
+    <Compile Include="Fiscal\IProdutosService.cs" />
+    <Compile Include="Fiscal\IUnidadesService.cs" />
+    <Compile Include="Files\ISpedFileWriterService.cs" />
+    <Compile Include="PisCofins\IConsolidacaoNotasFiscaisService.cs" />
+    <Compile Include="PisCofins\ICuponsFiscaisService.cs" />
+    <Compile Include="PisCofins\IDadosArquivoPisCofinsService.cs" />
+    <Compile Include="PisCofins\IDadosGeraisService.cs" />
+    <Compile Include="PisCofins\IDocumentosFiscaisMercadoriasService.cs" />
+    <Compile Include="PisCofins\INotasFiscaisEnergiaAguaGasService.cs" />
+    <Compile Include="PisCofins\INotasFiscaisMercadoriasService.cs" />
+    <Compile Include="PisCofins\INotasFiscaisServicoService.cs" />
+    <Compile Include="PisCofins\IParticipantesService.cs" />
+    <Compile Include="PisCofins\IProdutosService.cs" />
+    <Compile Include="PisCofins\IUnidadesService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
+      <Project>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</Project>
+      <Name>Hlp.Sped.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

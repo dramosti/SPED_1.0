@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB8A0750-6417-4A52-9716-CC5B41E81978}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hlp.Sped.Controllers</RootNamespace>
+    <AssemblyName>Hlp.Sped.Controllers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\Hlp.Sped.Infrastructure\NInject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigConnectionsController.cs" />
+    <Compile Include="Contabil\FrontController.cs" />
+    <Compile Include="Fiscal\FiscalProcessController.cs" />
+    <Compile Include="Fiscal\FrontController.cs" />
+    <Compile Include="Contabil\ContabilProcessController.cs" />
+    <Compile Include="Fiscal\Lorenzon\ClientesLorenzonProcessController.cs" />
+    <Compile Include="Fiscal\Lorenzon\InventarioLorenzonProcessController.cs" />
+    <Compile Include="Fiscal\Lorenzon\ProdutosInventarioLorenzonProcessController.cs" />
+    <Compile Include="Fiscal\PisCofins\PisCofinsProcessController.cs" />
+    <Compile Include="IoC\Contabil\DIContollersModuleContabil.cs" />
+    <Compile Include="IoC\Contabil\DIContollersModuleFront.cs" />
+    <Compile Include="IoC\DIContollersModuleConfigConnections.cs" />
+    <Compile Include="IoC\Fiscal\DIContollersModuleFiscal.cs" />
+    <Compile Include="IoC\Fiscal\DIContollersModuleFront.cs" />
+    <Compile Include="IoC\Fiscal\Lorenzon\DIContollersModuleFiscalLorenzon.cs" />
+    <Compile Include="IoC\PisCofins\DIContollersModulePisCofins.cs" />
+    <Compile Include="Parameters\Contabil\ContabilProcessParameters.cs" />
+    <Compile Include="Parameters\Fiscal\FiscalProcessParameters.cs" />
+    <Compile Include="Parameters\PisCofins\PisCofinsProcessParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
+      <Project>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</Project>
+      <Name>Hlp.Sped.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Repository.Implementation\Hlp.Sped.Repository.Implementation.csproj">
+      <Project>{B8A0D442-E1DE-4B1E-9F93-89D155E82B55}</Project>
+      <Name>Hlp.Sped.Repository.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Repository.Interfaces\Hlp.Sped.Repository.Interfaces.csproj">
+      <Project>{DDCEE3ED-E677-4940-9CC5-8725526ADFEF}</Project>
+      <Name>Hlp.Sped.Repository.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Services.Implementation\Hlp.Sped.Services.Implementation.csproj">
+      <Project>{25DB1F25-6979-45EC-B866-0D77E7C54A7C}</Project>
+      <Name>Hlp.Sped.Services.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Services.Interface\Hlp.Sped.Services.Interfaces.csproj">
+      <Project>{81EDAD84-B122-4758-A803-A5208F157E72}</Project>
+      <Name>Hlp.Sped.Services.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

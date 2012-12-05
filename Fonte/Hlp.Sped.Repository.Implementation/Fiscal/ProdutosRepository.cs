@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+using Ninject;
+using Hlp.Sped.Infrastructure;
+using Hlp.Sped.Repository.Interfaces.SQLExpressions.Fiscal;
+using Hlp.Sped.Repository.Interfaces.Fiscal;
+using Hlp.Sped.Domain.Models.Fiscal;
+using Hlp.Sped.Repository.Implementation.Fiscal.Mappers;
+
+namespace Hlp.Sped.Repository.Implementation.Fiscal
+{
+    public class ProdutosRepository : IProdutosRepository
+    {
+        [Inject]
+        public UnitOfWorkBase UndTrabalho { get; set; }
+
+        [Inject]
+        public ISqlExpressionsFiscalRepository SqlExpressionsFiscalRepository { get; set; }
+
+        private DataAccessor<Registro0200> reg0200Accessor;
+
+        private DataAccessor<Registro0220> reg0220Accessor;
+
+        public Registro0200 GetRegistro0200(string codigoProduto)
+        {
+            if (this.reg0200Accessor == null)
+            {
+                this.reg0200Accessor =
+                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                      SqlExpressionsFiscalRepository.GetSelectRegistro0200(),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      MapBuilder<Registro0200>.MapAllProperties()
+                      .Build());
+            }
+            return this.reg0200Accessor.Execute(
+                UndTrabalho.CodigoEmpresa, codigoProduto).FirstOrDefault();
+        }
+
+
+        public IEnumerable<Registro0220> GetRegistros0220(string codigoProduto)
+        {
+            if (this.reg0220Accessor == null)
+            {
+                this.reg0220Accessor =
+                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                      SqlExpressionsFiscalRepository.GetSelectRegistro0220(),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      MapBuilder<Registro0220>.MapAllProperties()
+                      .Build());
+            }
+            return this.reg0220Accessor.Execute(
+                UndTrabalho.CodigoEmpresa, codigoProduto).ToList();
+        }
+    }
+}

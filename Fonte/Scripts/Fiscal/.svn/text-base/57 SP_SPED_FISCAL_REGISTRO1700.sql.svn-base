@@ -1,0 +1,50 @@
+CREATE PROCEDURE SP_SPED_FISCAL_REGISTRO1700 (
+    CD_EMPRESA VARCHAR(3),
+    DT_EMI_INICIAL DATE,
+    DT_EMI_FINAL DATE)
+RETURNS (
+    COD_DISP VARCHAR(2),
+    COD_MOD VARCHAR(2),
+    SER VARCHAR(4),
+    SUB VARCHAR(3),
+    NUM_DOC_INI VARCHAR(12),
+    NUM_DOC_FIN VARCHAR(12),
+    NUM_AUT VARCHAR(8)
+)
+AS
+BEGIN
+
+    FOR
+    SELECT
+        '02' AS COD_DISP,
+        '01' AS COD_MOD,
+        '0001' AS SER,
+        '001' AS SUB,
+        '000001' AS NUM_DOC_INI,
+        '000002' AS NUM_DOC_FIN,
+        '00001' AS NUM_AUT
+    FROM RDB$DATABASE
+    UNION
+    SELECT
+        '03' AS COD_DISP,
+        '02' AS COD_MOD,
+        '0002' AS SER,
+        '002' AS SUB,
+        '000003' AS NUM_DOC_INI,
+        '000004' AS NUM_DOC_FIN,
+        '00002' AS NUM_AUT
+    FROM RDB$DATABASE
+    INTO
+        COD_DISP,
+        COD_MOD,
+        SER,
+        SUB,
+        NUM_DOC_INI,
+        NUM_DOC_FIN,
+        NUM_AUT
+    DO
+    BEGIN
+        SUSPEND;
+    END
+
+END

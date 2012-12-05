@@ -1,0 +1,60 @@
+CREATE PROCEDURE SP_SPED_FISCAL_REGISTRO1110 (
+    CD_EMPRESA VARCHAR(3),
+    PK_NOTAFIS VARCHAR(7)
+)
+RETURNS (
+    COD_PART VARCHAR(60),
+    COD_MOD VARCHAR(2),
+    SER VARCHAR(4),
+    NUM_DOC VARCHAR(9),
+    CHV_NFE VARCHAR(44),
+    DT_DOC DATE,
+    NR_MEMO VARCHAR(100),
+    QTD NUMERIC(15,3),
+    UNID VARCHAR(6)
+)
+AS
+BEGIN
+
+    -- PK_NOTAFIS CORRESPONDE AO VALOR CAMPO NR_SEQNF DE NOTAITEM
+
+    FOR SELECT
+        '0000252' AS COD_PART,
+        '01' AS COD_MOD,
+        '0001' AS SER,
+        '000000001' AS NUM_DOC,
+        '10.07.2012' AS DT_DOC,
+        '1' AS CHV_NFE,
+        '111' AS NR_MEMO,
+        100.123 AS QTD,
+        'TN' AS UNID
+        FROM RDB$DATABASE
+        UNION
+        SELECT
+        '0000253' AS COD_PART,
+        '02' AS COD_MOD,
+        '0002' AS SER,
+        '000000002' AS NUM_DOC,
+        '20.07.2012' AS DT_DOC,
+        '2' AS CHV_NFE,
+        '222' AS NR_MEMO,
+        200.456 AS QTD,
+        'LT' AS UNID
+        FROM RDB$DATABASE
+    INTO
+        :COD_PART,
+        :COD_MOD,
+        :SER,
+        :NUM_DOC,
+        :DT_DOC,
+        :CHV_NFE,
+        :NR_MEMO,
+        :QTD,
+        :UNID
+    DO
+    BEGIN
+        SUSPEND;
+
+    END
+
+END

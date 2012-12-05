@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09EED749-9792-42ED-B861-23B7203B88F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hlp.Sped.UI</RootNamespace>
+    <AssemblyName>HlpSped</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\CustomMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CustomToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\HeaderRenderer.cs" />
+    <Compile Include="Components\TitleStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConfigConnectionFirebird.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigConnectionFirebird.Designer.cs">
+      <DependentUpon>ConfigConnectionFirebird.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedFiscalClientesLorenzon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedFiscalClientesLorenzon.Designer.cs">
+      <DependentUpon>FormSpedFiscalClientesLorenzon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedFiscalInventarioLorenzon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedFiscalInventarioLorenzon.designer.cs">
+      <DependentUpon>FormSpedFiscalInventarioLorenzon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedFiscalProdutosLorenzon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedFiscalProdutosLorenzon.Designer.cs">
+      <DependentUpon>FormSpedFiscalProdutosLorenzon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedFiscal.Designer.cs">
+      <DependentUpon>FormSpedFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\SalvarConexaoFirebirdHandler.cs" />
+    <Compile Include="Events\TestarConexaoFirebirdHandler.cs" />
+    <Compile Include="FormConfigConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigConnections.Designer.cs">
+      <DependentUpon>FormConfigConnections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedContabil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedContabil.Designer.cs">
+      <DependentUpon>FormSpedContabil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpedPisCofins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpedPisCofins.Designer.cs">
+      <DependentUpon>FormSpedPisCofins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Spine.Designer.cs">
+      <DependentUpon>Spine.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConfigConnectionFirebird.resx">
+      <DependentUpon>ConfigConnectionFirebird.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedFiscalClientesLorenzon.resx">
+      <DependentUpon>FormSpedFiscalClientesLorenzon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedFiscalInventarioLorenzon.resx">
+      <DependentUpon>FormSpedFiscalInventarioLorenzon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedFiscalProdutosLorenzon.resx">
+      <DependentUpon>FormSpedFiscalProdutosLorenzon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedFiscal.resx">
+      <DependentUpon>FormSpedFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigConnections.resx">
+      <DependentUpon>FormConfigConnections.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedContabil.resx">
+      <DependentUpon>FormSpedContabil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpedPisCofins.resx">
+      <DependentUpon>FormSpedPisCofins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Spine.resx">
+      <DependentUpon>Spine.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Controllers\Hlp.Sped.Controllers.csproj">
+      <Project>{BB8A0750-6417-4A52-9716-CC5B41E81978}</Project>
+      <Name>Hlp.Sped.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
+      <Project>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</Project>
+      <Name>Hlp.Sped.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\back.png" />
+    <Content Include="Images\bluefooter.bmp" />
+    <Content Include="Images\blueheader.bmp" />
+    <Content Include="Images\browse.png" />
+    <Content Include="Images\email.png" />
+    <Content Include="Images\forward.png" />
+    <Content Include="Images\graphs.png" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\leftspine.PNG" />
+    <Content Include="Images\more.png" />
+    <Content Include="Images\online.png" />
+    <Content Include="Images\orders.png" />
+    <Content Include="Images\reports.png" />
+    <Content Include="Images\sound.png" />
+    <Content Include="Images\trends.png" />
+    <Content Include="Images\updates.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,169 @@
+10
+
+dir
+5210
+file://192.168.9.100/g/svn/repos/csharp/Fontes/SPED-2012/Hlp.Sped.Infrastructure
+file://192.168.9.100/g/svn/repos/csharp
+
+
+
+2012-08-27T14:41:08.825809Z
+4892
+diego
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bec86352-e73f-ed4d-b236-e556ffed02f2
+
+Entities
+dir
+
+NInject
+dir
+
+Hlp.Sped.Infrastructure.csproj
+file
+
+
+
+
+2012-11-30T14:03:48.048331Z
+92ce9e95ca2d0095c8d602b10519d54b
+2012-08-27T14:41:08.825809Z
+4892
+diego
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6656
+
+Properties
+dir
+
+Annotations
+dir
+
+Registro
+dir
+
+Helpers
+dir
+
+Files
+dir
+
+EnterpriseLibrary
+dir
+
+UnitOfWorkBase.cs
+file
+
+
+
+
+2012-11-30T14:03:48.050331Z
+4fdbc7d9574f2f170d6128695c075359
+2012-08-27T14:41:08.825809Z
+4892
+diego
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1583
+
+Controllers
+dir
+
+bin
+dir
+
+Hlp.Sped.Infrastructure.csproj.user
+file
+
+
+
+
+2012-11-30T14:03:48.052331Z
+d9e43730828eb83f50012e6268d268fa
+2012-08-27T14:41:08.825809Z
+4892
+diego
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+227
+
+obj
+dir
+
+IoC
+dir
+
+ActiveRecord
+dir
+
