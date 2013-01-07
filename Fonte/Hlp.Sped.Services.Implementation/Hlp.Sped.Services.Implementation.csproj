@@ -53,6 +53,11 @@
     <Compile Include="Contabil\LancamentosService.cs" />
     <Compile Include="Contabil\PlanoContasService.cs" />
     <Compile Include="Contabil\SaldosPeriodicosService.cs" />
+    <Compile Include="Contmatic\ConhecimentoTransporteService.cs" />
+    <Compile Include="Contmatic\DadosGeraisService.cs" />
+    <Compile Include="Contmatic\NotasFiscaisMercadoriasService.cs" />
+    <Compile Include="Contmatic\NotasFiscaisServicoService.cs" />
+    <Compile Include="Contmatic\OutrasInformacoesService.cs" />
     <Compile Include="Fiscal\ApuracaoServices.cs" />
     <Compile Include="Fiscal\ConhecimentoTransporteService.cs" />
     <Compile Include="Fiscal\CuponsFiscaisService.cs" />

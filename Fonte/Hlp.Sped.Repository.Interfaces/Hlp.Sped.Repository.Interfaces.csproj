@@ -49,6 +49,7 @@
     <Compile Include="Contabil\ILancamentosRepository.cs" />
     <Compile Include="Contabil\IPlanoContasRepository.cs" />
     <Compile Include="Contabil\ISaldosPeriodicosRepository.cs" />
+    <Compile Include="Contmatic\IDadosGeraisRepository.cs" />
     <Compile Include="Fiscal\IApuracaoRepository.cs" />
     <Compile Include="Fiscal\IConhecimentoTransporteRepository.cs" />
     <Compile Include="Fiscal\ICuponsFiscaisRepository.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="PisCofins\IUnidadesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLExpressions\Contabil\ISqlExpressionsContabilRepository.cs" />
+    <Compile Include="SQLExpressions\Contmatic\ISqlExpressionsContmaticRepository.cs" />
     <Compile Include="SQLExpressions\Fiscal\ISqlExpressionsFiscalRepository.cs" />
     <Compile Include="SQLExpressions\ISqlExpressionsRepository.cs" />
     <Compile Include="SQLExpressions\PisCofins\ISqlExpressionsPisCofinsRepository.cs" />

@@ -10,6 +10,13 @@ namespace Hlp.Sped.Repository.Implementation
 {
     public class UnitOfWork : UnitOfWorkBase
     {
+        private Database _DBOrigemDadosContmatic;
+
+        public override Database DBOrigemDadosContmatic
+        {
+            get { return _DBOrigemDadosContmatic; }
+        }
+
         private Database _DBOrigemDadosFiscal;
 
         public override Database DBOrigemDadosFiscal

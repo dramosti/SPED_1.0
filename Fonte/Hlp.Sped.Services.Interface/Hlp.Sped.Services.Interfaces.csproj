@@ -49,6 +49,7 @@
     <Compile Include="Contabil\ILancamentosService.cs" />
     <Compile Include="Contabil\IPlanoContasService.cs" />
     <Compile Include="Contabil\ISaldosPeriodicosService.cs" />
+    <Compile Include="Contmatic\IDadosGeraisService.cs" />
     <Compile Include="Fiscal\IApuracaoServices.cs" />
     <Compile Include="Fiscal\IConhecimentoTransporteService.cs" />
     <Compile Include="Fiscal\ICuponsFiscaisService.cs" />

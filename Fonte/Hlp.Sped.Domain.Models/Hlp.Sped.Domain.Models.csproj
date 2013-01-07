@@ -86,6 +86,7 @@
     <Compile Include="Contabil\RegistroJ900.cs" />
     <Compile Include="Contabil\RegistroJ930.cs" />
     <Compile Include="Contabil\RegistroJ990.cs" />
+    <Compile Include="Contmatic\Registro0000.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Fiscal\Lorenzon\RegistroH005Lorenzon.cs" />
     <Compile Include="Fiscal\Registro0400.cs" />

@@ -29,6 +29,8 @@ namespace Hlp.Sped.Infrastructure
         public string CaminhoArquivo { get; set; }
         public string NumeroReciboAnterior { get; set; }
 
+        public abstract Database DBOrigemDadosContmatic { get; }
+
         public abstract Database DBOrigemDadosFiscal { get; }
 
         public abstract Database DBOrigemDadosContabil { get; }
