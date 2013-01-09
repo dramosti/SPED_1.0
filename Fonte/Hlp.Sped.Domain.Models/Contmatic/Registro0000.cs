@@ -9,6 +9,7 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 {
     public class Registro0000 : RegistroBase
     {
+
         [CampoTextoFixo(Ordem = 1)]
         public override string REG
         {
@@ -18,15 +19,44 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         [CampoTextoNumerico(Ordem = 2, ComprimentoFixo = true, Tamanho = 3)]
         public string COD_VER { get; set; }
 
-        [CampoTextoNumerico(Ordem = 3)]
+        [CampoTextoNumerico(Ordem = 3, Tamanho = 1)]
         public string COD_FIN { get; set; }
 
         [CampoData(Ordem = 4)]
-        public DateTime? DT_INI { get; set; }
+        public DateTime DT_INI { get; set; }
 
         [CampoData(Ordem = 5)]
-        public DateTime? DT_FIN { get; set; }
+        public DateTime DT_FIN { get; set; }
 
+        [CampoTextoVariavel(Ordem = 6, Tamanho = 100)]
+        public string NOME { get; set; }
+
+        [CampoTextoNumerico(Ordem = 7, ComprimentoFixo = true, Tamanho = 14)]
+        public string CNPJ { get; set; }
+
+        [CampoTextoNumerico(Ordem = 8, ComprimentoFixo = true, Tamanho = 11)]
+        public string CPF { get; set; }
+
+        [CampoTextoVariavel(Ordem = 9, Tamanho = 2)]
+        public string UF { get; set; }
+
+        [CampoCodigo(Ordem = 10, Tamanho = 14)]
+        public string IE { get; set; }
+
+        [CampoTextoNumerico(Ordem = 11, ComprimentoFixo = true, Tamanho = 7)]
+        public string COD_MUN { get; set; }
+
+        [CampoTextoVariavel(Ordem = 12)]
+        public string IM { get; set; }
+
+        [CampoTextoVariavel(Ordem = 13, Tamanho = 9)]
+        public string SUFRAMA { get; set; }
+
+        [CampoTextoVariavel(Ordem = 14, Tamanho = 1)]
+        public string IND_PERFIL { get; set; }
+
+        [CampoTextoNumerico(Ordem = 15, Tamanho = 1)]
+        public string IND_ATIV { get; set; }
 
     }
 }
