@@ -13,6 +13,19 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
             return "{CALL SP_NOVA_SEQUENCIA_SPEDPISCOF}";
         }
 
+        public string GetSelectRegistroD500() 
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD500(?,?,?)";
+        }
+        public string GetSelectRegistroD501()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD501(?,?)";
+        }
+        public string GetSelectRegistroD505()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD505(?,?)";
+        }
+
         public string GetSelectRegistro0400()
         {
             return "SELECT * FROM SP_SPED_FISCAL_REGISTRO0400(?,?, ?)";

@@ -35,7 +35,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
                 UndTrabalho.DataFinal);
         }
 
-        public IEnumerable<RegistroD590> GetRegistrosD590(string codChaveNotaFiscal)
+        public IEnumerable<RegistroD590> GetRegistrosD590(string codNR_SEQNF)
         {
             if (regD590Accessor == null)
             {
@@ -48,7 +48,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
 
             return regD590Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
-                codChaveNotaFiscal).ToList();
+                codNR_SEQNF).ToList();
         }
     }
 }

@@ -14,6 +14,9 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.PisCofins
         string GetSelectRegistroJaExistente();
         string GetSelectQuantidadeRegistrosBloco();
         string GetSelectRegistro0000();
+        string GetSelectRegistroD500();
+        string GetSelectRegistroD501() ;
+        string GetSelectRegistroD505();
         string GetSelectRegistro0400();
         string GetSelectRegistro0500();
         string GetSelectRegistro0100();

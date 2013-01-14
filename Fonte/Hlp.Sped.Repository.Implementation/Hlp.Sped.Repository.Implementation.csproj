@@ -160,6 +160,7 @@
     <Compile Include="PisCofins\Mappers\FilterByNrArquivoParameterMapper.cs" />
     <Compile Include="PisCofins\NotasFiscaisEnergiaAguaGasRepository.cs" />
     <Compile Include="PisCofins\NotasFiscaisMercadoriasRepository.cs" />
+    <Compile Include="PisCofins\NotasFiscaisServComunicacaoRepository.cs" />
     <Compile Include="PisCofins\NotasFiscaisServicoRepository.cs" />
     <Compile Include="PisCofins\ParticipantesRepository.cs" />
     <Compile Include="PisCofins\ProdutosRepository.cs" />

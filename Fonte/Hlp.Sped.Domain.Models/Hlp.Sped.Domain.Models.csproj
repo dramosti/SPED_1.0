@@ -239,6 +239,9 @@
     <Compile Include="PisCofins\RegistroC500.cs" />
     <Compile Include="PisCofins\RegistroC990.cs" />
     <Compile Include="PisCofins\RegistroD001.cs" />
+    <Compile Include="PisCofins\RegistroD500.cs" />
+    <Compile Include="PisCofins\RegistroD501.cs" />
+    <Compile Include="PisCofins\RegistroD505.cs" />
     <Compile Include="PisCofins\RegistroD990.cs" />
     <Compile Include="PisCofins\RegistroF001.cs" />
     <Compile Include="PisCofins\RegistroF990.cs" />

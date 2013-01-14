@@ -72,6 +72,7 @@
     <Compile Include="Fiscal\IProdutosRepository.cs" />
     <Compile Include="Fiscal\IUnidadesRepository.cs" />
     <Compile Include="Files\ISpedFileWriterRepository.cs" />
+    <Compile Include="PisCofins\INotasFiscaisServComunicacaoRepository.cs" />
     <Compile Include="PisCofins\IConsolidacaoNotasFiscaisRepository.cs" />
     <Compile Include="PisCofins\ICuponsFiscaisRepository.cs" />
     <Compile Include="PisCofins\IDadosArquivoPisCofinsRepository.cs" />
