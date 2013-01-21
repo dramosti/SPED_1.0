@@ -48,7 +48,7 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 
         public override string CODIGO_ORDENACAO
         {
-            get { return "C400-" + this.GetNumeroControleRegistro(); }
+            get { return "C405-" + this.GetNumeroControleRegistro(); }
         }
     }
 }

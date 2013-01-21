@@ -13,9 +13,9 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
         [Inject]
         public INotasFiscaisServComunicacaoRepository notaFiscalServRepository { get; set; }
 
-        public IEnumerable<Domain.Models.PisCofins.RegistroD500> GetRegistrosD500()
+        public IEnumerable<Domain.Models.PisCofins.RegistroD500> GetRegistrosD500(string sCNPJ)
         {
-            return notaFiscalServRepository.GetRegistrosD500();
+            return notaFiscalServRepository.GetRegistrosD500(sCNPJ);
         }
 
         public IEnumerable<Domain.Models.PisCofins.RegistroD501> GetRegistrosD501(string codChaveNotaFiscal)
@@ -26,6 +26,11 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
         public IEnumerable<Domain.Models.PisCofins.RegistroD505> GetRegistrosD505(string codNR_SEQNF)
         {
             return notaFiscalServRepository.GetRegistrosD505(codNR_SEQNF);
+        }
+
+        public IEnumerable<Domain.Models.PisCofins.RegistroD010> GetRegistrosD010()
+        {
+            return notaFiscalServRepository.GetRegistrosD010();
         }
     }
 }

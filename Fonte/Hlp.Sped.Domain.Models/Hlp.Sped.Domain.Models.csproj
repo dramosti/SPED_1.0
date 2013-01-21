@@ -87,6 +87,7 @@
     <Compile Include="Contabil\RegistroJ930.cs" />
     <Compile Include="Contabil\RegistroJ990.cs" />
     <Compile Include="Contmatic\Registro0000.cs" />
+    <Compile Include="Contmatic\Registro0001.cs" />
     <Compile Include="Contmatic\Registro0100.cs" />
     <Compile Include="Contmatic\Registro0150.cs" />
     <Compile Include="Contmatic\Registro0190.cs" />
@@ -94,12 +95,18 @@
     <Compile Include="Contmatic\Registro0220.cs" />
     <Compile Include="Contmatic\Registro0400.cs" />
     <Compile Include="Contmatic\Registro0600.cs" />
+    <Compile Include="Contmatic\Registro0990.cs" />
+    <Compile Include="Contmatic\Registro1001.cs" />
     <Compile Include="Contmatic\Registro1010.cs" />
     <Compile Include="Contmatic\Registro1100.cs" />
     <Compile Include="Contmatic\Registro1200.cs" />
     <Compile Include="Contmatic\Registro1600.cs" />
+    <Compile Include="Contmatic\Registro1990.cs" />
+    <Compile Include="Contmatic\RegistroA001.cs" />
     <Compile Include="Contmatic\RegistroA100.cs" />
     <Compile Include="Contmatic\RegistroA170.cs" />
+    <Compile Include="Contmatic\RegistroA990.cs" />
+    <Compile Include="Contmatic\RegistroC001.cs" />
     <Compile Include="Contmatic\RegistroC100.cs" />
     <Compile Include="Contmatic\RegistroC170.cs" />
     <Compile Include="Contmatic\RegistroC400.cs" />
@@ -108,6 +115,8 @@
     <Compile Include="Contmatic\RegistroC470.cs" />
     <Compile Include="Contmatic\RegistroC500.cs" />
     <Compile Include="Contmatic\RegistroC510.cs" />
+    <Compile Include="Contmatic\RegistroC990.cs" />
+    <Compile Include="Contmatic\RegistroD001.cs" />
     <Compile Include="Contmatic\RegistroD100.cs" />
     <Compile Include="Contmatic\RegistroD101.cs" />
     <Compile Include="Contmatic\RegistroD110.cs" />
@@ -117,6 +126,7 @@
     <Compile Include="Contmatic\RegistroD500.cs" />
     <Compile Include="Contmatic\RegistroD510.cs" />
     <Compile Include="Contmatic\RegistroD590.cs" />
+    <Compile Include="Contmatic\RegistroD990.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Fiscal\Lorenzon\RegistroH005Lorenzon.cs" />
     <Compile Include="Fiscal\Registro0400.cs" />
@@ -239,6 +249,7 @@
     <Compile Include="PisCofins\RegistroC500.cs" />
     <Compile Include="PisCofins\RegistroC990.cs" />
     <Compile Include="PisCofins\RegistroD001.cs" />
+    <Compile Include="PisCofins\RegistroD010.cs" />
     <Compile Include="PisCofins\RegistroD500.cs" />
     <Compile Include="PisCofins\RegistroD501.cs" />
     <Compile Include="PisCofins\RegistroD505.cs" />

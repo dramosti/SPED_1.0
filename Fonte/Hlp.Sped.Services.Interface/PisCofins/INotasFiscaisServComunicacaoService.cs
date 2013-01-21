@@ -8,7 +8,8 @@ namespace Hlp.Sped.Services.Interfaces.PisCofins
 {
     public interface INotasFiscaisServComunicacaoService
     {
-        IEnumerable<RegistroD500> GetRegistrosD500();
+        IEnumerable<RegistroD010> GetRegistrosD010();
+        IEnumerable<RegistroD500> GetRegistrosD500(string sCNPJ );
         IEnumerable<RegistroD501> GetRegistrosD501(string codChaveNotaFiscal);
         IEnumerable<RegistroD505> GetRegistrosD505(string codNR_SEQNF);
     }

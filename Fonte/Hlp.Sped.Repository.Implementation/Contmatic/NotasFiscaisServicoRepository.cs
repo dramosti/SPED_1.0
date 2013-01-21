@@ -21,17 +21,16 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         public ISqlExpressionsContmaticRepository SqlExpressionsContmaticRepository { get; set; }
 
 
-        public IEnumerable<RegistroA100> GetRegistroA100(string codCNPJ)
+        public IEnumerable<RegistroA100> GetRegistroA100()
         {
             DataAccessor<RegistroA100> regA100Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroA100(),
-                 new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroA100>.MapAllProperties().Build());
 
             return regA100Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
-                codCNPJ,
+                UndTrabalho.CodigoEmpresa,                
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
@@ -41,7 +40,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroA170> regA170Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroA170(),
-                 new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroA170>.MapAllProperties()
                  .DoNotMap(p => p.NUM_ITEM)
                  .Build());

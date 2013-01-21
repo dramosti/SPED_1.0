@@ -268,7 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sped - Fiscal";
             this.Load += new System.EventHandler(this.FormSpedFiscal_Load);
-            this.Shown += new System.EventHandler(this.FormSpedFiscal_Shown);
+            //this.Shown += new System.EventHandler(this.FormSpedFiscal_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormSpedFiscal_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

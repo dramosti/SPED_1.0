@@ -86,5 +86,11 @@ namespace Hlp.Sped.UI
         }
 
         #endregion
+
+        private void fiscalContmaticToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSpedContmatic objForm = new FormSpedContmatic();
+            objForm.ShowDialog();
+        }
     }
 }

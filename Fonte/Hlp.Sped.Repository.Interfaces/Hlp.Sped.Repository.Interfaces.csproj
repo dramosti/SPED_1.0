@@ -50,10 +50,15 @@
     <Compile Include="Contabil\IPlanoContasRepository.cs" />
     <Compile Include="Contabil\ISaldosPeriodicosRepository.cs" />
     <Compile Include="Contmatic\IConhecimentoTransporteRepository.cs" />
+    <Compile Include="Contmatic\IDadosArquivoContmaticRepository.cs" />
     <Compile Include="Contmatic\IDadosGeraisRepository.cs" />
+    <Compile Include="Contmatic\IEmpresasRepository.cs" />
     <Compile Include="Contmatic\INotasFiscaisMercadoriasRepository.cs" />
     <Compile Include="Contmatic\INotasFiscaisServicoRepository.cs" />
     <Compile Include="Contmatic\IOutrasInformacoesRepository.cs" />
+    <Compile Include="Contmatic\IParticipantesRepository.cs" />
+    <Compile Include="Contmatic\IProdutosRepository.cs" />
+    <Compile Include="Contmatic\IUnidadesRepository.cs" />
     <Compile Include="Fiscal\IApuracaoRepository.cs" />
     <Compile Include="Fiscal\IConhecimentoTransporteRepository.cs" />
     <Compile Include="Fiscal\ICuponsFiscaisRepository.cs" />

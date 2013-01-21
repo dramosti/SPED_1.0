@@ -66,6 +66,9 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         [CampoDecimal(Ordem = 18, CasasDecimais = 2)]
         public decimal? VL_COFINS { get; set; }
 
-
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "A100-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

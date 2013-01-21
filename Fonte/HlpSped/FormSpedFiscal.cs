@@ -50,13 +50,13 @@ namespace Hlp.Sped.UI
             progressBar1.Visible = true;
 
             FiscalProcessParameters parameters = new FiscalProcessParameters();
-            
+
             parameters.CodigoEmpresa = cbxEmpresas.SelectedValue.ToString();
             parameters.DataInicial = DateTimeHelper.GetFirstDayOfTheMonth(dtpInicio.Value);
             parameters.DataFinal = DateTimeHelper.GetLastDayOfTheMonth(dtpFim.Value);
             parameters.CaminhoArquivo = saveFileDialog1.FileName;
             parameters.TipoArquivo = TipoArquivo.Fiscal;
-            
+
             if (rdbRemessaOriginal.Checked)
                 parameters.TipoRemessa = TipoRemessa.Original;
             else
@@ -73,10 +73,6 @@ namespace Hlp.Sped.UI
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FormSpedFiscal_Shown(object sender, EventArgs e)
-        {
         }
 
         private void FormSpedFiscal_Load(object sender, EventArgs e)
@@ -104,6 +100,8 @@ namespace Hlp.Sped.UI
             this.dtpInicio.Value = new DateTime(this.dtpFim.Value.Year, this.dtpFim.Value.Month, 1);
         }
 
+
+
         public void ConfigureBeforeAsynchronousExecution()
         {
             if (!this.InvokeRequired)
@@ -111,7 +109,7 @@ namespace Hlp.Sped.UI
                 this.Enabled = false;
                 progressBar1.Value = 0;
                 lblProgresso.Text = "Iniciando geração do arquivo...";
-           }
+            }
             else
             {
                 ConfigureBeforeAsynchronousDelegate configureBefore =
@@ -188,7 +186,7 @@ namespace Hlp.Sped.UI
                 return false;
             }
 
-            if (DateTimeHelper.GetFirstDayOfTheMonth(this.dtpInicio.Value) > 
+            if (DateTimeHelper.GetFirstDayOfTheMonth(this.dtpInicio.Value) >
                 DateTimeHelper.GetLastDayOfTheMonth(this.dtpFim.Value))
             {
                 MessageBox.Show("A Data Inicial não pode ser superior à Data Final!");
@@ -197,5 +195,7 @@ namespace Hlp.Sped.UI
 
             return true;
         }
+
+
     }
 }

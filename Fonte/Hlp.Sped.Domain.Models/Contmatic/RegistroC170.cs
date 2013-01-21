@@ -128,7 +128,11 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 
         [CampoTextoVariavel(Ordem = 39, Tamanho = 3)]
         public string NAT_REC_COFINS { get; set; }
-        
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "C100-" + this.GetNumeroControleRegistro(); }
+        }
 
 
     }

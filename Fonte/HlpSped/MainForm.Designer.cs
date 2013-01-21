@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.customMenuStrip1 = new Hlp.Sped.UI.CustomMenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,6 +37,7 @@
             this.fiscalProdutosLorenzonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pisCofinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fiscalContmaticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConfiguracoes = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +79,7 @@
             this.fiscalProdutosLorenzonToolStripMenuItem,
             this.contabilToolStripMenuItem,
             this.pisCofinsToolStripMenuItem,
+            this.fiscalContmaticToolStripMenuItem,
             this.toolStripSeparator4,
             this.sairToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -124,6 +127,13 @@
             this.pisCofinsToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.pisCofinsToolStripMenuItem.Text = "&Pis / Cofins";
             this.pisCofinsToolStripMenuItem.Click += new System.EventHandler(this.pisCofinsToolStripMenuItem_Click);
+            // 
+            // fiscalContmaticToolStripMenuItem
+            // 
+            this.fiscalContmaticToolStripMenuItem.Name = "fiscalContmaticToolStripMenuItem";
+            this.fiscalContmaticToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.fiscalContmaticToolStripMenuItem.Text = "Contmatic";
+            this.fiscalContmaticToolStripMenuItem.Click += new System.EventHandler(this.fiscalContmaticToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -198,8 +208,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(195)))), ((int)(((byte)(198)))));
             this.panel2.Location = new System.Drawing.Point(14, 65);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
@@ -209,8 +219,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(195)))), ((int)(((byte)(198)))));
             this.panel1.Location = new System.Drawing.Point(14, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 2);
@@ -272,6 +282,7 @@
             this.Controls.Add(this.customToolStrip1);
             this.Controls.Add(this.customToolStrip2);
             this.Controls.Add(this.customMenuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.customMenuStrip1;
             this.Name = "MainForm";
             this.Text = "HlpSped v1.1";
@@ -313,5 +324,6 @@
         private System.Windows.Forms.ToolStripMenuItem fiscalClientesLorenzonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalInventarioLorenzonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalProdutosLorenzonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fiscalContmaticToolStripMenuItem;
     }
 }

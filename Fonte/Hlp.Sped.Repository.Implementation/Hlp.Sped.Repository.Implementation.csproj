@@ -96,12 +96,16 @@
     <Compile Include="Contabil\PlanoContasRepository.cs" />
     <Compile Include="Contabil\SaldosPeriodicosRepository.cs" />
     <Compile Include="Contmatic\ConhecimentoTransporteRepository.cs" />
+    <Compile Include="Contmatic\DadosArquivoContmaticRepository.cs" />
     <Compile Include="Contmatic\DadosGeraisRepository.cs" />
+    <Compile Include="Contmatic\EmpresasRepository.cs" />
+    <Compile Include="Contmatic\FilterByCdEmpresaDtEmiNfParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaPkCupomFisParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaPkEcfDiaParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaPkEcfPeriodoParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaPkNotaFisParameterMapper.cs" />
+    <Compile Include="Contmatic\Mappers\FilterByNrArquivoParameterMapper.cs" />
     <Compile Include="Contmatic\NotasFiscaisMercadoriasRepository.cs" />
     <Compile Include="Contmatic\OutrasInformacoesRepository.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdCliforParameterMapper.cs" />
@@ -109,6 +113,9 @@
     <Compile Include="Contmatic\Mappers\FilterByCdEmpresaParameterMapper.cs" />
     <Compile Include="Contmatic\Mappers\FilterByCdTpUnidParameterMapper.cs" />
     <Compile Include="Contmatic\NotasFiscaisServicoRepository.cs" />
+    <Compile Include="Contmatic\ParticipantesRepository.cs" />
+    <Compile Include="Contmatic\ProdutosRepository.cs" />
+    <Compile Include="Contmatic\UnidadesRepository.cs" />
     <Compile Include="Fiscal\ApuracaoRepository.cs" />
     <Compile Include="Fiscal\ConhecimentoTransporteRepository.cs" />
     <Compile Include="Fiscal\CuponsFiscaisRepository.cs" />

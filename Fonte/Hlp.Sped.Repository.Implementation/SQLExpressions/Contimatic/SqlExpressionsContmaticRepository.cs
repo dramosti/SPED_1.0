@@ -8,6 +8,43 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 {
     public class SqlExpressionsContmaticRepository : ISqlExpressionsContmaticRepository
     {
+        public string GetSelectRegistro0990()
+        {
+            return @"SELECT '0990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_0
+                     FROM SPEDFISCALDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE '0%'";
+        }
+
+        public string GetSelectRegistroA990()
+        {
+            return @"SELECT 'A990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_A
+                     FROM SPEDPISCOFINSDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE 'A%'";
+        }
+
+        public string GetSelectRegistroC990()
+        {
+            return @"SELECT 'C990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_C
+                     FROM SPEDFISCALDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE 'C%'";
+        }
+        
+        public string GetSelectRegistroD990()
+        {
+            return @"SELECT 'D990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_D
+                     FROM SPEDFISCALDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE 'D%'";
+        }
+
+        public string GetSelectRegistro1990()
+        {
+            return @"SELECT '1990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_1
+                     FROM SPEDFISCALDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE '1%'";
+        }
+
+
+
 
         public string GetExpressionNovaSequenciaArquivo()
         {
@@ -16,12 +53,12 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 
         public string GetDeleteRegistrosGerados()
         {
-            return "DELETE FROM SPEDCONTMATDET WHERE NR_ARQUIVO = ?";
+            return "DELETE FROM SPEDCONTMATICDET WHERE NR_ARQUIVO = ?";
         }
 
         public string GetInsertPersistirRegistro()
         {
-            return @"INSERT INTO SPEDCONTMATDET (NR_ARQUIVO, VL_ORDENACAO_BLOCO, VL_CHAVE_REGISTRO, 
+            return @"INSERT INTO SPEDCONTMATICDET (NR_ARQUIVO, VL_ORDENACAO_BLOCO, VL_CHAVE_REGISTRO, 
                          TP_REGISTRO, DS_CONTEUDO_REGISTRO, CD_ORDENACAO_REGISTRO) 
                      VALUES ( ?, ?, ?, ?, ?, ?)";
         }
@@ -29,14 +66,14 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
         public string GetSelectRegistrosGerados()
         {
             return @"SELECT DS_CONTEUDO_REGISTRO
-                     FROM SPEDCONTMATDET
+                     FROM SPEDCONTMATICDET
                      WHERE NR_ARQUIVO = ?
                      ORDER BY NR_ARQUIVO, VL_ORDENACAO_BLOCO, CD_ORDENACAO_REGISTRO, VL_CHAVE_REGISTRO";
         }
 
         public string GetSelectRegistroJaExistente()
         {
-            return @"SELECT COUNT(1) AS EXISTE_REGISTRO FROM SPEDCONTMATDET
+            return @"SELECT COUNT(1) AS EXISTE_REGISTRO FROM SPEDCONTMATICDET
                      WHERE NR_ARQUIVO = ? AND 
                            TP_REGISTRO = ? AND 
                            VL_CHAVE_REGISTRO = ?";
@@ -44,7 +81,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 
         public string GetSelectQuantidadeRegistrosBloco()
         {
-            return @"SELECT COUNT(1) AS QTD_REGISTROS FROM SPEDCONTMATDET
+            return @"SELECT COUNT(1) AS QTD_REGISTROS FROM SPEDCONTMATICDET
                      WHERE NR_ARQUIVO = ? AND 
                            TP_REGISTRO LIKE ? || '%' AND 
                            TP_REGISTRO NOT LIKE '%001'";
@@ -116,7 +153,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 
         public string GetSelectRegistroA100()
         {
-            return "SELECT * FROM SP_SPED_CONTMAT_REGISTROA100(?,?,?,?)";
+            return "SELECT * FROM SP_SPED_CONTMAT_REGISTROA100(?,?,?)";
         }
 
         public string GetSelectRegistroA170()

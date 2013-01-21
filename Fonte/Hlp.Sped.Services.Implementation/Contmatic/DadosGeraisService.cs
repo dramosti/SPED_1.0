@@ -56,5 +56,11 @@ namespace Hlp.Sped.Services.Implementation.Contmatic
         {
             return DadosGeraisRepository.GetRegistro0600();
         }
+
+
+        public Domain.Models.Contmatic.Registro0001 GetRegistro0001()
+        {
+            return DadosGeraisRepository.GetRegistro0001();
+        }
     }
 }

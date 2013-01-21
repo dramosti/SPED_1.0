@@ -15,7 +15,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
 
         public string GetSelectRegistroD500() 
         {
-            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD500(?,?,?)";
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD500(?,?,?,?)";
         }
         public string GetSelectRegistroD501()
         {
@@ -307,6 +307,12 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
         public string GetSelectRegistro0500()
         {
             return "SELECT * FROM SP_SPED_PISCOF_REGISTRO0500(?)";
-        }       
+        }
+
+
+        public string GetSelectRegistrosD010()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD010(?,?,?)";
+        }
     }
 }

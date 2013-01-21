@@ -11,18 +11,18 @@ namespace Hlp.Sped.Services.Implementation.Contmatic
     /// <summary>
     /// Classe dos blocos que começam com A
     /// </summary>
-    class NotasFiscaisServicoService : INotasFiscaisServicoService
+   public class NotasFiscaisServicoService : INotasFiscaisServicoService
     {
         [Inject]
         public INotasFiscaisServicoRepository NotasFiscaisRepository { get; set; }
 
 
-        public IEnumerable<Domain.Models.Contmatic.RegistroA100> GetRegistroA100(string codCNPJ)
+        public IEnumerable<Domain.Models.Contmatic.RegistroA100> GetRegistrosA100()
         {
-            return NotasFiscaisRepository.GetRegistroA100(codCNPJ);
+            return NotasFiscaisRepository.GetRegistroA100();
         }
 
-        public IEnumerable<Domain.Models.Contmatic.RegistroA170> GetRegistroA170(string codChaveNotaFiscal)
+        public IEnumerable<Domain.Models.Contmatic.RegistroA170> GetRegistrosA170(string codChaveNotaFiscal)
         {
             return NotasFiscaisRepository.GetRegistroA170(codChaveNotaFiscal);
         }

@@ -31,7 +31,7 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         public string DESC_DEC_JUD { get; set; }
 
         [CampoData(Ordem = 7)]
-        public DateTime DT_SENT_JUD { get; set; }
+        public DateTime? DT_SENT_JUD { get; set; }
 
 
     }

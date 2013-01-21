@@ -13,6 +13,10 @@ namespace Hlp.Sped.Infrastructure.Files
         ContabilDiarioEscrituracaoResumida,
         ContabilDiarioAuxiliar,
         ContabilRazaoAuxiliar,
-        ContabilLivroBalancetes
+        ContabilLivroBalancetes,
+        ContmaticIventario,
+        ContmaticParticipante,
+        ContmaticCompleto,
+        ContmaticECF
     }
 }

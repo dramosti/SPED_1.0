@@ -76,13 +76,15 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         [CampoDecimal(Ordem = 21, CasasDecimais = 2)]
         public decimal? VL_ISS { get; set; }
 
+
+
         #region Campos Especificos
 
         [CampoDecimal(Ordem = 22, CasasDecimais = 2)]
         public decimal? BC_ISS { get; set; }
 
         [CampoDecimal(Ordem = 23, CasasDecimais = 2)]
-        public decimal? LIQ_ISS { get; set; }
+        public decimal? ALIQ_ISS { get; set; }
 
         [CampoTextoVariavel(Ordem = 24, Tamanho = 4)]
         public string TALAO { get; set; }
@@ -159,6 +161,20 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 
         #endregion
 
+
+        // Campo que não consta no arquivo, mas que serve de base para o
+        // detalhamento de uma nota fiscal
+        public string PK_NOTAFIS { get; set; }
+
+        // Este campo também não consta no arquivo, porém serve de base para a checagem
+        // se um documento que teve cancelamento, independentemente de seu tipo, possa ser identificado
+        // durante a montagem do arquivo
+        public string ST_DOC_CANCELADO { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "A100-" + this.GetNumeroControleRegistro(); }
+        }
 
     }
 }

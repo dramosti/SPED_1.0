@@ -400,6 +400,7 @@ namespace Hlp.Sped.Controllers.Fiscal
                 regD001.IND_MOV = "0";
             else
                 regD001.IND_MOV = "1";
+
             DadosArquivoFiscalService.PersistirRegistro(regD001);
             this.UpdateStatusAsynchronousExecution("Gerando Registro D001");
 

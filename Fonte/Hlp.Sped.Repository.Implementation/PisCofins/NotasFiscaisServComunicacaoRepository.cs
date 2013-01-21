@@ -25,20 +25,34 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         DataAccessor<RegistroD501> regD501Accessor;
         DataAccessor<RegistroD505> regD505Accessor;
 
-        public IEnumerable<RegistroD500> GetRegistrosD500()
+        public IEnumerable<RegistroD010> GetRegistrosD010()
+        {
+            DataAccessor<RegistroD010> regA010Accessor =
+                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                  SqlExpressionsPisCofinsRepository.GetSelectRegistrosD010(),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  MapBuilder<RegistroD010>.MapAllProperties().Build());
+            return regA010Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                UndTrabalho.DataInicial,
+                UndTrabalho.DataFinal).ToList();
+        }
+
+        public IEnumerable<RegistroD500> GetRegistrosD500(string CD_CNPJ)
         {
             IEnumerable<RegistroD500> objRet;
             if (regD500Accessor == null)
                 regD500Accessor =
                 UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
                   SqlExpressionsPisCofinsRepository.GetSelectRegistroD500(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
                   MapBuilder<RegistroD500>.MapAllProperties().Build());
 
             try
             {
                 objRet = regD500Accessor.Execute(
                UndTrabalho.CodigoEmpresa,
+               CD_CNPJ,
                UndTrabalho.DataInicial,
                UndTrabalho.DataFinal);
             }

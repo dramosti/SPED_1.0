@@ -27,7 +27,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroD100> regD100Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroD100(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroD100>.MapAllProperties().Build());
 
             return regD100Accessor.Execute(
@@ -116,7 +116,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroD500> regD500Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroD500(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroD500>.MapAllProperties().Build());
 
             return regD500Accessor.Execute(
@@ -157,5 +157,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
                 UndTrabalho.CodigoEmpresa,
                 codChaveNotaFiscal).ToList();
         }
+
+
     }
 }

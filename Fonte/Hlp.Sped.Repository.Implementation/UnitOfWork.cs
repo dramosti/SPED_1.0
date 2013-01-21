@@ -51,6 +51,7 @@ namespace Hlp.Sped.Repository.Implementation
             this._DBOrigemDadosContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBOrigemDadosContabil");
             this._DBArquivoSpedFiscal = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedFiscal");
             this._DBArquivoSpedContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContabil");
+            this._DBOrigemDadosContmatic = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContmatic");
         }
     }
 }

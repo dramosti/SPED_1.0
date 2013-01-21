@@ -78,7 +78,6 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             return reg0100;
         }
 
-
         public IEnumerable<Registro0400> GetRegistro0400()
         {
             DataAccessor<Registro0400> reg0400Accessor =
@@ -92,7 +91,6 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
-
 
         public IEnumerable<Registro0500> GetRegistro0500()
         {

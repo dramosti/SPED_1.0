@@ -7,6 +7,20 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.Contmatic
 {
     public interface ISqlExpressionsContmaticRepository
     {
+        string GetExpressionNovaSequenciaArquivo();
+        string GetDeleteRegistrosGerados();
+        string GetInsertPersistirRegistro();
+        string GetSelectRegistrosGerados();
+        string GetSelectRegistroJaExistente();
+        string GetSelectQuantidadeRegistrosBloco();
+
+        string GetSelectRegistro0990();
+        string GetSelectRegistroA990();
+        string GetSelectRegistroC990();
+        string GetSelectRegistroD990();
+        string GetSelectRegistro1990();
+
+
         string GetSelectRegistro0000();
         string GetSelectRegistro0100();
         string GetSelectRegistro0150();

@@ -39,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.configConnectionContmatic = new Hlp.Sped.UI.ConfigConnectionFirebird();
             this.panel1.SuspendLayout();
             this.titleStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.configConnectionContmatic);
             this.panel1.Controls.Add(this.configConnectionFirebirdSpedContabil);
             this.panel1.Controls.Add(this.configConnectionFirebirdSpedFiscal);
             this.panel1.Controls.Add(this.configConnectionFirebirdContabil);
@@ -56,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(529, 601);
+            this.panel1.Size = new System.Drawing.Size(526, 723);
             this.panel1.TabIndex = 4;
             // 
             // configConnectionFirebirdSpedContabil
@@ -76,15 +78,15 @@
             // 
             // configConnectionFirebirdSpedFiscal
             // 
-            this.configConnectionFirebirdSpedFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.configConnectionFirebirdSpedFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.configConnectionFirebirdSpedFiscal.CaminhoBase = "";
             this.configConnectionFirebirdSpedFiscal.Dialeto = "1";
             this.configConnectionFirebirdSpedFiscal.Location = new System.Drawing.Point(6, 292);
             this.configConnectionFirebirdSpedFiscal.Name = "configConnectionFirebirdSpedFiscal";
             this.configConnectionFirebirdSpedFiscal.NomeConexao = "DBArquivoSpedFiscal";
             this.configConnectionFirebirdSpedFiscal.Senha = "";
-            this.configConnectionFirebirdSpedFiscal.Size = new System.Drawing.Size(516, 139);
+            this.configConnectionFirebirdSpedFiscal.Size = new System.Drawing.Size(513, 139);
             this.configConnectionFirebirdSpedFiscal.TabIndex = 13;
             this.configConnectionFirebirdSpedFiscal.Title = "Configurações - Dados SPED Fiscal";
             this.configConnectionFirebirdSpedFiscal.Usuario = "";
@@ -93,15 +95,15 @@
             // 
             // configConnectionFirebirdContabil
             // 
-            this.configConnectionFirebirdContabil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.configConnectionFirebirdContabil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.configConnectionFirebirdContabil.CaminhoBase = "";
             this.configConnectionFirebirdContabil.Dialeto = "1";
             this.configConnectionFirebirdContabil.Location = new System.Drawing.Point(6, 159);
             this.configConnectionFirebirdContabil.Name = "configConnectionFirebirdContabil";
             this.configConnectionFirebirdContabil.NomeConexao = "DBOrigemDadosContabil";
             this.configConnectionFirebirdContabil.Senha = "";
-            this.configConnectionFirebirdContabil.Size = new System.Drawing.Size(516, 139);
+            this.configConnectionFirebirdContabil.Size = new System.Drawing.Size(513, 139);
             this.configConnectionFirebirdContabil.TabIndex = 12;
             this.configConnectionFirebirdContabil.Title = "Configurações - Contábil";
             this.configConnectionFirebirdContabil.Usuario = "";
@@ -110,15 +112,15 @@
             // 
             // configConnectionFirebirdFiscal
             // 
-            this.configConnectionFirebirdFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.configConnectionFirebirdFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.configConnectionFirebirdFiscal.CaminhoBase = "";
             this.configConnectionFirebirdFiscal.Dialeto = "1";
             this.configConnectionFirebirdFiscal.Location = new System.Drawing.Point(6, 26);
             this.configConnectionFirebirdFiscal.Name = "configConnectionFirebirdFiscal";
             this.configConnectionFirebirdFiscal.NomeConexao = "DBOrigemDadosFiscal";
             this.configConnectionFirebirdFiscal.Senha = "";
-            this.configConnectionFirebirdFiscal.Size = new System.Drawing.Size(516, 139);
+            this.configConnectionFirebirdFiscal.Size = new System.Drawing.Size(513, 139);
             this.configConnectionFirebirdFiscal.TabIndex = 11;
             this.configConnectionFirebirdFiscal.Title = "Configurações - Fiscal";
             this.configConnectionFirebirdFiscal.Usuario = "";
@@ -137,7 +139,7 @@
             this.titleStrip2.Lines = 6;
             this.titleStrip2.Location = new System.Drawing.Point(0, 0);
             this.titleStrip2.Name = "titleStrip2";
-            this.titleStrip2.Size = new System.Drawing.Size(529, 25);
+            this.titleStrip2.Size = new System.Drawing.Size(526, 25);
             this.titleStrip2.TabIndex = 10;
             this.titleStrip2.Text = "titleStrip2";
             // 
@@ -158,15 +160,15 @@
             this.panel3.BackgroundImage = global::Hlp.Sped.UI.Properties.Resources.blueheader;
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 568);
+            this.panel3.Location = new System.Drawing.Point(0, 690);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(529, 33);
+            this.panel3.Size = new System.Drawing.Size(526, 33);
             this.panel3.TabIndex = 6;
             // 
             // btnSair
             // 
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSair.Location = new System.Drawing.Point(444, 5);
+            this.btnSair.Location = new System.Drawing.Point(441, 5);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 1;
@@ -182,11 +184,24 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(323, 22);
             this.toolStripLabel1.Text = "Selecione o período e a empresa para geração do arquivo";
             // 
+            // configConnectionContmatic
+            // 
+            this.configConnectionContmatic.CaminhoBase = "";
+            this.configConnectionContmatic.Dialeto = "1";
+            this.configConnectionContmatic.Location = new System.Drawing.Point(6, 556);
+            this.configConnectionContmatic.Name = "configConnectionContmatic";
+            this.configConnectionContmatic.NomeConexao = "DBArquivoSpedContmatic";
+            this.configConnectionContmatic.Senha = "";
+            this.configConnectionContmatic.Size = new System.Drawing.Size(517, 139);
+            this.configConnectionContmatic.TabIndex = 15;
+            this.configConnectionContmatic.Title = "Configurações - Dados SPED Contmatic";
+            this.configConnectionContmatic.Usuario = "";
+            // 
             // FormConfigConnections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 601);
+            this.ClientSize = new System.Drawing.Size(526, 723);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -222,5 +237,6 @@
         private ConfigConnectionFirebird configConnectionFirebirdContabil;
         private ConfigConnectionFirebird configConnectionFirebirdSpedFiscal;
         private ConfigConnectionFirebird configConnectionFirebirdSpedContabil;
+        private ConfigConnectionFirebird configConnectionContmatic;
     }
 }

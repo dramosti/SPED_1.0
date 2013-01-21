@@ -13,6 +13,7 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.Fiscal
         string GetSelectRegistrosGerados();
         string GetSelectRegistroJaExistente();
         string GetSelectQuantidadeRegistrosBloco();
+
         string GetSelectRegistro0000();
         string GetSelectRegistro0005();
         string GetSelectRegistro0100();

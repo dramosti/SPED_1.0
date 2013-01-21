@@ -98,5 +98,25 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 
         [CampoDecimal(Ordem = 29, CasasDecimais = 2)]
         public decimal? VL_COFINS_ST { get; set; }
+
+
+        // Campo que não consta no arquivo, mas que serve de base para o
+        // detalhamento de uma nota fiscal
+        public string PK_NOTAFIS { get; set; }
+
+        // Este campo também não consta no arquivo, porém serve de base para a checagem
+        // se um documento que teve cancelamento, independentemente de seu tipo, possa ser identificado
+        // durante a montagem do arquivo
+        public string ST_DOC_CANCELADO { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "C100-" + this.GetNumeroControleRegistro(); }
+        }
+
+        public override string GetKeyValue()
+        {
+            return this.PK_NOTAFIS;
+        }
     }
 }

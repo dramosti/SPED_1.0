@@ -8,9 +8,9 @@ namespace Hlp.Sped.Services.Interfaces.Contmatic
 {
     public interface IOutrasInformacoesService
     {
-        IEnumerable<Registro1010> GetRegistro1010();
-        IEnumerable<Registro1100> GetRegistro1100();
-        IEnumerable<Registro1200> GetRegistro1200();
-        IEnumerable<Registro1600> GetRegistro1600();
+        IEnumerable<Registro1010> GetRegistros1010();
+        IEnumerable<Registro1100> GetRegistros1100();
+        IEnumerable<Registro1200> GetRegistros1200();
+        IEnumerable<Registro1600> GetRegistros1600();
     }
 }

@@ -11,28 +11,28 @@ namespace Hlp.Sped.Services.Implementation.Contmatic
     /// <summary>
     /// Classe dos blocos que começam com 1
     /// </summary>
-    class OutrasInformacoesService : IOutrasInformacoesService
+  public  class OutrasInformacoesService : IOutrasInformacoesService
     {
         [Inject]
         public IOutrasInformacoesRepository OutrasInfoRepository { get; set; }
 
 
-        public IEnumerable<Domain.Models.Contmatic.Registro1010> GetRegistro1010()
+        public IEnumerable<Domain.Models.Contmatic.Registro1010> GetRegistros1010()
         {
             return OutrasInfoRepository.GetRegistro1010();
         }
 
-        public IEnumerable<Domain.Models.Contmatic.Registro1100> GetRegistro1100()
+        public IEnumerable<Domain.Models.Contmatic.Registro1100> GetRegistros1100()
         {
             return OutrasInfoRepository.GetRegistro1100();
         }
 
-        public IEnumerable<Domain.Models.Contmatic.Registro1200> GetRegistro1200()
+        public IEnumerable<Domain.Models.Contmatic.Registro1200> GetRegistros1200()
         {
             return OutrasInfoRepository.GetRegistro1200();
         }
 
-        public IEnumerable<Domain.Models.Contmatic.Registro1600> GetRegistro1600()
+        public IEnumerable<Domain.Models.Contmatic.Registro1600> GetRegistros1600()
         {
             return OutrasInfoRepository.GetRegistro1600();
         }

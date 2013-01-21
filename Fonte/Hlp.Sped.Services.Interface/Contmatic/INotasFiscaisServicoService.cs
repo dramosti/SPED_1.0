@@ -8,7 +8,7 @@ namespace Hlp.Sped.Services.Interfaces.Contmatic
 {
     public interface INotasFiscaisServicoService
     {
-        IEnumerable<RegistroA100> GetRegistroA100(string codCNPJ);
-        IEnumerable<RegistroA170> GetRegistroA170(string codChaveNotaFiscal); // Vários por registro A100
+        IEnumerable<RegistroA100> GetRegistrosA100();
+        IEnumerable<RegistroA170> GetRegistrosA170(string codChaveNotaFiscal); // Vários por registro A100
     }
 }

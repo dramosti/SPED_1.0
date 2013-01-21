@@ -26,5 +26,14 @@ namespace Hlp.Sped.Domain.Models.Contmatic
 
         [CampoTextoNumerico(Ordem = 5, Tamanho = 3)]
         public int ECF_CX { get; set; }
+
+        // Campo que não consta no arquivo, mas que serve de base para o
+        // detalhamento de informações sobre ECFs e Cupons Fiscais
+        public string PK_ECF { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "C400-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

@@ -108,13 +108,16 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<Registro0400> reg0400Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistro0400(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<Registro0400>.MapAllProperties().Build());
 
             return reg0400Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
+
+            
+            
         }
 
         public IEnumerable<Registro0600> GetRegistro0600()
@@ -126,6 +129,14 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
                  MapBuilder<Registro0600>.MapAllProperties().Build());
 
             return reg0600Accessor.Execute(UndTrabalho.CodigoEmpresa).ToList();
+        }
+
+        public Registro0001 GetRegistro0001()
+        {
+            Registro0001 reg0001 = new Registro0001();
+            reg0001.IND_MOV = "0";  // Sempre haverá um conjunto de informações no bloco 0
+
+            return reg0001;
         }
     }
 }

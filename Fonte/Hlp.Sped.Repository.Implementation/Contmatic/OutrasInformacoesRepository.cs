@@ -26,7 +26,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<Registro1010> reg1010Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistro1010(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<Registro1010>.MapAllProperties().Build());
 
             return reg1010Accessor.Execute(
@@ -40,7 +40,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<Registro1100> reg1100Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistro1100(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<Registro1100>.MapAllProperties().Build());
 
             return reg1100Accessor.Execute(
@@ -54,7 +54,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<Registro1200> reg1200Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistro1200(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<Registro1200>.MapAllProperties().Build());
 
             return reg1200Accessor.Execute(
@@ -68,7 +68,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<Registro1600> reg1600Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistro1600(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<Registro1600>.MapAllProperties().Build());
 
             return reg1600Accessor.Execute(

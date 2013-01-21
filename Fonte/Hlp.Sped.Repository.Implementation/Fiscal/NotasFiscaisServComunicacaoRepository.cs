@@ -20,6 +20,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         [Inject]
         public ISqlExpressionsFiscalRepository SqlExpressionsFiscalRepository { get; set; }
 
+     
         private DataAccessor<RegistroD590> regD590Accessor;
 
         public IEnumerable<RegistroD500> GetRegistrosD500()

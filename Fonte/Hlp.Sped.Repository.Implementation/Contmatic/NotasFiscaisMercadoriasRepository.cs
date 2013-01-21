@@ -26,7 +26,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroC100> regC100Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroC100(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroC100>.MapAllProperties().Build());
 
             return regC100Accessor.Execute(

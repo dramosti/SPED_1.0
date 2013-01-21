@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ConfigConnectionsController.cs" />
     <Compile Include="Contabil\FrontController.cs" />
+    <Compile Include="Contmatic\ContmaticProcessController.cs" />
+    <Compile Include="Contmatic\FrontController.cs" />
     <Compile Include="Fiscal\FiscalProcessController.cs" />
     <Compile Include="Fiscal\FrontController.cs" />
     <Compile Include="Contabil\ContabilProcessController.cs" />
@@ -55,12 +57,15 @@
     <Compile Include="Fiscal\PisCofins\PisCofinsProcessController.cs" />
     <Compile Include="IoC\Contabil\DIContollersModuleContabil.cs" />
     <Compile Include="IoC\Contabil\DIContollersModuleFront.cs" />
+    <Compile Include="IoC\Contmatic\DIContollersModuleFront.cs" />
+    <Compile Include="IoC\Contmatic\DIControllersModuleContmatic.cs" />
     <Compile Include="IoC\DIContollersModuleConfigConnections.cs" />
     <Compile Include="IoC\Fiscal\DIContollersModuleFiscal.cs" />
     <Compile Include="IoC\Fiscal\DIContollersModuleFront.cs" />
     <Compile Include="IoC\Fiscal\Lorenzon\DIContollersModuleFiscalLorenzon.cs" />
     <Compile Include="IoC\PisCofins\DIContollersModulePisCofins.cs" />
     <Compile Include="Parameters\Contabil\ContabilProcessParameters.cs" />
+    <Compile Include="Parameters\Contmatic\ContmaticProcessParameters.cs" />
     <Compile Include="Parameters\Fiscal\FiscalProcessParameters.cs" />
     <Compile Include="Parameters\PisCofins\PisCofinsProcessParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

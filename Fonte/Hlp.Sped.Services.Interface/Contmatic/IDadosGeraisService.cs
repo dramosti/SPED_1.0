@@ -12,6 +12,7 @@ namespace Hlp.Sped.Services.Interfaces.Contmatic
     public interface IDadosGeraisService
     {
         Registro0000 GetRegistro0000();
+        Registro0001 GetRegistro0001();
         Registro0100 GetRegistro0100();
         IEnumerable<Registro0150> GetRegistro0150(string codigoParticipante);
         IEnumerable<Registro0190> GetRegistro0190(string codigoUnidade);

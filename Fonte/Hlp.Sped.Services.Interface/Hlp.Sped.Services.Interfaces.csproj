@@ -51,12 +51,17 @@
     <Compile Include="Contabil\ISaldosPeriodicosService.cs" />
     <Compile Include="Contmatic\IConhecimentoTransporteService.cs" />
     <Compile Include="Contmatic\IDadosGeraisService.cs" />
+    <Compile Include="Contmatic\IEmpresasService.cs" />
     <Compile Include="Contmatic\INotasFiscaisMercadoriasService.cs" />
     <Compile Include="Contmatic\INotasFiscaisServicoService.cs" />
     <Compile Include="Contmatic\IOutrasInformacoesService.cs" />
+    <Compile Include="Contmatic\IParticipantesService.cs" />
+    <Compile Include="Contmatic\IProdutosService.cs" />
+    <Compile Include="Contmatic\IUnidadesService.cs" />
     <Compile Include="Fiscal\IApuracaoServices.cs" />
     <Compile Include="Fiscal\IConhecimentoTransporteService.cs" />
     <Compile Include="Fiscal\ICuponsFiscaisService.cs" />
+    <Compile Include="Contmatic\IDadosArquivoContmaticService.cs" />
     <Compile Include="Fiscal\IEmpresasService.cs" />
     <Compile Include="Fiscal\IInventarioService.cs" />
     <Compile Include="Fiscal\INotasFiscaisEnergiaAguaGasService.cs" />

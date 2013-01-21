@@ -193,33 +193,54 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
         private void ProcessarNotasFiscaisServicosComunicacao()
         {
+            RegistroD001 regD001 = new RegistroD001();
+            if (DadosArquivoPisCofinsService.BlocoPossuiRegistros("D"))
+            {
+                regD001.IND_MOV = "0";
+            }
+            else
+            {
+                regD001.IND_MOV = "1";
+            }
+            DadosArquivoPisCofinsService.PersistirRegistro(regD001);
+
+            this.UpdateStatusAsynchronousExecution("Gerando Registro D001");
             IEnumerable<RegistroD501> registrosD501;
             IEnumerable<RegistroD505> registrosD505;
 
-            IEnumerable<RegistroD500> registrosD500 =
-                NotaFiscaisServService.GetRegistrosD500();
-            foreach (RegistroD500 regD500 in registrosD500)
+            IEnumerable<RegistroD010> registrosD010 = NotaFiscaisServService.GetRegistrosD010();
+
+            foreach (RegistroD010 regD010 in registrosD010)
             {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro D500");
-                DadosArquivoPisCofinsService.PersistirRegistro(regD500);
+                this.UpdateStatusAsynchronousExecution("Gerando Registro D010");
+                DadosArquivoPisCofinsService.PersistirRegistro(regD010);
+                
+                IEnumerable<RegistroD500> registrosD500 =
+                    NotaFiscaisServService.GetRegistrosD500(regD010.CNPJ);
 
-                // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                this.ProcessarParticipante(regD500.COD_PART);
-
-                if (regD500.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
+                foreach (RegistroD500 regD500 in registrosD500)
                 {
-                    registrosD501 = NotaFiscaisServService.GetRegistrosD501(
-                        regD500.PK_NOTAFIS);
-                    foreach (RegistroD501 regD501 in registrosD501)
-                    {                        
-                        DadosArquivoPisCofinsService.PersistirRegistro(regD501);
-                        this.UpdateStatusAsynchronousExecution("Gerando Registro D501");                       
-                    }
-                    registrosD505 = NotaFiscaisServService.GetRegistrosD505(regD500.PK_NOTAFIS);
-                    foreach (RegistroD505 reg505 in registrosD505)
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro D500");
+                    DadosArquivoPisCofinsService.PersistirRegistro(regD500);
+
+                    // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
+                    this.ProcessarParticipante(regD500.COD_PART);
+
+                    if (regD500.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
                     {
-                        DadosArquivoPisCofinsService.PersistirRegistro(reg505);
-                        this.UpdateStatusAsynchronousExecution("Gerando Registro D505");
+                        registrosD501 = NotaFiscaisServService.GetRegistrosD501(
+                            regD500.PK_NOTAFIS);
+                        foreach (RegistroD501 regD501 in registrosD501)
+                        {
+                            DadosArquivoPisCofinsService.PersistirRegistro(regD501);
+                            this.UpdateStatusAsynchronousExecution("Gerando Registro D501");
+                        }
+                        registrosD505 = NotaFiscaisServService.GetRegistrosD505(regD500.PK_NOTAFIS);
+                        foreach (RegistroD505 reg505 in registrosD505)
+                        {
+                            DadosArquivoPisCofinsService.PersistirRegistro(reg505);
+                            this.UpdateStatusAsynchronousExecution("Gerando Registro D505");
+                        }
                     }
                 }
             }
@@ -506,11 +527,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         }
         
         private void ProcessarDocumentosFiscaisServicoICMS()
-        {
-            RegistroD001 regD001 = new RegistroD001();
-            regD001.IND_MOV = "1"; // Nesta primeira versão este bloco não será informado
-            DadosArquivoPisCofinsService.PersistirRegistro(regD001);
-            this.UpdateStatusAsynchronousExecution("Gerando Registro D001");
+        {          
 
             this.ProcessarNotasFiscaisServicosComunicacao();
             
