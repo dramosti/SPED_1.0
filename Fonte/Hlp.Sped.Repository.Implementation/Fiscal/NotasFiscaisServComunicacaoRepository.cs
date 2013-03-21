@@ -51,5 +51,6 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
                 UndTrabalho.CodigoEmpresa,
                 codNR_SEQNF).ToList();
         }
+        
     }
 }

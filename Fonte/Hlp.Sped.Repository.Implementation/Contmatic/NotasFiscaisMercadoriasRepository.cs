@@ -60,7 +60,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroC400> regC400Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroC400(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroC400>.MapAllProperties().Build());
 
             return regC400Accessor.Execute(
@@ -116,7 +116,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             DataAccessor<RegistroC500> regC500Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                  SqlExpressionsContmaticRepository.GetSelectRegistroC500(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
                  MapBuilder<RegistroC500>.MapAllProperties().Build());
 
             return regC500Accessor.Execute(

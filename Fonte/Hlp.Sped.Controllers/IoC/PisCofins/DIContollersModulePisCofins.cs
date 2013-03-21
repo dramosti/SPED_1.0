@@ -38,6 +38,7 @@ namespace Hlp.Sped.Controllers.IoC.PisCofins
             Bind<IDadosArquivoPisCofinsRepository>().To<DadosArquivoPisCofinsRepository>();
             Bind<ISpedFileWriterRepository>().To<SpedFileWriterRepository>();
             Bind<INotasFiscaisServComunicacaoRepository>().To<NotasFiscaisServComunicacaoRepository>();
+            Bind<IDemaisDocumentosOperacoesRepository>().To<DemaisDocumentosOperacoesRepository>();
         }
 
         protected override void ResolveServices()
@@ -55,6 +56,7 @@ namespace Hlp.Sped.Controllers.IoC.PisCofins
             Bind<IDadosArquivoPisCofinsService>().To<DadosArquivoPisCofinsService>();
             Bind<ISpedFileWriterService>().To<SpedFileWriterService>();
             Bind<INotasFiscaisServComunicacaoService>().To<NotasFiscaisServComunicacaoService>();
+            Bind<IDemaisDocumentosOperacoesService>().To<DemaisDocumentosOperacoesService>();
         }
     }
 }

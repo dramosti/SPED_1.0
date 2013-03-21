@@ -44,6 +44,7 @@
             this.conexoesAcessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPublish = new System.Windows.Forms.ToolStripMenuItem();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.spine1 = new Hlp.Sped.UI.Spine();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -53,6 +54,7 @@
             this.customToolStrip1 = new Hlp.Sped.UI.CustomToolStrip();
             this.customToolStrip2 = new Hlp.Sped.UI.CustomToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsVersao = new System.Windows.Forms.ToolStripLabel();
             this.customMenuStrip1.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.customToolStrip2.SuspendLayout();
@@ -165,7 +167,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sobreToolStripMenuItem});
+            this.sobreToolStripMenuItem,
+            this.tsmPublish});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.helpToolStripMenuItem.Text = "&Ajuda";
@@ -173,8 +176,15 @@
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.sobreToolStripMenuItem.Text = "&Sobre";
+            // 
+            // tsmPublish
+            // 
+            this.tsmPublish.Name = "tsmPublish";
+            this.tsmPublish.Size = new System.Drawing.Size(155, 22);
+            this.tsmPublish.Text = "Publicar Versao";
+            this.tsmPublish.Click += new System.EventHandler(this.tsmPublish_Click);
             // 
             // contentPanel
             // 
@@ -257,7 +267,8 @@
             this.customToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.customToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.customToolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.tsVersao});
             this.customToolStrip2.Location = new System.Drawing.Point(0, 477);
             this.customToolStrip2.Name = "customToolStrip2";
             this.customToolStrip2.Size = new System.Drawing.Size(799, 25);
@@ -270,6 +281,14 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(224, 22);
             this.toolStripLabel1.Text = "Copyright © 2011 - Hlp Informática Ltda.";
+            // 
+            // tsVersao
+            // 
+            this.tsVersao.ForeColor = System.Drawing.SystemColors.Window;
+            this.tsVersao.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.tsVersao.Name = "tsVersao";
+            this.tsVersao.Size = new System.Drawing.Size(45, 22);
+            this.tsVersao.Text = "Versão:";
             // 
             // MainForm
             // 
@@ -325,5 +344,7 @@
         private System.Windows.Forms.ToolStripMenuItem fiscalInventarioLorenzonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalProdutosLorenzonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalContmaticToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmPublish;
+        private System.Windows.Forms.ToolStripLabel tsVersao;
     }
 }

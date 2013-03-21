@@ -48,7 +48,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 
         public string GetExpressionNovaSequenciaArquivo()
         {
-            return "{CALL SP_NOVA_SEQUENCIA_SPEDCONTMATIC}";
+            return "{CALL SP_NOVA_SEQUENCIA_SPEDCONTMAT}";
         }
 
         public string GetDeleteRegistrosGerados()
@@ -174,7 +174,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Contimatic
 
         public string GetSelectRegistroC400()
         {
-            return "SELECT * FROM SP_SPED_CONTMAT_REGISTROC400(?,?)";
+            return "SELECT * FROM SP_SPED_CONTMAT_REGISTROC400(?,?,?)";
         }
 
         public string GetSelectRegistroC405()

@@ -314,5 +314,58 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
         {
             return "SELECT * FROM SP_SPED_PISCOF_REGISTROD010(?,?,?)";
         }
+
+
+        public string GetSelectRegistroD100()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD100(?,?,?)";
+        }
+
+
+
+        public string GetSelectRegistroD200()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrod200(?,?,?)";
+        }
+
+        public string GetSelectRegistroD201()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrod201(?,?)";
+        }
+
+        public string GetSelectRegistroD205()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrod205(?,?)";
+        }
+
+
+
+
+        public string GetSelectRegistroD101()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD101(?,?)";
+        }
+
+        public string GetSelectRegistroD105()
+        {
+            return "SELECT * FROM SP_SPED_PISCOF_REGISTROD105(?,?)";
+        }
+
+
+        public string GetSelectRegistroF010()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrof010(?, ?, ?)";
+        }
+
+        public string GetSelectRegistroF600()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrof600(?, ?, ?)";
+        }
+
+
+        public string GetSelectRegistroF200()
+        {
+            return "SELECT * FROM sp_sped_piscof_registrof200(?, ?, ?)";
+        }
     }
 }

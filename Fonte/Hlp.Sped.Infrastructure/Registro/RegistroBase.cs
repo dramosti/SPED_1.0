@@ -68,7 +68,7 @@ namespace Hlp.Sped.Infrastructure.Registro
 
             return null;
         }
-
+             
         public override string ToString()
         {
             /*
@@ -131,7 +131,7 @@ namespace Hlp.Sped.Infrastructure.Registro
             }
             else if (atributo == typeof(CampoTextoNumericoAttribute))
             {
-                string valor = 
+                string valor =
                     this.GetType().GetProperty(propriedade).GetValue(this, null) == null ? null : this.GetType().GetProperty(propriedade).GetValue(this, null).ToString();
                 if (!String.IsNullOrWhiteSpace(valor))
                 {
@@ -187,7 +187,7 @@ namespace Hlp.Sped.Infrastructure.Registro
                         CampoDecimalAttribute atrib = (CampoDecimalAttribute)tipoCampo;
                         return valor.Value.ToString("0." + "0".PadRight(atrib.CasasDecimais, '0'));
                     }
-                    else 
+                    else
                     {
                         return valor.Value.ToString();
                     }

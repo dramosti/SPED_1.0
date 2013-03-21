@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Hlp.Sped.UI
 {
@@ -14,6 +15,12 @@ namespace Hlp.Sped.UI
         public MainForm()
         {
             InitializeComponent();
+            tsmPublish.Visible = false;
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                tsmPublish.Visible = true;
+            }
+            tsVersao.Text = "Versão: " + Assembly.GetEntryAssembly().GetName().Version; ;
         }
 
         #region Private Implementation
@@ -91,6 +98,12 @@ namespace Hlp.Sped.UI
         {
             FormSpedContmatic objForm = new FormSpedContmatic();
             objForm.ShowDialog();
+        }
+
+        private void tsmPublish_Click(object sender, EventArgs e)
+        {
+            frmPublish objfrm = new frmPublish();            
+            objfrm.ShowDialog();
         }
     }
 }

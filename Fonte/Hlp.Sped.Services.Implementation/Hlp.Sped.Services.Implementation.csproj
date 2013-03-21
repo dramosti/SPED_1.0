@@ -80,6 +80,7 @@
     <Compile Include="Fiscal\ParticipantesService.cs" />
     <Compile Include="Fiscal\ProdutosService.cs" />
     <Compile Include="Fiscal\UnidadesService.cs" />
+    <Compile Include="PisCofins\DemaisDocumentosOperacoesService.cs" />
     <Compile Include="PisCofins\NotasFiscaisServComunicacaoService.cs" />
     <Compile Include="PisCofins\ConsolidacaoNotasFiscaisService.cs" />
     <Compile Include="PisCofins\CuponsFiscaisService.cs" />

@@ -54,6 +54,14 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.PisCofins
         string GetSelectRegistrosC505(); 
         string GetSelectRegistroC990();
         string GetSelectRegistroD990();
+        string GetSelectRegistroD100();
+
+        string GetSelectRegistroD200();
+        string GetSelectRegistroD201();
+        string GetSelectRegistroD205();
+
+        string GetSelectRegistroD101();
+        string GetSelectRegistroD105();
         string GetSelectRegistroF990();
         string GetSelectRegistroM990();
         string GetSelectRegistroP990();
@@ -61,5 +69,9 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.PisCofins
         string GetSelectRegistros9900();
         string GetSelectRegistro9990();
         string GetSelectRegistro9999();
+        string GetSelectRegistroF010();
+        string GetSelectRegistroF600();
+        string GetSelectRegistroF200();
+
     }
 }

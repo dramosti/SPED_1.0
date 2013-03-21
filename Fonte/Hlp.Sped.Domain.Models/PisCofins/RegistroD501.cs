@@ -38,7 +38,7 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         
         public override string CODIGO_ORDENACAO
         {
-            get { return "D500-" + this.GetNumeroControleRegistro(); }
+            get { return "D010-" + this.GetNumeroControleRegistro(); }
         }
 
        

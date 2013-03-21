@@ -38,6 +38,47 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                 UndTrabalho.DataFinal).ToList();
         }
 
+        public IEnumerable<RegistroD100> GetRegistroD100()
+        {
+            DataAccessor<RegistroD100> regD100Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD100(),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD100>.MapAllProperties().Build());
+
+            return regD100Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                UndTrabalho.DataInicial,
+                UndTrabalho.DataFinal).ToList();
+        }
+
+        public IEnumerable<RegistroD101> GetRegistrosD101(string PK_NOTAFIS)
+        {
+            DataAccessor<RegistroD101> regD101Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD101(),
+                 new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD101>.MapAllProperties().Build());
+
+            return regD101Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                PK_NOTAFIS).ToList();
+        }
+
+        public IEnumerable<RegistroD105> GetRegistrosD105(string PK_NOTAFIS)
+        {
+            DataAccessor<RegistroD105> regD105Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD105(),
+                 new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD105>.MapAllProperties().Build());
+
+            return regD105Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                PK_NOTAFIS).ToList();
+        }
+
+
         public IEnumerable<RegistroD500> GetRegistrosD500(string CD_CNPJ)
         {
             IEnumerable<RegistroD500> objRet;
@@ -92,6 +133,44 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                 codChaveNotaFiscal);
         }
 
+        public IEnumerable<RegistroD200> GetRegistroD200()
+        {
+            DataAccessor<RegistroD200> regD200Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD200(),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD200>.MapAllProperties().Build());
 
+            return regD200Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                UndTrabalho.DataInicial,
+                UndTrabalho.DataFinal).ToList();
+        }
+
+        public IEnumerable<RegistroD201> GetRegistrosD201(string PK_NOTAFIS)
+        {
+            DataAccessor<RegistroD201> regD201Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD201(),
+                 new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD201>.MapAllProperties().Build());
+
+            return regD201Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                PK_NOTAFIS).ToList();
+        }
+
+        public IEnumerable<RegistroD205> GetRegistrosD205(string PK_NOTAFIS)
+        {
+            DataAccessor<RegistroD205> regD205Accessor =
+               UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
+                 SqlExpressionsPisCofinsRepository.GetSelectRegistroD205(),
+                 new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosContmatic),
+                 MapBuilder<RegistroD205>.MapAllProperties().Build());
+
+            return regD205Accessor.Execute(
+                UndTrabalho.CodigoEmpresa,
+                PK_NOTAFIS).ToList();
+        }
     }
 }

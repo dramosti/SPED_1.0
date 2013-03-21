@@ -49,6 +49,7 @@ namespace Hlp.Sped.UI
             this.CarregarConfiguracoes(configConnectionFirebirdContabil);
             this.CarregarConfiguracoes(configConnectionFirebirdSpedFiscal);
             this.CarregarConfiguracoes(configConnectionFirebirdSpedContabil);
+            this.CarregarConfiguracoes(configConnectionContmatic);
         }
 
         private void configConnectionFirebird_TestarConexao(ConfigConnectionFirebird sender)

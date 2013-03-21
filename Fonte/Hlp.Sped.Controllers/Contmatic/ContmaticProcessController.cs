@@ -251,6 +251,7 @@ namespace Hlp.Sped.Controllers.Contmatic
 
         private void ProcessarCuponsFiscais()
         {
+            //SP_SPED_CONTMAT_REGISTROC400
             IEnumerable<RegistroC400> registrosC400 =
                 notasFiscaisMercadoriasService.GetRegistrosC400();
             IEnumerable<RegistroC405> registrosC405;
@@ -558,8 +559,8 @@ namespace Hlp.Sped.Controllers.Contmatic
             this.ProcessarDadosGerais();
             this.ProcessarDocumentosFiscaisServico();
             this.ProcessarNotasFiscaisMercadorias();
+            this.ProcessarCuponsFiscais();
             this.ProcessarConhecimentosTransporte();
-
             //this.ProcessarApuracaoIcmsIPI();
             //this.ProcessarControleCIAP();
             //this.ProcessarInventarioFisico();

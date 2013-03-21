@@ -38,6 +38,13 @@
     <ApplicationIcon>1358792310_7518.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GeraXml_3.0\DLL\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\GeraXml_3.0\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -118,6 +125,12 @@
     <Compile Include="FormSpedPisCofins.Designer.cs">
       <DependentUpon>FormSpedPisCofins.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPublish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPublish.Designer.cs">
+      <DependentUpon>frmPublish.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSpedPisCofins.resx">
       <DependentUpon>FormSpedPisCofins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPublish.resx">
+      <DependentUpon>frmPublish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

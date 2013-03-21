@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.configConnectionContmatic = new Hlp.Sped.UI.ConfigConnectionFirebird();
             this.configConnectionFirebirdSpedContabil = new Hlp.Sped.UI.ConfigConnectionFirebird();
             this.configConnectionFirebirdSpedFiscal = new Hlp.Sped.UI.ConfigConnectionFirebird();
             this.configConnectionFirebirdContabil = new Hlp.Sped.UI.ConfigConnectionFirebird();
@@ -39,7 +40,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.configConnectionContmatic = new Hlp.Sped.UI.ConfigConnectionFirebird();
             this.panel1.SuspendLayout();
             this.titleStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,6 +60,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(526, 723);
             this.panel1.TabIndex = 4;
+            // 
+            // configConnectionContmatic
+            // 
+            this.configConnectionContmatic.CaminhoBase = "";
+            this.configConnectionContmatic.Dialeto = "1";
+            this.configConnectionContmatic.Location = new System.Drawing.Point(6, 556);
+            this.configConnectionContmatic.Name = "configConnectionContmatic";
+            this.configConnectionContmatic.NomeConexao = "DBArquivoSpedContmatic";
+            this.configConnectionContmatic.Senha = "";
+            this.configConnectionContmatic.Size = new System.Drawing.Size(517, 139);
+            this.configConnectionContmatic.TabIndex = 15;
+            this.configConnectionContmatic.Title = "Configurações - Dados SPED Contmatic";
+            this.configConnectionContmatic.Usuario = "";
+            this.configConnectionContmatic.TestarConexao += new Hlp.Sped.UI.Events.TestarConexaoFirebirdHandler(this.configConnectionFirebird_TestarConexao);
+            this.configConnectionContmatic.SalvarConexao += new Hlp.Sped.UI.Events.SalvarConexaoFirebirdHandler(this.configConnectionFirebird_SalvarConexao);
             // 
             // configConnectionFirebirdSpedContabil
             // 
@@ -183,19 +198,6 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(323, 22);
             this.toolStripLabel1.Text = "Selecione o período e a empresa para geração do arquivo";
-            // 
-            // configConnectionContmatic
-            // 
-            this.configConnectionContmatic.CaminhoBase = "";
-            this.configConnectionContmatic.Dialeto = "1";
-            this.configConnectionContmatic.Location = new System.Drawing.Point(6, 556);
-            this.configConnectionContmatic.Name = "configConnectionContmatic";
-            this.configConnectionContmatic.NomeConexao = "DBArquivoSpedContmatic";
-            this.configConnectionContmatic.Senha = "";
-            this.configConnectionContmatic.Size = new System.Drawing.Size(517, 139);
-            this.configConnectionContmatic.TabIndex = 15;
-            this.configConnectionContmatic.Title = "Configurações - Dados SPED Contmatic";
-            this.configConnectionContmatic.Usuario = "";
             // 
             // FormConfigConnections
             // 

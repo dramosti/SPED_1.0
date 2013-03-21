@@ -298,11 +298,18 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
     [ActiveRecord("SPEDCONTMATIC")]
     internal class ArquivoContmaticRecord : ActiveRecordBase<ArquivoContmaticRecord>
     {
+        [Property("CD_EMPRESA")]
+        public string CodigoEmpresa { get; set; }
+
+        [Property("DS_CAMINHO_ARQUIVO_GERADO")]
+        public string CaminhoArquivo { get; set; }
+
         [PrimaryKey("NR_ARQUIVO")]
         public int NumeroIdentificacaoArquivo { get; set; }
 
-        [Property("CD_EMPRESA")]
-        public string CodigoEmpresa { get; set; }
+        [Property("DS_EXCECAO")]
+        public string Excecao { get; set; }
+               
 
         [Property("TP_ARQUIVO")]
         public string TipoArquivo { get; set; }
@@ -310,11 +317,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         [Property("TP_REMESSA")]
         public string TipoRemessa { get; set; }
 
-        [Property("DS_CAMINHO_ARQUIVO_GERADO")]
-        public string CaminhoArquivo { get; set; }
+        
 
-        [Property("DS_EXCECAO")]
-        public string Excecao { get; set; }
+       
 
         [Property("DT_INICIAL_INFORMACOES")]
         public DateTime? DataInicial { get; set; }

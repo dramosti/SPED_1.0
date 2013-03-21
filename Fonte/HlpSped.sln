@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hlp.Sped.Services.Implement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hlp.Sped.Controllers", "Hlp.Sped.Controllers\Hlp.Sped.Controllers.csproj", "{BB8A0750-6417-4A52-9716-CC5B41E81978}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SPED_Installer", "SPED_Installer\SPED_Installer.vdproj", "{33EA4B3E-5E5F-4492-917E-610898782E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,12 @@ Global
 		{BB8A0750-6417-4A52-9716-CC5B41E81978}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BB8A0750-6417-4A52-9716-CC5B41E81978}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BB8A0750-6417-4A52-9716-CC5B41E81978}.Release|x86.ActiveCfg = Release|Any CPU
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Debug|Any CPU.ActiveCfg = Debug
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Debug|x86.ActiveCfg = Debug
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Release|Any CPU.ActiveCfg = Release
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Release|Mixed Platforms.ActiveCfg = Release
+		{33EA4B3E-5E5F-4492-917E-610898782E95}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -152,6 +152,7 @@
     <Compile Include="PisCofins\CuponsFiscaisRepository.cs" />
     <Compile Include="PisCofins\DadosArquivoPisCofinsRepository.cs" />
     <Compile Include="PisCofins\DadosGeraisRepository.cs" />
+    <Compile Include="PisCofins\DemaisDocumentosOperacoesRepository.cs" />
     <Compile Include="PisCofins\DocumentosFiscaisMercadoriasRepository.cs" />
     <Compile Include="PisCofins\Mappers\FilterByCdCliforParameterMapper.cs" />
     <Compile Include="PisCofins\Mappers\FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper.cs" />
