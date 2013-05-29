@@ -21,6 +21,8 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         [CampoTextoVariavel(Ordem = 3, Tamanho = 1)]
         public string IND_ESCRI { get; set; }
 
+        public string CD_EMP { get; set; }
+
         public override string CODIGO_ORDENACAO
         {
             get { return "C010-" + this.GetNumeroControleRegistro(); }

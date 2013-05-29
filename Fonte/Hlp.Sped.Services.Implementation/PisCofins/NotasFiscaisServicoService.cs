@@ -19,14 +19,14 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
             return NotasFiscaisServicoRepository.GetRegistrosA010();
         }
 
-        public IEnumerable<RegistroA100> GetRegistrosA100(string codCNPJ)
+        public IEnumerable<RegistroA100> GetRegistrosA100(string codCNPJ, string codEmp)
         {
-            return NotasFiscaisServicoRepository.GetRegistrosA100(codCNPJ);
+            return NotasFiscaisServicoRepository.GetRegistrosA100(codCNPJ, codEmp);
         }
 
-        public IEnumerable<RegistroA170> GetRegistrosA170(string codChaveNotaFiscal)
+        public IEnumerable<RegistroA170> GetRegistrosA170(string codChaveNotaFiscal, string codEmp)
         {
-            return NotasFiscaisServicoRepository.GetRegistrosA170(codChaveNotaFiscal);
+            return NotasFiscaisServicoRepository.GetRegistrosA170(codChaveNotaFiscal, codEmp);
         }
     }
 }

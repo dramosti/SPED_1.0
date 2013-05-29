@@ -29,143 +29,108 @@
         private void InitializeComponent()
         {
             this.grpDadosFiscal = new System.Windows.Forms.GroupBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnTestar = new System.Windows.Forms.Button();
-            this.txtCaminhoBase = new System.Windows.Forms.TextBox();
+            this.txtServer = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCaminhoBase = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.lblCaminhoBase = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.rdbDialeto3 = new System.Windows.Forms.RadioButton();
-            this.rdbDialeto1 = new System.Windows.Forms.RadioButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.grpDadosFiscal.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDadosFiscal
             // 
-            this.grpDadosFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDadosFiscal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.grpDadosFiscal.Controls.Add(this.btnSalvar);
-            this.grpDadosFiscal.Controls.Add(this.btnTestar);
+            this.grpDadosFiscal.BackColor = System.Drawing.Color.Transparent;
+            this.grpDadosFiscal.Controls.Add(this.btnLimpar);
+            this.grpDadosFiscal.Controls.Add(this.txtServer);
+            this.grpDadosFiscal.Controls.Add(this.label1);
             this.grpDadosFiscal.Controls.Add(this.txtCaminhoBase);
+            this.grpDadosFiscal.Controls.Add(this.btnSalvar);
             this.grpDadosFiscal.Controls.Add(this.lblCaminhoBase);
-            this.grpDadosFiscal.Controls.Add(this.txtSenha);
-            this.grpDadosFiscal.Controls.Add(this.lblSenha);
-            this.grpDadosFiscal.Controls.Add(this.txtUsuario);
-            this.grpDadosFiscal.Controls.Add(this.lblUsuario);
-            this.grpDadosFiscal.Controls.Add(this.rdbDialeto3);
-            this.grpDadosFiscal.Controls.Add(this.rdbDialeto1);
-            this.grpDadosFiscal.Location = new System.Drawing.Point(9, 4);
+            this.grpDadosFiscal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpDadosFiscal.Location = new System.Drawing.Point(0, 0);
             this.grpDadosFiscal.Name = "grpDadosFiscal";
-            this.grpDadosFiscal.Size = new System.Drawing.Size(510, 126);
-            this.grpDadosFiscal.TabIndex = 7;
+            this.grpDadosFiscal.Size = new System.Drawing.Size(528, 68);
+            this.grpDadosFiscal.TabIndex = 9;
             this.grpDadosFiscal.TabStop = false;
             // 
-            // btnSalvar
+            // txtServer
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Location = new System.Drawing.Point(414, 19);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(70, 23);
-            this.btnSalvar.TabIndex = 11;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.txtServer.Location = new System.Drawing.Point(56, 16);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(122, 20);
+            this.txtServer.TabIndex = 1;
             // 
-            // btnTestar
+            // label1
             // 
-            this.btnTestar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTestar.Location = new System.Drawing.Point(338, 19);
-            this.btnTestar.Name = "btnTestar";
-            this.btnTestar.Size = new System.Drawing.Size(70, 23);
-            this.btnTestar.TabIndex = 10;
-            this.btnTestar.Text = "Testar";
-            this.btnTestar.UseVisualStyleBackColor = true;
-            this.btnTestar.Click += new System.EventHandler(this.btnTestar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Server";
             // 
             // txtCaminhoBase
             // 
-            this.txtCaminhoBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCaminhoBase.Location = new System.Drawing.Point(23, 96);
+            this.txtCaminhoBase.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
+            this.buttonSpecAny1});
+            this.txtCaminhoBase.Location = new System.Drawing.Point(56, 43);
             this.txtCaminhoBase.Name = "txtCaminhoBase";
-            this.txtCaminhoBase.Size = new System.Drawing.Size(464, 20);
-            this.txtCaminhoBase.TabIndex = 9;
+            this.txtCaminhoBase.Size = new System.Drawing.Size(372, 20);
+            this.txtCaminhoBase.TabIndex = 2;
             // 
             // lblCaminhoBase
             // 
             this.lblCaminhoBase.AutoSize = true;
-            this.lblCaminhoBase.Location = new System.Drawing.Point(20, 80);
+            this.lblCaminhoBase.Location = new System.Drawing.Point(12, 46);
             this.lblCaminhoBase.Name = "lblCaminhoBase";
-            this.lblCaminhoBase.Size = new System.Drawing.Size(139, 13);
+            this.lblCaminhoBase.Size = new System.Drawing.Size(31, 13);
             this.lblCaminhoBase.TabIndex = 8;
-            this.lblCaminhoBase.Text = "Caminho da Base de Dados";
+            this.lblCaminhoBase.Text = "Base";
             // 
-            // txtSenha
+            // openFileDialog1
             // 
-            this.txtSenha.Location = new System.Drawing.Point(182, 57);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(139, 20);
-            this.txtSenha.TabIndex = 5;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // lblSenha
+            // btnSalvar
             // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(179, 41);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
-            this.lblSenha.TabIndex = 4;
-            this.lblSenha.Text = "Senha";
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Location = new System.Drawing.Point(452, 42);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(70, 22);
+            this.btnSalvar.TabIndex = 3;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtUsuario
+            // buttonSpecAny1
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(23, 57);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(139, 20);
-            this.txtUsuario.TabIndex = 3;
+            this.buttonSpecAny1.Image = global::Hlp.Sped.UI.Properties.Resources.Pasta;
+            this.buttonSpecAny1.UniqueName = "E2BED0334B7442E1B298D2917E9256F5";
+            this.buttonSpecAny1.Click += new System.EventHandler(this.buttonSpecAny1_Click);
             // 
-            // lblUsuario
+            // btnLimpar
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(20, 41);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Usuário";
-            // 
-            // rdbDialeto3
-            // 
-            this.rdbDialeto3.AutoSize = true;
-            this.rdbDialeto3.Location = new System.Drawing.Point(116, 19);
-            this.rdbDialeto3.Name = "rdbDialeto3";
-            this.rdbDialeto3.Size = new System.Drawing.Size(67, 17);
-            this.rdbDialeto3.TabIndex = 1;
-            this.rdbDialeto3.Text = "Dialeto 3";
-            this.rdbDialeto3.UseVisualStyleBackColor = true;
-            // 
-            // rdbDialeto1
-            // 
-            this.rdbDialeto1.AutoSize = true;
-            this.rdbDialeto1.Checked = true;
-            this.rdbDialeto1.Location = new System.Drawing.Point(23, 19);
-            this.rdbDialeto1.Name = "rdbDialeto1";
-            this.rdbDialeto1.Size = new System.Drawing.Size(67, 17);
-            this.rdbDialeto1.TabIndex = 0;
-            this.rdbDialeto1.TabStop = true;
-            this.rdbDialeto1.Text = "Dialeto 1";
-            this.rdbDialeto1.UseVisualStyleBackColor = true;
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpar.Location = new System.Drawing.Point(452, 14);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(70, 22);
+            this.btnLimpar.TabIndex = 14;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnTestar_Click);
             // 
             // ConfigConnectionFirebird
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.grpDadosFiscal);
             this.Name = "ConfigConnectionFirebird";
-            this.Size = new System.Drawing.Size(528, 139);
+            this.Size = new System.Drawing.Size(528, 106);
             this.grpDadosFiscal.ResumeLayout(false);
             this.grpDadosFiscal.PerformLayout();
             this.ResumeLayout(false);
@@ -175,15 +140,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpDadosFiscal;
-        private System.Windows.Forms.RadioButton rdbDialeto3;
-        private System.Windows.Forms.RadioButton rdbDialeto1;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txtCaminhoBase;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCaminhoBase;
+        private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny1;
         private System.Windows.Forms.Label lblCaminhoBase;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtServer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnTestar;
+        private System.Windows.Forms.Button btnLimpar;
+
+
     }
 }

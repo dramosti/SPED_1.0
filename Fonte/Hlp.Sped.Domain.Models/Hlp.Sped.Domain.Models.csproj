@@ -152,6 +152,7 @@
     <Compile Include="Fiscal\RegistroD120.cs" />
     <Compile Include="Fiscal\RegistroD130.cs" />
     <Compile Include="Fiscal\RegistroE116.cs" />
+    <Compile Include="ModelConexao.cs" />
     <Compile Include="PisCofins\Registro0400.cs" />
     <Compile Include="PisCofins\Registro0500.cs" />
     <Compile Include="PisCofins\RegistroC120.cs" />
@@ -271,6 +272,8 @@
     <Compile Include="PisCofins\RegistroP990.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fiscal\Registro0001.cs" />
+    <Compile Include="SerializeClassToXml.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">

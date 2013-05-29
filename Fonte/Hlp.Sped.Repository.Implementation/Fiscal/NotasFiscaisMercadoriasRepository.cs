@@ -26,9 +26,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public IEnumerable<RegistroC100> GetRegistrosC100()
         {
             DataAccessor<RegistroC100> regC100Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistrosC100(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroC100>.MapAllProperties().Build());
             return regC100Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
@@ -41,9 +41,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC170Accessor == null)
             {
                 regC170Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC170(),
-                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC170>.MapAllProperties()
                     .DoNotMap(p => p.NUM_ITEM)
                     .Build());
@@ -63,9 +63,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC190Accessor == null)
             {
                 regC190Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC190(),
-                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC190>.MapAllProperties().Build());
             }
 

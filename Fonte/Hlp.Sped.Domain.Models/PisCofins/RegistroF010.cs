@@ -18,5 +18,7 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         [CampoTextoNumerico(Ordem = 2, Tamanho = 14)]
         public string CNPJ { get; set; }
 
+        public string CD_EMP { get; set; }
+
     }
 }

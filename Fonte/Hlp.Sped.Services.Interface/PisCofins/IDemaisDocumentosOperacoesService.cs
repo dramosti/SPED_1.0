@@ -10,8 +10,8 @@ namespace Hlp.Sped.Services.Interfaces.PisCofins
     {
         List<RegistroF010> GetRegistroF010();
 
-        List<RegistroF600> GetRegistroF600();
+        List<RegistroF600> GetRegistroF600(string codEmp);
 
-        List<RegistroF200> GetRegistroF200();
+        List<RegistroF200> GetRegistroF200(string codEmp);
     }
 }

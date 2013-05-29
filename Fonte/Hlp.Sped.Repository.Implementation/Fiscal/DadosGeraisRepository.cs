@@ -24,9 +24,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public Registro0000 GetRegistro0000()
         {
             DataAccessor<Registro0000> reg0000Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistro0000(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<Registro0000>.MapAllProperties()
                   .DoNotMap(p => p.COD_FIN)
                   .DoNotMap(p => p.DT_INI)
@@ -54,9 +54,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public Registro0005 GetRegistro0005()
         {
             DataAccessor<Registro0005> reg0005Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistro0005(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<Registro0005>.MapAllProperties()
                   .Map(p => p.END).ToColumn("ENDERECO")
                   .Build());
@@ -67,9 +67,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public Registro0100 GetRegistro0100()
         {
             DataAccessor<Registro0100> reg0100Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistro0100(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<Registro0100>.MapAllProperties()
                   .Map(p => p.END).ToColumn("ENDERECO")
                   .Build());
@@ -81,9 +81,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public IEnumerable<Registro0400> GetRegistro0400()
         {
             DataAccessor<Registro0400> reg0400Accessor =
-               UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+               UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                  SqlExpressionsFiscalRepository.GetSelectRegistro0400(),
-                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                 new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                  MapBuilder<Registro0400>.MapAllProperties().Build());
 
             return reg0400Accessor.Execute(
@@ -95,9 +95,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public IEnumerable<Registro0500> GetRegistro0500()
         {
             DataAccessor<Registro0500> reg0500Accessor =
-               UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+               UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                  SqlExpressionsFiscalRepository.GetSelectRegistro0500(),
-                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                 new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                  MapBuilder<Registro0500>.MapAllProperties().Build());
             
             return reg0500Accessor.Execute(

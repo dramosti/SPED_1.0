@@ -32,9 +32,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<RegistroJ930> GetRegistrosJ930()
         {
             DataAccessor<RegistroJ930> regJ930Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistrosJ930(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroJ930>.MapAllProperties()
                   .Build());
 

@@ -25,55 +25,55 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         private DataAccessor<RegistroC120> regC120Accessor;
         private DataAccessor<RegistroC170> regC170Accessor;
 
-        public IEnumerable<RegistroC100> GetRegistrosC100(string codCNPJ)
+        public IEnumerable<RegistroC100> GetRegistrosC100(string codCNPJ, string codEmp)
         {
             if (regC100Accessor == null)
             {
                 regC100Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC100(),
-                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC100>.MapAllProperties().Build());
             }
 
             return regC100Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
-        public IEnumerable<RegistroC120> GetRegistrosC120(string codChaveNotaFiscal)
+        public IEnumerable<RegistroC120> GetRegistrosC120(string codChaveNotaFiscal, string codEmp)
         {
             if (regC120Accessor == null)
             {
                 regC120Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC120(),
-                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC120>.MapAllProperties().Build());
             }
 
             return regC120Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codChaveNotaFiscal).ToList();
         }
 
-        public IEnumerable<RegistroC170> GetRegistrosC170(string codChaveNotaFiscal)
+        public IEnumerable<RegistroC170> GetRegistrosC170(string codChaveNotaFiscal, string codEmp)
         {
             if (regC170Accessor == null)
             {
                 regC170Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC170(),
-                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC170>.MapAllProperties()
                             .DoNotMap(p => p.NUM_ITEM)
                             .Build());
             }
 
             List<RegistroC170> resultado = regC170Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codChaveNotaFiscal).ToList();
             int numeroItem = 0;
             foreach (RegistroC170 regC170 in resultado)

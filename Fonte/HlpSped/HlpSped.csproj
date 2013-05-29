@@ -38,6 +38,9 @@
     <ApplicationIcon>1358792310_7518.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AC.ExtendedRenderer.Toolkit">
+      <HintPath>..\krypton\AC.ExtendedRenderer.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\GeraXml_3.0\DLL\ComponentFactory.Krypton.Toolkit.dll</HintPath>
@@ -45,8 +48,15 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\GeraXml_3.0\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Ninject, Version=2.1.0.91, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Hlp.Sped.Infrastructure\NInject\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -74,6 +84,12 @@
     </Compile>
     <Compile Include="ConfigConnectionFirebird.Designer.cs">
       <DependentUpon>ConfigConnectionFirebird.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSenhaSped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSenhaSped.Designer.cs">
+      <DependentUpon>FormSenhaSped.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSpedContmatic.cs">
       <SubType>Form</SubType>
@@ -148,6 +164,9 @@
     <EmbeddedResource Include="ConfigConnectionFirebird.resx">
       <DependentUpon>ConfigConnectionFirebird.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSenhaSped.resx">
+      <DependentUpon>FormSenhaSped.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSpedContmatic.resx">
       <DependentUpon>FormSpedContmatic.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +198,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -192,9 +212,10 @@
     <EmbeddedResource Include="Spine.resx">
       <DependentUpon>Spine.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config">
+    <Content Include="App.config">
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,6 +238,10 @@
     <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
       <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
       <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Services.Interface\Hlp.Sped.Services.Interfaces.csproj">
+      <Project>{81EDAD84-B122-4758-A803-A5208F157E72}</Project>
+      <Name>Hlp.Sped.Services.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +266,7 @@
     <Content Include="Images\sound.png" />
     <Content Include="Images\trends.png" />
     <Content Include="Images\updates.png" />
+    <None Include="Resources\Pasta.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

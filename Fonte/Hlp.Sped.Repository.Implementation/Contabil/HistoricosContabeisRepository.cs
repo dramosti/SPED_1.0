@@ -27,9 +27,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
             if (this.regI075Accessor == null)
             {
                 this.regI075Accessor =
-                    UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                       SqlExpressionsContabilRepository.GetSelectRegistroI075(),
-                      new FilterByCdHistParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                      new FilterByCdHistParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                       MapBuilder<RegistroI075>.MapAllProperties().Build());
             }
             return this.regI075Accessor.Execute(codigoHistorico).FirstOrDefault();

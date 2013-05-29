@@ -41,9 +41,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public RegistroI010 GetRegistroI010()
         {
             DataAccessor<RegistroI010> regI010Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistroI010(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroI010>.MapAllProperties()
                   .DoNotMap(p => p.IND_ESC)
                   .Build());
@@ -74,9 +74,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<RegistroI200> GetRegistrosI200()
         {
             DataAccessor<RegistroI200> regI200Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistrosI200(),
-                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroI200>.MapAllProperties()
                   .Build());
 
@@ -91,9 +91,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
             if (regI250Accessor == null)
             {
                 regI250Accessor =
-                    UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                       SqlExpressionsContabilRepository.GetSelectRegistrosI250(),
-                      new FilterByCdEmpresaNumLctoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                      new FilterByCdEmpresaNumLctoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                       MapBuilder<RegistroI250>.MapAllProperties()
                       .Build());
             }

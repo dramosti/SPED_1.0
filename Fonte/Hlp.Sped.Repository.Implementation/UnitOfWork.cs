@@ -5,6 +5,7 @@ using System.Text;
 using Hlp.Sped.Infrastructure;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Data;
+using System.Configuration;
 
 namespace Hlp.Sped.Repository.Implementation
 {
@@ -15,20 +16,6 @@ namespace Hlp.Sped.Repository.Implementation
         public override Database DBOrigemDadosContmatic
         {
             get { return _DBOrigemDadosContmatic; }
-        }
-
-        private Database _DBOrigemDadosFiscal;
-
-        public override Database DBOrigemDadosFiscal
-        {
-            get { return _DBOrigemDadosFiscal; }
-        }
-
-        private Database _DBOrigemDadosContabil;
-        
-        public override Database DBOrigemDadosContabil
-        {
-            get { return _DBOrigemDadosContabil; }
         }
 
         private Database _DBArquivoSpedFiscal;
@@ -45,13 +32,32 @@ namespace Hlp.Sped.Repository.Implementation
             get { return _DBArquivoSpedContabil; }
         }
 
+        //private Database _DBArquivoSpedFiscal;
+
+        //public override Database DBArquivoSpedFiscal
+        //{
+        //    get { return _DBArquivoSpedFiscal; }
+        //}
+
+        //private Database _DBArquivoSpedContabil;
+
+        //public override Database DBArquivoSpedContabil
+        //{
+        //    get { return _DBArquivoSpedContabil; }
+        //}
+
         public UnitOfWork()
         {
-            this._DBOrigemDadosFiscal = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBOrigemDadosFiscal");
-            this._DBOrigemDadosContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBOrigemDadosContabil");
-            this._DBArquivoSpedFiscal = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedFiscal");
-            this._DBArquivoSpedContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContabil");
-            this._DBOrigemDadosContmatic = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContmatic");
+            //this._DBArquivoSpedFiscal = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBOrigemDadosFiscal");
+            //this._DBArquivoSpedContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBOrigemDadosContabil");
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            if (config.ConnectionStrings.ConnectionStrings["DBArquivoSpedFiscal"].ConnectionString != "")
+                this._DBArquivoSpedFiscal = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedFiscal");
+            if (config.ConnectionStrings.ConnectionStrings["DBArquivoSpedContabil"].ConnectionString != "")
+                this._DBArquivoSpedContabil = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContabil");
+            if (config.ConnectionStrings.ConnectionStrings["DBArquivoSpedContmatic"].ConnectionString != "")
+                this._DBOrigemDadosContmatic = EnterpriseLibraryContainer.Current.GetInstance<Database>("DBArquivoSpedContmatic");
         }
     }
 }

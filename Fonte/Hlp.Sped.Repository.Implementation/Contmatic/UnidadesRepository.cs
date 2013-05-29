@@ -29,7 +29,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
                 this.reg0190Accessor =
                     UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                       SqlExpressionsContmaticRepository.GetSelectRegistro0190(),
-                      new FilterByCdTpUnidParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdTpUnidParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0190>.MapNoProperties()
                       .Map(p => p.UNID).ToColumn("UNID")
                       .Map(p => p.DESCR).ToColumn("DESCR")

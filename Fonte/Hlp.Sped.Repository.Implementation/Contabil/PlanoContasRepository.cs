@@ -28,9 +28,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
             if (regI050Accessor == null)
             {
                 regI050Accessor =
-                    UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                     SqlExpressionsContabilRepository.GetSelectRegistrosI050(),
-                    new FilterByCdEmpresaContaSuperiorNivelParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaContaSuperiorNivelParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroI050>.MapAllProperties()
                     .Build());
             }

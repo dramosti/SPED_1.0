@@ -27,36 +27,47 @@ namespace Hlp.Sped.UI
         {
             get
             {
-                if (this.rdbDialeto1.Checked)
-                    return "1";
-                else
-                    return "3";
+                //if (this.rdbDialeto1.Checked)
+                //    return "1";
+                //else
+                //    return "3";
+                return "1";
             }
-            set
-            {
-                if (value == "1")
-                    this.rdbDialeto1.Checked = true;
-                else
-                    this.rdbDialeto3.Checked = true;
-            }
+            //set
+            //{
+            //    if (value == "1")
+            //        this.rdbDialeto1.Checked = true;
+            //    else
+            //        this.rdbDialeto3.Checked = true;
+            //}
         }
 
         public string Usuario
         {
-            get { return this.txtUsuario.Text.Trim(); }
-            set { this.txtUsuario.Text = value; }
+            get { return "SYSDBA"; }
+
         }
 
         public string Senha
         {
-            get { return this.txtSenha.Text; }
-            set { this.txtSenha.Text = value; }
+            get { return "masterkey"; }
+
         }
+
+
+
 
         public string CaminhoBase
         {
-            get { return this.txtCaminhoBase.Text.Trim(); }
-            set { this.txtCaminhoBase.Text = value; }
+            get { return this.txtServer.Text + ":" + this.txtCaminhoBase.Text.Trim(); }
+            set
+            {
+                if (value != "")
+                {
+                    this.txtServer.Text = value.Split(':')[0].ToString();
+                    this.txtCaminhoBase.Text = value.Replace(txtServer.Text + ":", "");
+                }
+            }
         }
 
         public ConfigConnectionFirebird()
@@ -75,5 +86,23 @@ namespace Hlp.Sped.UI
             if (SalvarConexao != null)
                 SalvarConexao(this);
         }
+
+        private void buttonSpecAny1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Diretório da base de dados";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                txtCaminhoBase.Text = openFileDialog1.FileName;
+            }
+        }
+
+        public void Clear()
+        {
+            txtCaminhoBase.Text = "";
+            txtServer.Text = "";
+            txtServer.Focus();
+        }
+
+
     }
 }

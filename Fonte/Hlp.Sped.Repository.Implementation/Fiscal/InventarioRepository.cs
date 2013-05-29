@@ -28,9 +28,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             //DateTime dataFinalInventario = dataInicialInventario.AddMonths(1).AddDays(-1);
 
             DataAccessor<RegistroH005> regH005Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistrosH005(),
-                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroH005>.MapAllProperties().Build());
             return regH005Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
@@ -43,9 +43,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regH010Accessor == null)
             {
                 regH010Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosH010(),
-                    new FilterByCdEmpresaDtInveParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaDtInveParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroH010>.MapAllProperties().Build());
             }
 

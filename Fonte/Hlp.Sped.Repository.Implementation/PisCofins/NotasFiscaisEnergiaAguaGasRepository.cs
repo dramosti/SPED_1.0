@@ -30,9 +30,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC500Accessor == null)
             {
                 regC500Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC500(),
-                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC500>.MapAllProperties().Build());
             }
 
@@ -48,9 +48,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC501Accessor == null)
             {
                 regC501Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC501(),
-                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC501>.MapAllProperties().Build());
             }
 
@@ -64,9 +64,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC505Accessor == null)
             {
                 regC505Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC505(),
-                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC505>.MapAllProperties().Build());
             }
 

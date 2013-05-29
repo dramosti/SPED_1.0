@@ -24,9 +24,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public Registro0000 GetRegistro0000()
         {
             DataAccessor<Registro0000> reg0000Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistro0000(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<Registro0000>.MapAllProperties()
                   .DoNotMap(p => p.DT_INI)
                   .DoNotMap(p => p.DT_FIN)
@@ -51,9 +51,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<Registro0007> GetRegistros0007()
         {
             DataAccessor<Registro0007> reg0007Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistro0007(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<Registro0007>.MapAllProperties()
                   .Build());
 
@@ -63,9 +63,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<Registro0020> GetRegistros0020()
         {
             DataAccessor<Registro0020> reg0020Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistro0020(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<Registro0020>.MapAllProperties()
                   .Build());
 
@@ -75,9 +75,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<Registro0150> GetRegistros0150()
         {
             DataAccessor<Registro0150> reg0150Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistro0150(),
-                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<Registro0150>.MapAllProperties()
                   .Build());
 
@@ -91,9 +91,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
             if (this.reg0180Accessor == null)
             {
                 this.reg0180Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistro0180(),
-                  new FilterByCdParticipanteParameterMapper(UndTrabalho.DBOrigemDadosContabil), 
+                  new FilterByCdParticipanteParameterMapper(UndTrabalho.DBArquivoSpedContabil), 
                   MapBuilder<Registro0180>.MapAllProperties()
                   .Build());
             }

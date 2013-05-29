@@ -25,9 +25,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal.Lorenzon
             DateTime dataFinalInventario = UndTrabalho.DataFinal;
 
             DataAccessor<RegistroH005Lorenzon> regH005Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   "SELECT * FROM SP_SPEDFIS_LORENZON_REGH005(?, ?, ?)",
-                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroH005Lorenzon>
                       .MapAllProperties()
                       .Build());
@@ -42,9 +42,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal.Lorenzon
             if (regH010Accessor == null)
             {
                 regH010Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     "SELECT * FROM SP_SPEDFIS_LORENZON_REGH010(?, ?)",
-                    new FilterByCdEmpresaDtInveParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaDtInveParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroH010>.MapAllProperties().Build());
             }
 
@@ -59,9 +59,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal.Lorenzon
             DateTime dataFinalInventario = UndTrabalho.DataFinal;
 
             DataAccessor<Registro0200> reg0200Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   "SELECT * FROM SP_SPEDFIS_LORENZON_REG0200(?, ?, ?)",
-                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaPeriodoInveParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<Registro0200>
                       .MapAllProperties()
                       .Build());

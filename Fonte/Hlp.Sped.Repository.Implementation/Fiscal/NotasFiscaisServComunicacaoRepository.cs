@@ -26,9 +26,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public IEnumerable<RegistroD500> GetRegistrosD500()
         {
             DataAccessor<RegistroD500> regD500Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistrosD500(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroD500>.MapAllProperties().Build());
             return regD500Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
@@ -41,9 +41,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regD590Accessor == null)
             {
                 regD590Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosD590(),
-                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroD590>.MapAllProperties().Build());
             }
 

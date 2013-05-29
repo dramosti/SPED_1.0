@@ -29,9 +29,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (this.reg0200Accessor == null)
             {
                 this.reg0200Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                       SqlExpressionsFiscalRepository.GetSelectRegistro0200(),
-                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0200>.MapAllProperties()
                       .Build());
             }
@@ -45,9 +45,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (this.reg0220Accessor == null)
             {
                 this.reg0220Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                       SqlExpressionsFiscalRepository.GetSelectRegistro0220(),
-                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0220>.MapAllProperties()
                       .Build());
             }

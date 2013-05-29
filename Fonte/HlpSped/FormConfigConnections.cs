@@ -36,34 +36,51 @@ namespace Hlp.Sped.UI
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
 
         private void FormConfigConnections_Load(object sender, EventArgs e)
         {
+            txtCaminhoBase.Text = Util.GetPastaConfiguracao();
+
+
             _ConfigConnectionsController = new ConfigConnectionsController();
             _ConfigConnectionsController.Initialize();
 
-            this.CarregarConfiguracoes(configConnectionFirebirdFiscal);
-            this.CarregarConfiguracoes(configConnectionFirebirdContabil);
+            //this.CarregarConfiguracoes(configConnectionFirebirdFiscal);
+            //this.CarregarConfiguracoes(configConnectionFirebirdContabil);
             this.CarregarConfiguracoes(configConnectionFirebirdSpedFiscal);
             this.CarregarConfiguracoes(configConnectionFirebirdSpedContabil);
             this.CarregarConfiguracoes(configConnectionContmatic);
+
+
+
         }
 
         private void configConnectionFirebird_TestarConexao(ConfigConnectionFirebird sender)
         {
-            if (_ConfigConnectionsController.ValidarConexao(
-                this.GetInformacoesConexao(sender)))
-                MessageBox.Show("Conexão válida!");
-            else
-                MessageBox.Show("Erro ao se tentar efetuar a conexão com a base de dados!");
+            //if (_ConfigConnectionsController.ValidarConexao(
+            //    this.GetInformacoesConexao(sender)))
+            //    MessageBox.Show("Conexão válida!");
+            //else
+            //    MessageBox.Show("Erro ao se tentar efetuar a conexão com a base de dados!");
+            Conexao conexao = this.GetInformacoesConexao(sender);
+
+            if (conexao != null)
+            {
+                _ConfigConnectionsController.ConexoesService.RemoveConexao(conexao);
+                sender.Clear();                
+            }
         }
 
         private void configConnectionFirebird_SalvarConexao(ConfigConnectionFirebird sender)
         {
             Conexao conexao = this.GetInformacoesConexao(sender);
+
+            conexao.bCOMPLETO = ckbCompleto.Checked;
+
             if (!_ConfigConnectionsController.ValidarConexao(conexao))
             {
                 MessageBox.Show("Impossível salvar esta configuração, pois ocorreu um erro " +
@@ -81,10 +98,21 @@ namespace Hlp.Sped.UI
         {
             Conexao conexao = _ConfigConnectionsController.ObterConexao(
                 config.NomeConexao);
-            config.Dialeto = conexao.PROPRIEDADES["Dialect"];
-            config.Usuario = conexao.PROPRIEDADES["uid"];
-            config.Senha = conexao.PROPRIEDADES["pwd"];
-            config.CaminhoBase = conexao.PROPRIEDADES["dbname"];
+            if (conexao != null)
+            {
+                //config.Dialeto = conexao.PROPRIEDADES["Dialect"];
+                //config.Usuario = conexao.PROPRIEDADES["uid"];
+                //config.Senha = conexao.PROPRIEDADES["pwd"];
+                config.CaminhoBase = conexao.PROPRIEDADES["dbname"];
+
+                if (conexao.bCOMPLETO)
+                {
+                    config.Visible = true;
+                    ckbCompleto.Checked = true;
+                    configConnectionFirebirdSpedContabil.Visible = true;
+                    configConnectionContmatic.Visible = true;
+                }
+            }
         }
 
         private Conexao GetInformacoesConexao(ConfigConnectionFirebird config)
@@ -108,6 +136,51 @@ namespace Hlp.Sped.UI
             MessageBox.Show("Caso tenha alterado alguma configuração de acesso, " +
                 "encerre esta aplicação e execute a mesma novamente, a fim de que as mudanças " +
                 "efetuadas possam surtir efeito.");
+        }
+
+        private void kryptonCheckBox1_Click(object sender, EventArgs e)
+        {
+            if (ckbCompleto.Checked)
+            {
+                this.Visible = false;
+                FormSenhaSped frm = new FormSenhaSped();
+                frm.ShowDialog();
+                if (frm.bSenhaValida)
+                {
+                    configConnectionFirebirdSpedContabil.Visible = ckbCompleto.Checked;
+                    configConnectionContmatic.Visible = ckbCompleto.Checked;
+                }
+                else
+                {
+                    ckbCompleto.Checked = false;
+                }
+                this.Visible = true;
+            }
+            else
+            {
+                configConnectionFirebirdSpedContabil.Visible = ckbCompleto.Checked;
+                configConnectionContmatic.Visible = ckbCompleto.Checked;
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (txtCaminhoBase.Text != "")
+            {
+                if (Directory.Exists(txtCaminhoBase.Text))
+                {
+                    Util.SalvarRegistro(txtCaminhoBase.Text);
+                }
+            }
+        }
+
+        private void buttonSpecAny1_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.Description = "Selecione um diretório Válido na ree";
+            if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txtCaminhoBase.Text = folderBrowserDialog1.SelectedPath;
+            }
         }
     }
 }

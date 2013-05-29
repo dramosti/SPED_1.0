@@ -28,5 +28,23 @@ namespace Hlp.Sped.Services.Implementation
         {
             ConexoesRepository.Salvar(conexao);
         }
+
+
+        public ModelConexao GetConfigConexoes()
+        {
+            return ConexoesRepository.GetConfigConexoes();
+        }
+
+
+        public void RemoveConexao(Conexao conexao)
+        {
+            ConexoesRepository.RemoveConexao(conexao);
+        }
+
+
+        public string GetConnectionString(Conexao conexao)
+        {
+            return ConexoesRepository.GetConnectionString(conexao);
+        }
     }
 }

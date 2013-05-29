@@ -25,7 +25,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         {
             if (empresaAccessor == null)
             {
-                empresaAccessor = UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                empresaAccessor = UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsRepository.GetSelectListAllEmpresas(),
                   MapBuilder<Empresa>.MapAllProperties().Build());
             }

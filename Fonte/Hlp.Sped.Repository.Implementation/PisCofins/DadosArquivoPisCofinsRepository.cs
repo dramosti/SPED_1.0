@@ -100,6 +100,25 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
 
         public void PersistirRegistro(RegistroBase registro)
         {
+            string sCD_ORD = registro.CODIGO_ORDENACAO.Split('-')[0].Trim();
+            
+
+            if (sCD_ORD.Equals("0140"))
+            {
+                UndTrabalho.iCONTROLE_EMP++;
+            }
+
+            if (sCD_ORD.Contains("010"))
+            {
+                UndTrabalho.iCONTROLE_EMP++;
+            }
+
+            else if (sCD_ORD.Equals("9001"))
+            {
+                UndTrabalho.iCONTROLE_EMP++;
+            }
+
+
             if (_cmdPersistirRegistro == null)
             {
                 _cmdPersistirRegistro = UndTrabalho.DBArquivoSpedFiscal.GetSqlStringCommand(
@@ -116,6 +135,10 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                     DbType.String, registro.ToString());
                 UndTrabalho.AddParameterToCommand(_cmdPersistirRegistro, "@CD_ORDENACAO_REGISTRO",
                     DbType.String, registro.CODIGO_ORDENACAO);
+
+                //tratamento específico para piscofins
+                //UndTrabalho.AddParameterToCommand(_cmdPersistirRegistro, "@CD_COLTROLE_EMP",
+                //    DbType.Int32, UndTrabalho.iCONTROLE_EMP);
             }
             else
             {
@@ -128,6 +151,8 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                     registro.ToString();
                 _cmdPersistirRegistro.Parameters["@CD_ORDENACAO_REGISTRO"].Value =
                     registro.CODIGO_ORDENACAO;
+                //_cmdPersistirRegistro.Parameters["@CD_COLTROLE_EMP"].Value =
+                //   UndTrabalho.iCONTROLE_EMP;
             }
 
             UndTrabalho.DBArquivoSpedFiscal.ExecuteNonQuery(_cmdPersistirRegistro);

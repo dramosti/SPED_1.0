@@ -23,19 +23,19 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
 
         private DataAccessor<Registro0200> reg0200Accessor;
 
-        public Registro0200 GetRegistro0200(string codigoProduto)
+        public Registro0200 GetRegistro0200(string codigoProduto, string codEmp)
         {
             if (this.reg0200Accessor == null)
             {
                 this.reg0200Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                       SqlExpressionsPisCofinsRepository.GetSelectRegistro0200(),
-                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0200>.MapAllProperties()
                       .Build());
             }
             return this.reg0200Accessor.Execute(
-                UndTrabalho.CodigoEmpresa, codigoProduto).FirstOrDefault();
+                codEmp, codigoProduto).FirstOrDefault();
         }
     }
 }

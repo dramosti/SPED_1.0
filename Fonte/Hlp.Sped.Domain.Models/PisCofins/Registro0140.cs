@@ -38,5 +38,10 @@ namespace Hlp.Sped.Domain.Models.PisCofins
 
         [CampoTextoVariavel(Ordem = 9, Tamanho = 9)]  //os 27580 - comentando teste
         public string SUFRAMA { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "0140-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

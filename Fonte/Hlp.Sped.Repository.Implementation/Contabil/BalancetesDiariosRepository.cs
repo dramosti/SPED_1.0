@@ -31,9 +31,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<RegistroI300> GetRegistrosI300()
         {
             DataAccessor<RegistroI300> regI300Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistrosI300(),
-                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroI300>.MapAllProperties()
                   .Build());
 
@@ -48,9 +48,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
             if (regI310Accessor == null)
             {
                 regI310Accessor =
-                    UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                       SqlExpressionsContabilRepository.GetSelectRegistrosI310(),
-                      new FilterByCdEmpresaDtBcteParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                      new FilterByCdEmpresaDtBcteParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                       MapBuilder<RegistroI310>.MapAllProperties()
                       .Build());
             }

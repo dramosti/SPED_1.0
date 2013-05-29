@@ -33,9 +33,9 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         public IEnumerable<RegistroI155> GetRegistrosI155()
         {
             DataAccessor<RegistroI155> regI155Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContabilRepository.GetSelectRegistrosI155(),
-                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByCdEmpresaDtLctoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroI155>.MapAllProperties()
                   .Build());
 

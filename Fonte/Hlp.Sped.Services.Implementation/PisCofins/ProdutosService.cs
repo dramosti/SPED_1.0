@@ -14,9 +14,9 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
         [Inject]
         public IProdutosRepository ProdutosRepository { get; set; }
 
-        public Registro0200 GetRegistro0200(string codigoProduto)
+        public Registro0200 GetRegistro0200(string codigoProduto, string codEmp)
         {
-            return ProdutosRepository.GetRegistro0200(codigoProduto);
+            return ProdutosRepository.GetRegistro0200(codigoProduto, codEmp);
         }
     }
 }

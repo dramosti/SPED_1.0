@@ -8,9 +8,13 @@ namespace Hlp.Sped.Domain.Models
 {
     public class Conexao : BaseEntity
     {
-        private Dictionary<string, string> _PROPRIEDADES = new Dictionary<string,string>();
+        private Dictionary<string, string> _PROPRIEDADES = new Dictionary<string, string>();
 
         public string NOME { get; set; }
+
+        public bool bCOMPLETO { get; set; }
+
+        public string  sNM_EMPRESA { get; set; }
 
         public Dictionary<string, string> PROPRIEDADES
         {

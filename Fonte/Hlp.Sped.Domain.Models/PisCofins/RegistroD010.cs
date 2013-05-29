@@ -18,6 +18,8 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         [CampoCodigo(Ordem = 2, Tamanho = 14, ComprimentoFixo = false)]
         public string CNPJ { get; set; }
 
+        public string CD_EMP { get; set; }
+
         public override string CODIGO_ORDENACAO
         {
             get { return "D010-" + this.GetNumeroControleRegistro(); }

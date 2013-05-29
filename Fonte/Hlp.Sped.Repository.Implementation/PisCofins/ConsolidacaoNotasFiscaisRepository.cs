@@ -34,38 +34,38 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         private DataAccessor<RegistroC381> regC381Accessor;
         private DataAccessor<RegistroC385> regC385Accessor;
 
-        public IEnumerable<RegistroC180> GetRegistrosC180(string codCNPJ)
+        public IEnumerable<RegistroC180> GetRegistrosC180(string codCNPJ, string codEmp)
         {
             if (regC180Accessor == null)
             {
                 regC180Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC180(),
-                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC180>.MapAllProperties().Build());
             }
 
             return regC180Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
         public IEnumerable<RegistroC181> GetRegistrosC181(
-            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC181Accessor == null)
             {
                 regC181Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC181(),
-                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC181>.MapAllProperties().Build());
             }
 
             return regC181Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codItem,
                 dtInicial,
@@ -73,57 +73,57 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         }
 
         public IEnumerable<RegistroC185> GetRegistrosC185(
-            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC185Accessor == null)
             {
                 regC185Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC185(),
-                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC185>.MapAllProperties().Build());
             }
 
             return regC185Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codItem,
                 dtInicial,
                 dtFinal).ToList();
         }
 
-        public IEnumerable<RegistroC190> GetRegistrosC190(string codCNPJ)
+        public IEnumerable<RegistroC190> GetRegistrosC190(string codCNPJ, string codEmp)
         {
             if (regC190Accessor == null)
             {
                 regC190Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC190(),
-                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC190>.MapAllProperties().Build());
             }
 
             return regC190Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
         public IEnumerable<RegistroC191> GetRegistrosC191(
-            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC191Accessor == null)
             {
                 regC191Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC191(),
-                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC191>.MapAllProperties().Build());
             }
 
             return regC191Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codItem,
                 dtInicial,
@@ -131,19 +131,19 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         }
 
         public IEnumerable<RegistroC195> GetRegistrosC195(
-            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC195Accessor == null)
             {
                 regC195Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC195(),
-                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC195>.MapAllProperties().Build());
             }
 
             return regC195Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codItem,
                 dtInicial,
@@ -151,57 +151,57 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         }
 
         public IEnumerable<RegistroC199> GetRegistrosC199(
-            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codItem, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC199Accessor == null)
             {
                 regC199Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC199(),
-                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdItemPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC199>.MapAllProperties().Build());
             }
 
             return regC199Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codItem,
                 dtInicial,
                 dtFinal).ToList();
         }
 
-        public IEnumerable<RegistroC380> GetRegistrosC380(string codCNPJ)
+        public IEnumerable<RegistroC380> GetRegistrosC380(string codCNPJ, string codEmp)
         {
             if (regC380Accessor == null)
             {
                 regC380Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC380(),
-                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC380>.MapAllProperties().Build());
             }
 
             return regC380Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
         public IEnumerable<RegistroC381> GetRegistrosC381(
-            string codCNPJ, string codModeloFiscal, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codModeloFiscal, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC381Accessor == null)
             {
                 regC381Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC381(),
-                    new FilterByCdEmpresaCdCNPJCdModPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdModPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC381>.MapAllProperties().Build());
             }
 
             return regC381Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codModeloFiscal,
                 dtInicial,
@@ -209,19 +209,19 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         }
 
         public IEnumerable<RegistroC385> GetRegistrosC385(
-            string codCNPJ, string codModeloFiscal, DateTime dtInicial, DateTime dtFinal)
+            string codCNPJ, string codModeloFiscal, DateTime dtInicial, DateTime dtFinal, string codEmp)
         {
             if (regC385Accessor == null)
             {
                 regC385Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC385(),
-                    new FilterByCdEmpresaCdCNPJCdModPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJCdModPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC385>.MapAllProperties().Build());
             }
 
             return regC385Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codCNPJ,
                 codModeloFiscal,
                 dtInicial,

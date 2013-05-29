@@ -55,5 +55,9 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         {
             return this.COD_PART;
         }
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "0140-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

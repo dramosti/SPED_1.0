@@ -254,7 +254,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         public RegistroA990 GetRegistroA990()
         {
             DataAccessor<RegistroA990> registroA990Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContimaticRepository.GetSelectRegistroA990(),
                   new FilterByNrArquivoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroA990>.MapAllProperties().Build());
@@ -264,9 +264,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         public RegistroC990 GetRegistroC990()
         {
             DataAccessor<RegistroC990> registroC990Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContimaticRepository.GetSelectRegistroC990(),
-                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroC990>.MapAllProperties().Build());
 
             return registroC990Accessor.Execute(this._NumeroIdentificacaoArquivo).First();
@@ -274,9 +274,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         public RegistroD990 GetRegistroD990()
         {
             DataAccessor<RegistroD990> registroD990Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContimaticRepository.GetSelectRegistroD990(),
-                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<RegistroD990>.MapAllProperties().Build());
 
             return registroD990Accessor.Execute(this._NumeroIdentificacaoArquivo).First();
@@ -284,9 +284,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         public Registro1990 GetRegistro1990()
         {
             DataAccessor<Registro1990> registro1990Accessor =
-                UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsContimaticRepository.GetSelectRegistro1990(),
-                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBOrigemDadosContabil),
+                  new FilterByNrArquivoParameterMapper(UndTrabalho.DBArquivoSpedContabil),
                   MapBuilder<Registro1990>.MapAllProperties().Build());
 
             return registro1990Accessor.Execute(this._NumeroIdentificacaoArquivo).First();

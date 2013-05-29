@@ -20,7 +20,7 @@ namespace Hlp.Sped.Infrastructure
                 return _Id;
             }
         }
-
+        public int iCONTROLE_EMP = 0;
         public string CodigoEmpresa { get; set; }
         public DateTime DataInicial { get; set; }
         public DateTime DataFinal { get; set; }
@@ -31,9 +31,9 @@ namespace Hlp.Sped.Infrastructure
 
         public abstract Database DBOrigemDadosContmatic { get; }
 
-        public abstract Database DBOrigemDadosFiscal { get; }
+        //public abstract Database DBArquivoSpedFiscal { get; }
 
-        public abstract Database DBOrigemDadosContabil { get; }
+        //public abstract Database DBArquivoSpedContabil { get; }
 
         public abstract Database DBArquivoSpedFiscal { get; }
 

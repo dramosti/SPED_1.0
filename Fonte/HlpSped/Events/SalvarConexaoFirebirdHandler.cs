@@ -5,6 +5,5 @@ using System.Text;
 
 namespace Hlp.Sped.UI.Events
 {
-    public delegate void SalvarConexaoFirebirdHandler(
-        ConfigConnectionFirebird sender);
+    public delegate void SalvarConexaoFirebirdHandler(ConfigConnectionFirebird sender);
 }

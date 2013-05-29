@@ -36,10 +36,10 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         [CampoTextoNumerico(Ordem = 8, Tamanho = 14)]
         public string CNPJ { get; set; }
 
-        [CampoDecimal(Ordem = 9, CasasDecimais = 4)]
+        [CampoDecimal(Ordem = 9, CasasDecimais = 2)]
         public decimal VL_RET_PIS { get; set; }
 
-        [CampoDecimal(Ordem = 10, CasasDecimais = 4)]
+        [CampoDecimal(Ordem = 10, CasasDecimais = 2)]
         public decimal VL_RET_COFINS { get; set; }
 
         [CampoTextoNumerico(Ordem = 11)]

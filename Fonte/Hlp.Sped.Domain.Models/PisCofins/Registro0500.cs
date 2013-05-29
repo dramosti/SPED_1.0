@@ -38,5 +38,10 @@ namespace Hlp.Sped.Domain.Models.PisCofins
 
         [CampoTextoNumerico(Ordem = 9, Tamanho = 14)]
         public string CNPJ_EST { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "0140-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

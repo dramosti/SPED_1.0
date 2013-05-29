@@ -176,7 +176,7 @@
             this.txtPastaToPublish.Name = "txtPastaToPublish";
             this.txtPastaToPublish.Size = new System.Drawing.Size(420, 20);
             this.txtPastaToPublish.TabIndex = 1;
-            this.txtPastaToPublish.Text = "C:\\GeraXml\\Versoes\\SPED 1.0";
+            this.txtPastaToPublish.Text = "\\\\192.168.9.33\\GeraXml\\Versoes\\SPED 1.0";
             // 
             // btnLocalToPublish
             // 
@@ -190,7 +190,7 @@
             this.txtPastaInstalador.Name = "txtPastaInstalador";
             this.txtPastaInstalador.Size = new System.Drawing.Size(420, 20);
             this.txtPastaInstalador.TabIndex = 0;
-            this.txtPastaInstalador.Text = "D:\\GIT-SVN\\Fontes\\SPED_1.0\\Fonte\\SPED_Installer\\Debug\\";
+            this.txtPastaInstalador.Text = "D:\\GitHub\\HLP\\SPED_1.0\\Fonte\\SPED_Installer\\Debug";
             // 
             // btnLocalInstalador
             // 

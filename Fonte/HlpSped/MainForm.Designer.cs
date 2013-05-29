@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.customMenuStrip1 = new Hlp.Sped.UI.CustomMenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalClientesLorenzonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalInventarioLorenzonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalProdutosLorenzonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contabilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pisCofinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalContmaticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsLorenzon1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBasico = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsLorenzon2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFull1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsFull2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsContabil = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsContimatic = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemConfiguracoes = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,77 +75,85 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fiscalToolStripMenuItem,
-            this.fiscalClientesLorenzonToolStripMenuItem,
-            this.fiscalInventarioLorenzonToolStripMenuItem,
-            this.fiscalProdutosLorenzonToolStripMenuItem,
-            this.contabilToolStripMenuItem,
-            this.pisCofinsToolStripMenuItem,
-            this.fiscalContmaticToolStripMenuItem,
+            this.tsLorenzon1,
+            this.tsBasico,
+            this.tsLorenzon2,
+            this.tsFull1,
+            this.tsFull2,
+            this.tsContabil,
+            this.tsContimatic,
             this.toolStripSeparator4,
             this.sairToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.fileToolStripMenuItem.Text = "&Escrituração";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
-            // fiscalToolStripMenuItem
+            // tsLorenzon1
             // 
-            this.fiscalToolStripMenuItem.Name = "fiscalToolStripMenuItem";
-            this.fiscalToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.fiscalToolStripMenuItem.Text = "&Fiscal";
-            this.fiscalToolStripMenuItem.Click += new System.EventHandler(this.fiscalToolStripMenuItem_Click);
+            this.tsLorenzon1.Name = "tsLorenzon1";
+            this.tsLorenzon1.Size = new System.Drawing.Size(222, 22);
+            this.tsLorenzon1.Text = "Fiscal - Clientes (Lorenzon)";
+            this.tsLorenzon1.Visible = false;
+            this.tsLorenzon1.Click += new System.EventHandler(this.fiscalClientesLorenzonToolStripMenuItem_Click);
             // 
-            // fiscalClientesLorenzonToolStripMenuItem
+            // tsBasico
             // 
-            this.fiscalClientesLorenzonToolStripMenuItem.Name = "fiscalClientesLorenzonToolStripMenuItem";
-            this.fiscalClientesLorenzonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.fiscalClientesLorenzonToolStripMenuItem.Text = "Fiscal - Clientes (Lorenzon)";
-            this.fiscalClientesLorenzonToolStripMenuItem.Click += new System.EventHandler(this.fiscalClientesLorenzonToolStripMenuItem_Click);
+            this.tsBasico.Name = "tsBasico";
+            this.tsBasico.Size = new System.Drawing.Size(222, 22);
+            this.tsBasico.Text = "Fiscal - Inventário";
+            this.tsBasico.Visible = false;
+            this.tsBasico.Click += new System.EventHandler(this.fiscalInventarioLorenzonToolStripMenuItem_Click);
             // 
-            // fiscalInventarioLorenzonToolStripMenuItem
+            // tsLorenzon2
             // 
-            this.fiscalInventarioLorenzonToolStripMenuItem.Name = "fiscalInventarioLorenzonToolStripMenuItem";
-            this.fiscalInventarioLorenzonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.fiscalInventarioLorenzonToolStripMenuItem.Text = "Fiscal - Inventário (Lorenzon)";
-            this.fiscalInventarioLorenzonToolStripMenuItem.Click += new System.EventHandler(this.fiscalInventarioLorenzonToolStripMenuItem_Click);
+            this.tsLorenzon2.Name = "tsLorenzon2";
+            this.tsLorenzon2.Size = new System.Drawing.Size(222, 22);
+            this.tsLorenzon2.Text = "Fiscal - Produtos (Lorenzon)";
+            this.tsLorenzon2.Visible = false;
+            this.tsLorenzon2.Click += new System.EventHandler(this.fiscalProdutosLorenzonToolStripMenuItem_Click);
             // 
-            // fiscalProdutosLorenzonToolStripMenuItem
+            // tsFull1
             // 
-            this.fiscalProdutosLorenzonToolStripMenuItem.Name = "fiscalProdutosLorenzonToolStripMenuItem";
-            this.fiscalProdutosLorenzonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.fiscalProdutosLorenzonToolStripMenuItem.Text = "Fiscal - Produtos (Lorenzon)";
-            this.fiscalProdutosLorenzonToolStripMenuItem.Click += new System.EventHandler(this.fiscalProdutosLorenzonToolStripMenuItem_Click);
+            this.tsFull1.Name = "tsFull1";
+            this.tsFull1.Size = new System.Drawing.Size(222, 22);
+            this.tsFull1.Text = "&Fiscal";
+            this.tsFull1.Visible = false;
+            this.tsFull1.Click += new System.EventHandler(this.fiscalToolStripMenuItem_Click);
             // 
-            // contabilToolStripMenuItem
+            // tsFull2
             // 
-            this.contabilToolStripMenuItem.Name = "contabilToolStripMenuItem";
-            this.contabilToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.contabilToolStripMenuItem.Text = "&Contábil";
-            this.contabilToolStripMenuItem.Click += new System.EventHandler(this.contabilToolStripMenuItem_Click);
+            this.tsFull2.Name = "tsFull2";
+            this.tsFull2.Size = new System.Drawing.Size(222, 22);
+            this.tsFull2.Text = "&Pis / Cofins";
+            this.tsFull2.Visible = false;
+            this.tsFull2.Click += new System.EventHandler(this.pisCofinsToolStripMenuItem_Click);
             // 
-            // pisCofinsToolStripMenuItem
+            // tsContabil
             // 
-            this.pisCofinsToolStripMenuItem.Name = "pisCofinsToolStripMenuItem";
-            this.pisCofinsToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.pisCofinsToolStripMenuItem.Text = "&Pis / Cofins";
-            this.pisCofinsToolStripMenuItem.Click += new System.EventHandler(this.pisCofinsToolStripMenuItem_Click);
+            this.tsContabil.Name = "tsContabil";
+            this.tsContabil.Size = new System.Drawing.Size(222, 22);
+            this.tsContabil.Text = "&Contábil";
+            this.tsContabil.Visible = false;
+            this.tsContabil.Click += new System.EventHandler(this.contabilToolStripMenuItem_Click);
             // 
-            // fiscalContmaticToolStripMenuItem
+            // tsContimatic
             // 
-            this.fiscalContmaticToolStripMenuItem.Name = "fiscalContmaticToolStripMenuItem";
-            this.fiscalContmaticToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.fiscalContmaticToolStripMenuItem.Text = "Contmatic";
-            this.fiscalContmaticToolStripMenuItem.Click += new System.EventHandler(this.fiscalContmaticToolStripMenuItem_Click);
+            this.tsContimatic.Name = "tsContimatic";
+            this.tsContimatic.Size = new System.Drawing.Size(222, 22);
+            this.tsContimatic.Text = "Contmatic";
+            this.tsContimatic.Visible = false;
+            this.tsContimatic.Click += new System.EventHandler(this.fiscalContmaticToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(224, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(219, 6);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.sairToolStripMenuItem.Text = "Sai&r";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -304,7 +312,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.customMenuStrip1;
             this.Name = "MainForm";
-            this.Text = "HlpSped v1.1";
+            this.Text = "HlpSped";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.customMenuStrip1.ResumeLayout(false);
@@ -334,16 +342,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiscalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contabilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsFull1;
+        private System.Windows.Forms.ToolStripMenuItem tsContabil;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemConfiguracoes;
         private System.Windows.Forms.ToolStripMenuItem conexoesAcessoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pisCofinsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiscalClientesLorenzonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiscalInventarioLorenzonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiscalProdutosLorenzonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiscalContmaticToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsFull2;
+        private System.Windows.Forms.ToolStripMenuItem tsLorenzon1;
+        private System.Windows.Forms.ToolStripMenuItem tsBasico;
+        private System.Windows.Forms.ToolStripMenuItem tsLorenzon2;
+        private System.Windows.Forms.ToolStripMenuItem tsContimatic;
         private System.Windows.Forms.ToolStripMenuItem tsmPublish;
         private System.Windows.Forms.ToolStripLabel tsVersao;
     }

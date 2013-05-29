@@ -16,6 +16,17 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 {
     public class PisCofinsProcessController : BaseController
     {
+        private List<validacao> produtos;
+        private List<validacao> unidades;
+        private List<validacao> contribuintes;
+
+
+        private struct validacao
+        {
+            public string codEmp { get; set; }
+            public object registro { get; set; }
+        }
+
         [Inject]
         public IDadosGeraisService DadosGeraisService { get; set; }
 
@@ -120,20 +131,58 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             Registro0110 reg0110 = DadosGeraisService.GetRegistro0110();
             DadosArquivoPisCofinsService.PersistirRegistro(reg0110);
 
-            this.UpdateStatusAsynchronousExecution("Gerando Registro 0140");
-            Registro0140 reg0140 = DadosGeraisService.GetRegistro0140();
-            DadosArquivoPisCofinsService.PersistirRegistro(reg0140);
 
-            this.UpdateStatusAsynchronousExecution("Gerando Registro 0400");
-            foreach (Registro0400 reg0400 in DadosGeraisService.GetRegistro0400())
+        }
+
+        private void ProcessarDadosGeraisPorEmpresa()
+        {
+            this.UpdateStatusAsynchronousExecution("Gerando Registro 0140");
+            IEnumerable<Registro0140> lreg0140 = DadosGeraisService.GetRegistro0140();
+            foreach (Registro0140 reg0140 in lreg0140)
             {
-                DadosArquivoPisCofinsService.PersistirRegistro(reg0400);
+                DadosArquivoPisCofinsService.PersistirRegistro(reg0140);
+
+                foreach (validacao validaProd in contribuintes.Where(c => c.codEmp == reg0140.COD_EST))
+                {
+                    Registro0150 reg0150 = validaProd.registro as Registro0150;
+
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro 0150");
+                    DadosArquivoPisCofinsService.PersistirRegistro(reg0150);
+                }
+
+                foreach (validacao validaUM in unidades.Where(c => c.codEmp == reg0140.COD_EST))
+                {
+                    Registro0190 reg0190 = validaUM.registro as Registro0190;
+
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro 0190");
+                    DadosArquivoPisCofinsService.PersistirRegistro(reg0190);
+                }
+
+                foreach (validacao validaProd in produtos.Where(c => c.codEmp == reg0140.COD_EST))
+                {
+                    Registro0200 reg0200 = validaProd.registro as Registro0200;
+
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro 0200");
+                    DadosArquivoPisCofinsService.PersistirRegistro(reg0200);
+                }
+
+
+                this.UpdateStatusAsynchronousExecution("Gerando Registro 0400");
+                foreach (Registro0400 reg0400 in DadosGeraisService.GetRegistro0400(reg0140.COD_EST))
+                {
+                    DadosArquivoPisCofinsService.PersistirRegistro(reg0400);
+                }
+                this.UpdateStatusAsynchronousExecution("Gerando Registro 0500");
+                foreach (Registro0500 reg0500 in DadosGeraisService.GetRegistro0500(reg0140.COD_EST))
+                {
+                    DadosArquivoPisCofinsService.PersistirRegistro(reg0500);
+                }
+
             }
-            this.UpdateStatusAsynchronousExecution("Gerando Registro 0500");
-            foreach (Registro0500 reg0500 in DadosGeraisService.GetRegistro0500())
-            {
-                DadosArquivoPisCofinsService.PersistirRegistro(reg0500);
-            }
+
+
+
+
         }
 
         private void ProcessarDocumentosFiscaisServico()
@@ -148,17 +197,17 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 DadosArquivoPisCofinsService.PersistirRegistro(regA010);
 
                 registrosA100 = NotasFiscaisServicoService.GetRegistrosA100(
-                    regA010.CNPJ);
+                    regA010.CNPJ, regA010.CD_EMP);
                 foreach (RegistroA100 regA100 in registrosA100)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro A100");
                     DadosArquivoPisCofinsService.PersistirRegistro(regA100);
 
                     // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                    this.ProcessarParticipante(regA100.COD_PART);
+                    this.ProcessarParticipante(regA100.COD_PART, regA010.CD_EMP);
 
                     if (regA100.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
-                        this.ProcessarDetalhesDocumentosFiscaisServico(regA100);
+                        this.ProcessarDetalhesDocumentosFiscaisServico(regA100, regA010.CD_EMP);
                 }
             }
 
@@ -177,74 +226,25 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             this.UpdateStatusAsynchronousExecution("Gerando Registro A990");
         }
 
-        private void ProcessarDetalhesDocumentosFiscaisServico(RegistroA100 regA100)
+        private void ProcessarDetalhesDocumentosFiscaisServico(RegistroA100 regA100, string codEmp)
         {
             this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
 
             // Processsa informações dos itens da nota fiscal
             this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
             IEnumerable<RegistroA170> registrosA170 =
-                NotasFiscaisServicoService.GetRegistrosA170(regA100.PK_NOTAFIS);
+                NotasFiscaisServicoService.GetRegistrosA170(regA100.PK_NOTAFIS, codEmp);
             foreach (RegistroA170 regA170 in registrosA170)
             {
                 this.UpdateStatusAsynchronousExecution("Gerando Registro A170");
                 DadosArquivoPisCofinsService.PersistirRegistro(regA170);
 
-                this.ProcessarProduto(regA170.COD_ITEM);
+                this.ProcessarProduto(regA170.COD_ITEM, codEmp);
             }
         }
-        private void ProcessarConhecimentosTransporte()
+        private void ProcessarConhecimentosTransporte(RegistroD010 regD010)
         {
-            IEnumerable<RegistroD101> registrosD101;
-            IEnumerable<RegistroD105> registrosD105;
 
-            IEnumerable<RegistroD100> registrosD100 =
-                NotaFiscaisServService.GetRegistrosD100();
-            foreach (RegistroD100 regD100 in registrosD100)
-            {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro D100");
-                DadosArquivoPisCofinsService.PersistirRegistro(regD100);
-                // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                this.ProcessarParticipante(regD100.COD_PART);
-
-                registrosD101 = NotaFiscaisServService.GetRegistrosD101(regD100.PK_NOTAFIS);
-                foreach (RegistroD101 reg101 in registrosD101)
-                {
-                    DadosArquivoPisCofinsService.PersistirRegistro(reg101);
-                }
-
-                registrosD105 = NotaFiscaisServService.GetRegistrosD105(regD100.PK_NOTAFIS);
-                foreach (RegistroD105 regD105 in registrosD105)
-                {
-                    DadosArquivoPisCofinsService.PersistirRegistro(regD105);
-                }
-            }
-
-            IEnumerable<RegistroD200> registrosD200 = NotaFiscaisServService.GetRegistrosD200();
-            IEnumerable<RegistroD201> registrosD201;
-            IEnumerable<RegistroD205> registrosD205;
-
-            foreach (RegistroD200 regD200 in registrosD200)
-            {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro D200");
-                DadosArquivoPisCofinsService.PersistirRegistro(regD200);
-
-                registrosD201 = NotaFiscaisServService.GetRegistrosD201(regD200.PK_NOTAFIS);
-
-                foreach (RegistroD201 regD201 in registrosD201)
-                {
-                    this.UpdateStatusAsynchronousExecution("Gerando Registro D201");
-                    DadosArquivoPisCofinsService.PersistirRegistro(regD201);
-                }
-
-                registrosD205 = NotaFiscaisServService.GetRegistrosD205(regD200.PK_NOTAFIS);
-
-                foreach (RegistroD205 regD205 in registrosD205)
-                {
-                    this.UpdateStatusAsynchronousExecution("Gerando Registro D205");
-                    DadosArquivoPisCofinsService.PersistirRegistro(regD205);
-                }
-            }
         }
 
         private void ProcessarNotasFiscaisServicosComunicacao()
@@ -260,8 +260,61 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 this.UpdateStatusAsynchronousExecution("Gerando Registro D010");
                 DadosArquivoPisCofinsService.PersistirRegistro(regD010);
 
+                //this.ProcessarConhecimentosTransporte(regD010);
+
+                IEnumerable<RegistroD101> registrosD101;
+                IEnumerable<RegistroD105> registrosD105;
+
+                IEnumerable<RegistroD100> registrosD100 =
+                    NotaFiscaisServService.GetRegistrosD100(regD010.CD_EMP);
+                foreach (RegistroD100 regD100 in registrosD100)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro D100");
+                    DadosArquivoPisCofinsService.PersistirRegistro(regD100);
+                    // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
+                    this.ProcessarParticipante(regD100.COD_PART, regD010.CD_EMP);
+
+                    registrosD101 = NotaFiscaisServService.GetRegistrosD101(regD100.PK_NOTAFIS, regD010.CD_EMP);
+                    foreach (RegistroD101 reg101 in registrosD101)
+                    {
+                        DadosArquivoPisCofinsService.PersistirRegistro(reg101);
+                    }
+
+                    registrosD105 = NotaFiscaisServService.GetRegistrosD105(regD100.PK_NOTAFIS, regD010.CD_EMP);
+                    foreach (RegistroD105 regD105 in registrosD105)
+                    {
+                        DadosArquivoPisCofinsService.PersistirRegistro(regD105);
+                    }
+                }
+
+                IEnumerable<RegistroD200> registrosD200 = NotaFiscaisServService.GetRegistrosD200(regD010.CD_EMP);
+                IEnumerable<RegistroD201> registrosD201;
+                IEnumerable<RegistroD205> registrosD205;
+
+                foreach (RegistroD200 regD200 in registrosD200)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro D200");
+                    DadosArquivoPisCofinsService.PersistirRegistro(regD200);
+
+                    registrosD201 = NotaFiscaisServService.GetRegistrosD201(regD200.PK_NOTAFIS, regD010.CD_EMP);
+
+                    foreach (RegistroD201 regD201 in registrosD201)
+                    {
+                        this.UpdateStatusAsynchronousExecution("Gerando Registro D201");
+                        DadosArquivoPisCofinsService.PersistirRegistro(regD201);
+                    }
+
+                    registrosD205 = NotaFiscaisServService.GetRegistrosD205(regD200.PK_NOTAFIS, regD010.CD_EMP);
+
+                    foreach (RegistroD205 regD205 in registrosD205)
+                    {
+                        this.UpdateStatusAsynchronousExecution("Gerando Registro D205");
+                        DadosArquivoPisCofinsService.PersistirRegistro(regD205);
+                    }
+                }
+
                 IEnumerable<RegistroD500> registrosD500 =
-                    NotaFiscaisServService.GetRegistrosD500(regD010.CNPJ);
+                    NotaFiscaisServService.GetRegistrosD500(regD010.CNPJ, regD010.CD_EMP);
 
                 foreach (RegistroD500 regD500 in registrosD500)
                 {
@@ -269,18 +322,18 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                     DadosArquivoPisCofinsService.PersistirRegistro(regD500);
 
                     // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                    this.ProcessarParticipante(regD500.COD_PART);
+                    this.ProcessarParticipante(regD500.COD_PART, regD010.CD_EMP);
 
                     if (regD500.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
                     {
                         registrosD501 = NotaFiscaisServService.GetRegistrosD501(
-                            regD500.PK_NOTAFIS);
+                            regD500.PK_NOTAFIS, regD010.CD_EMP);
                         foreach (RegistroD501 regD501 in registrosD501)
                         {
                             DadosArquivoPisCofinsService.PersistirRegistro(regD501);
                             this.UpdateStatusAsynchronousExecution("Gerando Registro D501");
                         }
-                        registrosD505 = NotaFiscaisServService.GetRegistrosD505(regD500.PK_NOTAFIS);
+                        registrosD505 = NotaFiscaisServService.GetRegistrosD505(regD500.PK_NOTAFIS, regD010.CD_EMP);
                         foreach (RegistroD505 reg505 in registrosD505)
                         {
                             DadosArquivoPisCofinsService.PersistirRegistro(reg505);
@@ -288,6 +341,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                         }
                     }
                 }
+
             }
         }
 
@@ -328,28 +382,28 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         private void ProcessarNotasFiscaisMercadorias(RegistroC010 regC010)
         {
             IEnumerable<RegistroC100> registrosC100 =
-                NotasFiscaisMercadoriasService.GetRegistrosC100(regC010.CNPJ);
+                NotasFiscaisMercadoriasService.GetRegistrosC100(regC010.CNPJ, regC010.CD_EMP);
             foreach (RegistroC100 regC100 in registrosC100)
             {
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C100");
                 DadosArquivoPisCofinsService.PersistirRegistro(regC100);
 
                 // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                this.ProcessarParticipante(regC100.COD_PART);
+                this.ProcessarParticipante(regC100.COD_PART, regC010.CD_EMP);
 
                 if (regC100.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
-                    this.ProcessarDetalhesNotasFiscaisMercadorias(regC100);
+                    this.ProcessarDetalhesNotasFiscaisMercadorias(regC100, regC010.CD_EMP);
             }
         }
 
-        private void ProcessarDetalhesNotasFiscaisMercadorias(RegistroC100 regC100)
+        private void ProcessarDetalhesNotasFiscaisMercadorias(RegistroC100 regC100, string codEmp)
         {
             this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
 
             // Processa possíveis informações de importação
             this.UpdateStatusAsynchronousExecution("Processando informações de importação");
             IEnumerable<RegistroC120> registrosC120 =
-                NotasFiscaisMercadoriasService.GetRegistrosC120(regC100.PK_NOTAFIS);
+                NotasFiscaisMercadoriasService.GetRegistrosC120(regC100.PK_NOTAFIS, codEmp);
             foreach (RegistroC120 regC120 in registrosC120)
             {
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C120");
@@ -359,14 +413,14 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             // Processsa informações dos itens da nota fiscal
             this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
             IEnumerable<RegistroC170> registrosC170 =
-                NotasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS);
+                NotasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS, codEmp);
             foreach (RegistroC170 regC170 in registrosC170)
             {
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C170");
                 DadosArquivoPisCofinsService.PersistirRegistro(regC170);
 
-                this.ProcessarUnidade(regC170.UNID);
-                this.ProcessarProduto(regC170.COD_ITEM);
+                this.ProcessarUnidade(regC170.UNID, codEmp);
+                this.ProcessarProduto(regC170.COD_ITEM, codEmp);
             }
         }
 
@@ -374,9 +428,10 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         {
             this.UpdateStatusAsynchronousExecution("Processando a consolidação de notas fiscais");
 
+            string codEmp = regC010.CD_EMP;
             // Consolidação de notas fiscais eletrônicas - vendas
             IEnumerable<RegistroC180> registrosC180 =
-                ConsolidacaoNotasFiscaisService.GetRegistrosC180(regC010.CNPJ);
+                ConsolidacaoNotasFiscaisService.GetRegistrosC180(regC010.CNPJ, codEmp);
             IEnumerable<RegistroC181> registrosC181;
             IEnumerable<RegistroC185> registrosC185;
             foreach (RegistroC180 regC180 in registrosC180)
@@ -384,13 +439,14 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C180");
                 DadosArquivoPisCofinsService.PersistirRegistro(regC180);
 
-                this.ProcessarProduto(regC180.COD_ITEM);
+                this.ProcessarProduto(regC180.COD_ITEM, regC010.CD_EMP);
 
                 registrosC181 = ConsolidacaoNotasFiscaisService.GetRegistrosC181(
                     regC010.CNPJ,
                     regC180.COD_ITEM,
                     regC180.DT_DOC_INI.Value,
-                    regC180.DT_DOC_FIN.Value);
+                    regC180.DT_DOC_FIN.Value,
+                    codEmp);
                 foreach (RegistroC181 regC181 in registrosC181)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C181");
@@ -401,7 +457,8 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                     regC010.CNPJ,
                     regC180.COD_ITEM,
                     regC180.DT_DOC_INI.Value,
-                    regC180.DT_DOC_FIN.Value);
+                    regC180.DT_DOC_FIN.Value,
+                    codEmp);
                 foreach (RegistroC185 regC185 in registrosC185)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C185");
@@ -411,7 +468,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
             // Consolidação de notas fiscais eletrônicas - direito a crédito e devoluções
             IEnumerable<RegistroC190> registrosC190 =
-                ConsolidacaoNotasFiscaisService.GetRegistrosC190(regC010.CNPJ);
+                ConsolidacaoNotasFiscaisService.GetRegistrosC190(regC010.CNPJ, codEmp);
             IEnumerable<RegistroC191> registrosC191;
             IEnumerable<RegistroC195> registrosC195;
             IEnumerable<RegistroC199> registrosC199;
@@ -420,13 +477,14 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C190");
                 DadosArquivoPisCofinsService.PersistirRegistro(regC190);
 
-                this.ProcessarProduto(regC190.COD_ITEM);
+                this.ProcessarProduto(regC190.COD_ITEM, codEmp);
 
                 registrosC191 = ConsolidacaoNotasFiscaisService.GetRegistrosC191(
                     regC010.CNPJ,
                     regC190.COD_ITEM,
                     regC190.DT_REF_INI.Value,
-                    regC190.DT_REF_FIN.Value);
+                    regC190.DT_REF_FIN.Value,
+                    codEmp);
                 foreach (RegistroC191 regC191 in registrosC191)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C191");
@@ -437,7 +495,8 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                     regC010.CNPJ,
                     regC190.COD_ITEM,
                     regC190.DT_REF_INI.Value,
-                    regC190.DT_REF_FIN.Value);
+                    regC190.DT_REF_FIN.Value,
+                    codEmp);
                 foreach (RegistroC195 regC195 in registrosC195)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C195");
@@ -448,7 +507,8 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                     regC010.CNPJ,
                     regC190.COD_ITEM,
                     regC190.DT_REF_INI.Value,
-                    regC190.DT_REF_FIN.Value);
+                    regC190.DT_REF_FIN.Value,
+                    codEmp);
                 foreach (RegistroC199 regC199 in registrosC199)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C199");
@@ -458,7 +518,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
             // Consolidação de notas fiscais de vendas
             IEnumerable<RegistroC380> registrosC380 =
-                ConsolidacaoNotasFiscaisService.GetRegistrosC380(regC010.CNPJ);
+                ConsolidacaoNotasFiscaisService.GetRegistrosC380(regC010.CNPJ, codEmp);
             IEnumerable<RegistroC381> registrosC381;
             IEnumerable<RegistroC385> registrosC385;
 
@@ -471,26 +531,28 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                     regC010.CNPJ,
                     regC380.COD_MOD,
                     regC380.DT_DOC_INI.Value,
-                    regC380.DT_DOC_FIN.Value);
+                    regC380.DT_DOC_FIN.Value,
+                    codEmp);
                 foreach (RegistroC381 regC381 in registrosC381)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C381");
                     DadosArquivoPisCofinsService.PersistirRegistro(regC381);
 
-                    this.ProcessarProduto(regC381.COD_ITEM);
+                    this.ProcessarProduto(regC381.COD_ITEM, codEmp);
                 }
 
                 registrosC385 = ConsolidacaoNotasFiscaisService.GetRegistrosC385(
                     regC010.CNPJ,
                     regC380.COD_MOD,
                     regC380.DT_DOC_INI.Value,
-                    regC380.DT_DOC_FIN.Value);
+                    regC380.DT_DOC_FIN.Value,
+                    codEmp);
                 foreach (RegistroC385 regC385 in registrosC385)
                 {
                     this.UpdateStatusAsynchronousExecution("Gerando Registro C385");
                     DadosArquivoPisCofinsService.PersistirRegistro(regC385);
 
-                    this.ProcessarProduto(regC385.COD_ITEM);
+                    this.ProcessarProduto(regC385.COD_ITEM, codEmp);
                 }
             }
         }
@@ -522,7 +584,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                         this.UpdateStatusAsynchronousExecution("Gerando Registro C481");
                         DadosArquivoPisCofinsService.PersistirRegistro(regC481);
 
-                        this.ProcessarProduto(regC481.COD_ITEM);
+                        this.ProcessarProduto(regC481.COD_ITEM, regC010.CD_EMP);
                     }
 
                     registrosC485 = CuponsFiscaisService.GetRegistrosC485(
@@ -532,7 +594,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                         this.UpdateStatusAsynchronousExecution("Gerando Registro C485");
                         DadosArquivoPisCofinsService.PersistirRegistro(regC485);
 
-                        this.ProcessarProduto(regC485.COD_ITEM);
+                        this.ProcessarProduto(regC485.COD_ITEM, regC010.CD_EMP);
                     }
                 }
             }
@@ -551,7 +613,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 DadosArquivoPisCofinsService.PersistirRegistro(regC500);
 
                 // Processa informações do fornecedor vinculado a uma nota fiscal
-                this.ProcessarParticipante(regC500.COD_PART);
+                this.ProcessarParticipante(regC500.COD_PART, regC010.CD_EMP);
 
                 registrosC501 = NotasFiscaisEnergiaAguaGasService.GetRegistrosC501(
                     regC500.PK_NOTAFIS);
@@ -577,9 +639,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         /// </summary>
         private void ProcessarDocumentosFiscaisServicoICMS()
         {
-            this.ProcessarConhecimentosTransporte();
             this.ProcessarNotasFiscaisServicosComunicacao();
-
             this.UpdateStatusAsynchronousExecution("Gerando Registro D001");
             RegistroD001 regD001 = new RegistroD001();
             if (DadosArquivoPisCofinsService.BlocoPossuiRegistros("D"))
@@ -609,24 +669,22 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             {
                 this.UpdateStatusAsynchronousExecution("Gerando Registro F010");
                 DadosArquivoPisCofinsService.PersistirRegistro(regf010);
-                break;
-            }
+                registrosF200 = demaisDocOperacoes.GetRegistroF200(regf010.CD_EMP);
 
-            registrosF200 = demaisDocOperacoes.GetRegistroF200();
-
-            foreach (RegistroF200 regF200 in registrosF200)
-            {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro F200");
-                DadosArquivoPisCofinsService.PersistirRegistro(regF200);
-            }
+                foreach (RegistroF200 regF200 in registrosF200)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro F200");
+                    DadosArquivoPisCofinsService.PersistirRegistro(regF200);
+                }
 
 
-            registrosF600 = demaisDocOperacoes.GetRegistroF600();
+                registrosF600 = demaisDocOperacoes.GetRegistroF600(regf010.CD_EMP);
 
-            foreach (RegistroF600 regf600 in registrosF600)
-            {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro F600");
-                DadosArquivoPisCofinsService.PersistirRegistro(regf600);
+                foreach (RegistroF600 regf600 in registrosF600)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro F600");
+                    DadosArquivoPisCofinsService.PersistirRegistro(regf600);
+                }
             }
 
             RegistroF001 regF001 = new RegistroF001();
@@ -694,11 +752,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         {
             this.UpdateStatusAsynchronousExecution("Iniciando geração dos controles de encerramento");
 
-            // Como pode ocorrer a inclusão de dados de Participantes, Produtos e Unidades
-            // em outros blocos, a geração do registro 0990 deve ocorrer somente neste momento
-            this.UpdateStatusAsynchronousExecution("Gerando Registro 0990");
-            Registro0990 reg0990 = DadosArquivoPisCofinsService.GetRegistro0990();
-            DadosArquivoPisCofinsService.PersistirRegistro(reg0990);
+
 
             Registro9001 reg9001 = DadosArquivoPisCofinsService.GetRegistro9001();
             DadosArquivoPisCofinsService.PersistirRegistro(reg9001);
@@ -720,51 +774,67 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             this.UpdateStatusAsynchronousExecution("Gerando Registro 9999");
         }
 
-        private void ProcessarParticipante(string codigoParticipante)
+        private void ProcessarFinalBloco0990()
+        {
+            // Como pode ocorrer a inclusão de dados de Participantes, Produtos e Unidades
+            // em outros blocos, a geração do registro 0990 deve ocorrer somente neste momento
+            this.UpdateStatusAsynchronousExecution("Gerando Registro 0990");
+            Registro0990 reg0990 = DadosArquivoPisCofinsService.GetRegistro0990();
+            DadosArquivoPisCofinsService.PersistirRegistro(reg0990);
+        }
+
+        private void ProcessarParticipante(string codigoParticipante, string codEmp)
         {
             if (String.IsNullOrWhiteSpace(codigoParticipante))
                 return;
 
-            if (!DadosArquivoPisCofinsService.RegistroJaExistente("0150", codigoParticipante))
+            Registro0150 reg0150 = ParticipantesService.GetRegistro0150(codigoParticipante);
+
+            if (reg0150 != null)
             {
-                // Caso o cliente ou fornecedor ainda não tenha sido processado,
-                // persiste o mesmo para posterior geração do arquivo
-                this.UpdateStatusAsynchronousExecution("Gerando Registro 0150");
-                Registro0150 reg0150 = ParticipantesService.GetRegistro0150(codigoParticipante);
-                if (reg0150 != null)
-                    DadosArquivoPisCofinsService.PersistirRegistro(reg0150);
+                if (contribuintes.Where(c => c.codEmp == codEmp && c.registro.ToString() == reg0150.ToString()).Count() == 0)
+                {
+                    // Caso o cliente ou fornecedor ainda não tenha sido processado,
+                    // persiste o mesmo para posterior geração do arquivo
+                    contribuintes.Add(new validacao { codEmp = codEmp, registro = reg0150 });
+                }
             }
         }
 
-        private void ProcessarUnidade(string codigoUnidade)
+        private void ProcessarUnidade(string codigoUnidade, string codEmp)
         {
             if (String.IsNullOrWhiteSpace(codigoUnidade))
                 return;
 
-            if (!DadosArquivoPisCofinsService.RegistroJaExistente("0190", codigoUnidade))
+            Registro0190 reg0190 = UnidadesService.GetRegistro0190(codigoUnidade);
+            if (reg0190 != null)
             {
-                // Apenas persiste uma unidade se a mesma ainda não tiver sido processada
-                this.UpdateStatusAsynchronousExecution("Gerando Registro 0190");
-                Registro0190 reg0190 = UnidadesService.GetRegistro0190(codigoUnidade);
-                if (reg0190 != null)
-                    DadosArquivoPisCofinsService.PersistirRegistro(reg0190);
+                if (unidades.Where(c => c.codEmp == codEmp && c.registro.ToString() == reg0190.ToString()).Count() == 0)
+                {
+                    // Apenas persiste uma unidade se a mesma ainda não tiver sido processada
+                    //this.UpdateStatusAsynchronousExecution("Gerando Registro 0190");
+                    //DadosArquivoPisCofinsService.PersistirRegistro(reg0190);
+                    unidades.Add(new validacao { codEmp = codEmp, registro = reg0190 });
+                }
             }
         }
 
-        private void ProcessarProduto(string codigoProduto)
+        private void ProcessarProduto(string codigoProduto, string codEmp)
         {
             if (String.IsNullOrWhiteSpace(codigoProduto))
                 return;
 
-            if (!DadosArquivoPisCofinsService.RegistroJaExistente("0200", codigoProduto))
+            Registro0200 reg0200 = ProdutosService.GetRegistro0200(codigoProduto, codEmp);
+            if (reg0200 != null)
             {
-                // Apenas persiste uma unidade se a mesma ainda não tiver sido processada
-                this.UpdateStatusAsynchronousExecution("Gerando Registro 0200");
-                Registro0200 reg0200 = ProdutosService.GetRegistro0200(codigoProduto);
-                if (reg0200 != null)
+                //if (!DadosArquivoPisCofinsService.RegistroJaExistente("0200", codigoProduto))
+                if (produtos.Where(c => c.codEmp == codEmp && c.registro.ToString() == reg0200.ToString()).Count() == 0)
                 {
-                    DadosArquivoPisCofinsService.PersistirRegistro(reg0200);
-                    this.ProcessarUnidade(reg0200.UNID_INV);
+                    // Apenas persiste uma unidade se a mesma ainda não tiver sido processada
+                    //this.UpdateStatusAsynchronousExecution("Gerando Registro 0200");
+                    //DadosArquivoPisCofinsService.PersistirRegistro(reg0200);
+                    produtos.Add(new validacao { codEmp = codEmp, registro = reg0200 });
+                    this.ProcessarUnidade(reg0200.UNID_INV, codEmp);
                 }
             }
         }
@@ -803,7 +873,12 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
         private void PisCofinsProcessController_AsynchronousExecution()
         {
+            produtos = new List<validacao>();
+            unidades = new List<validacao>();
+            contribuintes = new List<validacao>();
+
             this.ProcessarDadosGerais();
+
             this.ProcessarDocumentosFiscaisServico();
             this.ProcessarDocumentosFiscaisMercadorias();
             this.ProcessarDocumentosFiscaisServicoICMS();
@@ -811,7 +886,11 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             this.ProcessarApuracaoContribuicaoCreditoPIS_PASEP();
             this.ProcessarApuracaoContribPrevidRecBruta();
             this.ProcessarComplementoEscrituracao();
+            this.ProcessarDadosGeraisPorEmpresa(); //INICIA EMPRESAS
+            this.ProcessarFinalBloco0990(); // FINALIZA EMPRESAS
+
             this.ProcessarControlesEncerramento();
+
             this.ProcessarGravacaoArquivo();
         }
 

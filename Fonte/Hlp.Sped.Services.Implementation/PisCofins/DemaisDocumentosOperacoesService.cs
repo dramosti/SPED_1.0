@@ -18,15 +18,15 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
             return demaisDocumentosOperacoesRepository.GetRegistroF010();
         }
 
-        public List<Domain.Models.PisCofins.RegistroF600> GetRegistroF600()
+        public List<Domain.Models.PisCofins.RegistroF600> GetRegistroF600(string codEmp)
         {
-            return demaisDocumentosOperacoesRepository.GetRegistroF600();
+            return demaisDocumentosOperacoesRepository.GetRegistroF600(codEmp);
         }
 
 
-        public List<Domain.Models.PisCofins.RegistroF200> GetRegistroF200()
+        public List<Domain.Models.PisCofins.RegistroF200> GetRegistroF200(string codEmp)
         {
-            return demaisDocumentosOperacoesRepository.GetRegistroF200();
+            return demaisDocumentosOperacoesRepository.GetRegistroF200(codEmp);
         }
     }
 }

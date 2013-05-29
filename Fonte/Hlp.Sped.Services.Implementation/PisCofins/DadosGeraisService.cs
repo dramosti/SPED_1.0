@@ -34,19 +34,19 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
             return DadosGeraisRepository.GetRegistro0110();
         }
 
-        public Registro0140 GetRegistro0140()
+        public IEnumerable<Registro0140> GetRegistro0140()
         {
             return DadosGeraisRepository.GetRegistro0140();
         }
 
-        public IEnumerable<Registro0400> GetRegistro0400()
+        public IEnumerable<Registro0400> GetRegistro0400(string codEmp)
         {
-            return DadosGeraisRepository.GetRegistro0400();
+            return DadosGeraisRepository.GetRegistro0400(codEmp);
         }
 
-        public IEnumerable<Registro0500> GetRegistro0500()
+        public IEnumerable<Registro0500> GetRegistro0500(string codEmp)
         {
-            return DadosGeraisRepository.GetRegistro0500();
+            return DadosGeraisRepository.GetRegistro0500(codEmp);
         }
     }
 }

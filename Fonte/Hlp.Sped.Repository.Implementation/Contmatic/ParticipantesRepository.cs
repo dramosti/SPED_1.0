@@ -27,9 +27,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             if (this.reg0150Accessor == null)
             {
                 this.reg0150Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                       SqlExpressionsFiscalRepository.GetSelectRegistro0150(),
-                      new FilterByCdCliforParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdCliforParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0150>.MapAllProperties()
                       .Map(p => p.END).ToColumn("ENDERECO")
                       .Build());

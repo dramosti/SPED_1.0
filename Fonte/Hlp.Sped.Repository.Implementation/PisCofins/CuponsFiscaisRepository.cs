@@ -31,9 +31,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC400Accessor == null)
             {
                 regC400Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                         SqlExpressionsPisCofinsRepository.GetSelectRegistrosC400(),
-                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                        new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                         MapBuilder<RegistroC400>.MapAllProperties().Build());
             }
 
@@ -49,9 +49,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC405Accessor == null)
             {
                 regC405Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC405(),
-                    new FilterByCdEmpresaCdCNPJPkEcfPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJPkEcfPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC405>.MapAllProperties().Build());
             }
 
@@ -69,9 +69,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC481Accessor == null)
             {
                 regC481Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC481(),
-                    new FilterByCdEmpresaCdCNPJPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC481>.MapAllProperties().Build());
             }
 
@@ -88,9 +88,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             if (regC485Accessor == null)
             {
                 regC485Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsPisCofinsRepository.GetSelectRegistrosC485(),
-                    new FilterByCdEmpresaCdCNPJPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaCdCNPJPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC485>.MapAllProperties().Build());
             }
 

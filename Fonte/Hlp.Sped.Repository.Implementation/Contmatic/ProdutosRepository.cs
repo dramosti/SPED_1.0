@@ -31,7 +31,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
                 this.reg0200Accessor =
                     UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                       SqlExpressionsContmaticRepository.GetSelectRegistro0200(),
-                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0200>.MapAllProperties()
                       .Build());
             }
@@ -47,7 +47,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
                 this.reg0220Accessor =
                     UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
                       SqlExpressionsContmaticRepository.GetSelectRegistro0220(),
-                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdEmpresaCdProdParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0220>.MapAllProperties()
                       .Build());
             }

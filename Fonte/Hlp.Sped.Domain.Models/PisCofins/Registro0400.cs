@@ -20,5 +20,10 @@ namespace Hlp.Sped.Domain.Models.PisCofins
 
         [CampoTextoVariavel(Ordem = 3, Tamanho = 150)]
         public string DESCR_NAT { get; set; }
+
+        public override string CODIGO_ORDENACAO
+        {
+            get { return "0140-" + this.GetNumeroControleRegistro(); }
+        }
     }
 }

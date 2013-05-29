@@ -22,7 +22,7 @@ namespace Hlp.Sped.Domain.Models.PisCofins
         public decimal VL_BC_PIS { get; set; }
         [CampoDecimal(Ordem = 5, CasasDecimais = 2)]
         public decimal ALIQ_PIS { get; set; }
-        [CampoDecimal(Ordem = 6, CasasDecimais = 4)]
+        [CampoDecimal(Ordem = 6, CasasDecimais = 2)]
         public decimal VL_PIS { get; set; }
         [CampoTextoVariavel(Ordem = 7)]
         public string COD_CTA { get; set; }

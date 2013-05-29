@@ -362,8 +362,11 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             strb.AppendLine("Stack Trace: " + ex.StackTrace);
             strb.Length = 4000;
 
-            this._informacoesArquivo.Excecao = strb.ToString();
-            this._informacoesArquivo.Save();
+            if (this._informacoesArquivo != null)
+            {
+                this._informacoesArquivo.Excecao = strb.ToString();
+                this._informacoesArquivo.Save();
+            }
         }
 
         public void Finalizar()

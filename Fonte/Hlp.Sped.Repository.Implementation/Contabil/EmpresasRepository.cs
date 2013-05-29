@@ -25,7 +25,7 @@ namespace Hlp.Sped.Repository.Implementation.Contabil
         {
             if (empresaAccessor == null)
             {
-                empresaAccessor = UndTrabalho.DBOrigemDadosContabil.CreateSqlStringAccessor(
+                empresaAccessor = UndTrabalho.DBArquivoSpedContabil.CreateSqlStringAccessor(
                   SqlExpressionsRepository.GetSelectListAllEmpresas(),
                   MapBuilder<Empresa>.MapAllProperties().Build());
             }

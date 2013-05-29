@@ -28,9 +28,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         public IEnumerable<RegistroD010> GetRegistrosD010()
         {
             DataAccessor<RegistroD010> regA010Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsPisCofinsRepository.GetSelectRegistrosD010(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroD010>.MapAllProperties().Build());
             return regA010Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
@@ -38,7 +38,7 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                 UndTrabalho.DataFinal).ToList();
         }
 
-        public IEnumerable<RegistroD100> GetRegistroD100()
+        public IEnumerable<RegistroD100> GetRegistroD100(string codEmp)
         {
             DataAccessor<RegistroD100> regD100Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -47,12 +47,12 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD100>.MapAllProperties().Build());
 
             return regD100Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
-        public IEnumerable<RegistroD101> GetRegistrosD101(string PK_NOTAFIS)
+        public IEnumerable<RegistroD101> GetRegistrosD101(string PK_NOTAFIS, string codEmp)
         {
             DataAccessor<RegistroD101> regD101Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -61,11 +61,11 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD101>.MapAllProperties().Build());
 
             return regD101Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 PK_NOTAFIS).ToList();
         }
 
-        public IEnumerable<RegistroD105> GetRegistrosD105(string PK_NOTAFIS)
+        public IEnumerable<RegistroD105> GetRegistrosD105(string PK_NOTAFIS, string codEmp)
         {
             DataAccessor<RegistroD105> regD105Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -74,25 +74,25 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD105>.MapAllProperties().Build());
 
             return regD105Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 PK_NOTAFIS).ToList();
         }
 
 
-        public IEnumerable<RegistroD500> GetRegistrosD500(string CD_CNPJ)
+        public IEnumerable<RegistroD500> GetRegistrosD500(string CD_CNPJ, string codEmp)
         {
             IEnumerable<RegistroD500> objRet;
             if (regD500Accessor == null)
                 regD500Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsPisCofinsRepository.GetSelectRegistroD500(),
-                  new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaCdCNPJDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroD500>.MapAllProperties().Build());
 
             try
             {
                 objRet = regD500Accessor.Execute(
-               UndTrabalho.CodigoEmpresa,
+               codEmp,
                CD_CNPJ,
                UndTrabalho.DataInicial,
                UndTrabalho.DataFinal);
@@ -105,35 +105,35 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
             return objRet;
         }
 
-        public IEnumerable<RegistroD501> GetRegistrosD501(string codChaveNotaFiscal)
+        public IEnumerable<RegistroD501> GetRegistrosD501(string codChaveNotaFiscal, string codEmp)
         {
             if (regD501Accessor == null)
                 regD501Accessor =
-                   UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                   UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                      SqlExpressionsPisCofinsRepository.GetSelectRegistroD501(),
-                     new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                     new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                      MapBuilder<RegistroD501>.MapAllProperties().Build());
 
             return regD501Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codChaveNotaFiscal);
         }
 
-        public IEnumerable<RegistroD505> GetRegistrosD505(string codChaveNotaFiscal)
+        public IEnumerable<RegistroD505> GetRegistrosD505(string codChaveNotaFiscal, string codEmp)
         {
             if (regD505Accessor == null)
                 regD505Accessor =
-                   UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                   UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                      SqlExpressionsPisCofinsRepository.GetSelectRegistroD505(),
-                     new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                     new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                      MapBuilder<RegistroD505>.MapAllProperties().Build());
 
             return regD505Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 codChaveNotaFiscal);
         }
 
-        public IEnumerable<RegistroD200> GetRegistroD200()
+        public IEnumerable<RegistroD200> GetRegistroD200(string codEmp)
         {
             DataAccessor<RegistroD200> regD200Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -142,12 +142,12 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD200>.MapAllProperties().Build());
 
             return regD200Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
 
-        public IEnumerable<RegistroD201> GetRegistrosD201(string PK_NOTAFIS)
+        public IEnumerable<RegistroD201> GetRegistrosD201(string PK_NOTAFIS, string codEmp)
         {
             DataAccessor<RegistroD201> regD201Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -156,11 +156,11 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD201>.MapAllProperties().Build());
 
             return regD201Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 PK_NOTAFIS).ToList();
         }
 
-        public IEnumerable<RegistroD205> GetRegistrosD205(string PK_NOTAFIS)
+        public IEnumerable<RegistroD205> GetRegistrosD205(string PK_NOTAFIS, string codEmp)
         {
             DataAccessor<RegistroD205> regD205Accessor =
                UndTrabalho.DBOrigemDadosContmatic.CreateSqlStringAccessor(
@@ -169,7 +169,7 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                  MapBuilder<RegistroD205>.MapAllProperties().Build());
 
             return regD205Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 PK_NOTAFIS).ToList();
         }
     }

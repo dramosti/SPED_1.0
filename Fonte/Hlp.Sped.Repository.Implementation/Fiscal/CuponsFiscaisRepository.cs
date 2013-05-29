@@ -31,9 +31,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
         public IEnumerable<RegistroC400> GetRegistrosC400()
         {
             DataAccessor<RegistroC400> regC400Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsFiscalRepository.GetSelectRegistrosC400(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroC400>.MapAllProperties().Build());
             return regC400Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
@@ -46,9 +46,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC405Accessor == null)
             {
                 regC405Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC405(),
-                    new FilterByCdEmpresaPkEcfPeriodoParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfPeriodoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC405>.MapAllProperties().Build());
             }
 
@@ -64,9 +64,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC410Accessor == null)
             {
                 regC410Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistroC410(),
-                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC410>.MapAllProperties().Build());
             }
 
@@ -81,9 +81,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC420Accessor == null)
             {
                 regC420Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC420(),
-                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC420>.MapAllProperties().Build());
             }
 
@@ -99,9 +99,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC425Accessor == null)
             {
                 regC425Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC425(),
-                    new FilterByCdEmpresaPkEcfDiaTotalizadorParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfDiaTotalizadorParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC425>.MapAllProperties().Build());
             }
 
@@ -117,9 +117,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC460Accessor == null)
             {
                 regC460Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC460(),
-                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC460>.MapAllProperties().Build());
             }
 
@@ -134,9 +134,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC470Accessor == null)
             {
                 regC470Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC470(),
-                    new FilterByCdEmpresaPkCupomFisParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkCupomFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC470>.MapAllProperties().Build());
             }
 
@@ -150,9 +150,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (regC490Accessor == null)
             {
                 regC490Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                     SqlExpressionsFiscalRepository.GetSelectRegistrosC490(),
-                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                    new FilterByCdEmpresaPkEcfDiaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                     MapBuilder<RegistroC490>.MapAllProperties().Build());
             }
 

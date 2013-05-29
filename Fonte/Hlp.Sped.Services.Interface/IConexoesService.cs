@@ -11,5 +11,8 @@ namespace Hlp.Sped.Services.Interfaces
         Conexao Obter(string nomeConexao);
         bool Validar(Conexao conexao);
         void Salvar(Conexao conexao);
+        ModelConexao GetConfigConexoes();
+        void RemoveConexao(Conexao conexao);
+        string GetConnectionString(Conexao conexao);
     }
 }

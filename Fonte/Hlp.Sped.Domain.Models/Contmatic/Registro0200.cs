@@ -43,7 +43,7 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         public string COD_GEN { get; set; }
 
         [CampoTextoNumerico(Ordem = 11, Tamanho = 4)]
-        public int? COD_LST { get; set; }
+        public string COD_LST { get; set; }
 
         #region Campos opcionais
         [CampoDecimal(Ordem = 12, CasasDecimais = 2)]
@@ -56,13 +56,13 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         public string DESC_GRUPO { get; set; }
 
         [CampoTextoNumerico(Ordem = 15, Tamanho = 4)]
-        public int? COD_SEFAZ { get; set; }
+        public string COD_SEFAZ { get; set; }
 
         [CampoTextoNumerico(Ordem = 16, Tamanho = 3)]
-        public int? CSOSN { get; set; }
+        public string CSOSN { get; set; }
 
         [CampoTextoNumerico(Ordem = 17, Tamanho = 3)]
-        public int? CST_ICMS { get; set; }
+        public string CST_ICMS { get; set; }
 
         [CampoDecimal(Ordem = 18, CasasDecimais = 2)]
         public decimal? PER_RED_BC_ICMS { get; set; }
@@ -71,34 +71,34 @@ namespace Hlp.Sped.Domain.Models.Contmatic
         public decimal? BC_ICMS_ST { get; set; }
 
         [CampoTextoNumerico(Ordem = 20, Tamanho = 2)]
-        public int? CST_IPI_ENTRADA { get; set; }
+        public string CST_IPI_ENTRADA { get; set; }
 
         [CampoTextoNumerico(Ordem = 21, Tamanho = 2)]
-        public int? CST_IPI_SAIDA { get; set; }
+        public string CST_IPI_SAIDA { get; set; }
 
         [CampoDecimal(Ordem = 22, CasasDecimais = 2)]
         public decimal? ALIQ_IPI { get; set; }
 
         [CampoTextoNumerico(Ordem = 23, Tamanho = 2)]
-        public int? CST_PIS_ENTRADA { get; set; }
+        public string CST_PIS_ENTRADA { get; set; }
 
         [CampoTextoNumerico(Ordem = 24, Tamanho = 2)]
-        public int? CST_PIS_SAIDA { get; set; }
+        public string CST_PIS_SAIDA { get; set; }
 
         [CampoTextoNumerico(Ordem = 25, Tamanho = 3)]
-        public int? NAT_REC_PIS { get; set; }
+        public string NAT_REC_PIS { get; set; }
 
         [CampoDecimal(Ordem = 26, CasasDecimais = 2)]
         public decimal? ALIQ_PIS { get; set; }
 
         [CampoTextoNumerico(Ordem = 27, Tamanho = 2)]
-        public int? CST_COFINS_ENTRADA { get; set; }
+        public string CST_COFINS_ENTRADA { get; set; }
 
         [CampoTextoNumerico(Ordem = 28, Tamanho = 2)]
-        public int? CST_COFINS_SAIDA { get; set; }
+        public string CST_COFINS_SAIDA { get; set; }
 
         [CampoTextoNumerico(Ordem = 29, Tamanho = 3)]
-        public int? NAT_REC_COFINS { get; set; }
+        public string NAT_REC_COFINS { get; set; }
 
         [CampoDecimal(Ordem = 30, CasasDecimais = 2)]
         public decimal? ALIQ_COFINS { get; set; }

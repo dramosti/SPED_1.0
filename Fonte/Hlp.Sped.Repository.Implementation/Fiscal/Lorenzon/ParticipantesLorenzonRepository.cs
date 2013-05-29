@@ -19,9 +19,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal.Lorenzon
         public IEnumerable<Registro0150> GetRegistros0150()
         {
             DataAccessor<Registro0150> reg0150Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   "SELECT * FROM SP_SPEDFIS_LORENZON_REG0150(?, ?, ?)",
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<Registro0150>.MapAllProperties()
                   .Map(p => p.END).ToColumn("ENDERECO")
                   .Build());

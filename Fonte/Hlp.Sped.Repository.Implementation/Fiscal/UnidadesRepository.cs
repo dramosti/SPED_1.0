@@ -27,9 +27,9 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             if (this.reg0190Accessor == null)
             {
                 this.reg0190Accessor =
-                    UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                       SqlExpressionsFiscalRepository.GetSelectRegistro0190(),
-                      new FilterByCdTpUnidParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                      new FilterByCdTpUnidParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                       MapBuilder<Registro0190>.MapNoProperties()
                       .Map(p => p.UNID).ToColumn("UNID")
                       .Map(p => p.DESCR).ToColumn("DESCR")

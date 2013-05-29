@@ -22,6 +22,8 @@ namespace Hlp.Sped.Infrastructure.Registro
             get { return this.REG; }
         }
 
+        
+
         // O método abaixo deve ser invocado a fim de zerar instâncias estáticas
         // contendo especificações de registros.
         public static void InicializarProcessamentoRegistros()

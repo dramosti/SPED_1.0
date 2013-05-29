@@ -8,6 +8,6 @@ namespace Hlp.Sped.Repository.Interfaces.PisCofins
 {
     public interface IProdutosRepository
     {
-        Registro0200 GetRegistro0200(string codigoProduto);
+        Registro0200 GetRegistro0200(string codigoProduto, string codEmp);
     }
 }

@@ -24,9 +24,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         public IEnumerable<RegistroC010> GetRegistrosC010()
         {
             DataAccessor<RegistroC010> regC010Accessor =
-                UndTrabalho.DBOrigemDadosFiscal.CreateSqlStringAccessor(
+                UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
                   SqlExpressionsPisCofinsRepository.GetSelectRegistrosC010(),
-                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBOrigemDadosFiscal),
+                  new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroC010>.MapAllProperties().Build());
             return regC010Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
