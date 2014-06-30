@@ -171,30 +171,46 @@ namespace Hlp.Sped.Controllers.Fiscal
 
         private void ProcessarDetalhesNotasFiscaisMercadorias(RegistroC100 regC100)
         {
-            this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
-
-            // Processsa informações dos itens da nota fiscal
-            this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
-            IEnumerable<RegistroC170> registrosC170 =
-                NotasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS);
-            foreach (RegistroC170 regC170 in registrosC170)
+            try
             {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro C170");
-                DadosArquivoFiscalService.PersistirRegistro(regC170);
+                this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
 
-                this.ProcessarUnidade(regC170.UNID);
-                this.ProcessarProduto(regC170.COD_ITEM);
+                // Processsa informações dos itens da nota fiscal
+                this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
+                IEnumerable<RegistroC170> registrosC170 =
+                    NotasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS);
+                foreach (RegistroC170 regC170 in registrosC170)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro C170");
+                    DadosArquivoFiscalService.PersistirRegistro(regC170);
+
+                    this.ProcessarUnidade(regC170.UNID);
+                    this.ProcessarProduto(regC170.COD_ITEM);
+                }
+
+                try
+                {
+                    // Processa informações de impostos agrupadas por Situação Tributária, CFOP e
+                    // Alíquota de ICMS
+                    this.UpdateStatusAsynchronousExecution("Processando impostos de documento fiscal");
+                    IEnumerable<RegistroC190> registrosC190 =
+                        NotasFiscaisMercadoriasService.GetRegistrosC190(regC100.PK_NOTAFIS);
+                    foreach (RegistroC190 regC190 in registrosC190)
+                    {
+
+                        this.UpdateStatusAsynchronousExecution("Gerando Registro C190");
+                        DadosArquivoFiscalService.PersistirRegistro(regC190);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-
-            // Processa informações de impostos agrupadas por Situação Tributária, CFOP e
-            // Alíquota de ICMS
-            this.UpdateStatusAsynchronousExecution("Processando impostos de documento fiscal");
-            IEnumerable<RegistroC190> registrosC190 =
-                NotasFiscaisMercadoriasService.GetRegistrosC190(regC100.PK_NOTAFIS);
-            foreach (RegistroC190 regC190 in registrosC190)
+            catch (Exception)
             {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro C190");
-                DadosArquivoFiscalService.PersistirRegistro(regC190);
+
+                throw;
             }
         }
 
@@ -374,7 +390,7 @@ namespace Hlp.Sped.Controllers.Fiscal
                     {
                         this.UpdateStatusAsynchronousExecution("Gerando Registros 0220");
                         //item.FAT_CONV
-                        if (!DadosArquivoFiscalService.RegistroJaExistente("0190",item.UNID_CONV))
+                        if (!DadosArquivoFiscalService.RegistroJaExistente("0190", item.UNID_CONV))
                         {
                             // Apenas persiste uma unidade se a mesma ainda não tiver sido processada
                             this.UpdateStatusAsynchronousExecution("Gerando Registro 0190");
@@ -527,6 +543,29 @@ namespace Hlp.Sped.Controllers.Fiscal
                     this.UpdateStatusAsynchronousExecution("Gerando Registro E116");
                 }
             }
+
+            IEnumerable<RegistroE200> registrosE200;
+            registrosE200 = ApuracaoServices.GetRegistrosE200();
+            RegistroE210 registroE210;
+            IEnumerable<RegistroE250> registrosE250;
+            foreach (RegistroE200 regE200 in registrosE200)
+            {
+                this.UpdateStatusAsynchronousExecution("Gerando Registro E200");
+                DadosArquivoFiscalService.PersistirRegistro(regE200);
+                registroE210 = ApuracaoServices.GetRegistroE210(regE200.DT_INI, regE200.DT_FIN, regE200.UF);
+                DadosArquivoFiscalService.PersistirRegistro(registroE210);
+
+                registrosE250 = ApuracaoServices.GetRegistrosE250(regE200.DT_INI, regE200.DT_FIN, regE200.UF);
+
+                foreach (RegistroE250 reg250 in registrosE250)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro E250");
+                    DadosArquivoFiscalService.PersistirRegistro(reg250);
+                }
+            }
+
+
+
 
             IEnumerable<RegistroE500> registrosE500;
             registrosE500 = ApuracaoServices.GetRegistrosE500();

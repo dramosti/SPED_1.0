@@ -52,5 +52,23 @@ namespace Hlp.Sped.Services.Implementation.Fiscal
         {
             return ApuracaoRepository.GetRegistrosE116(dtPeriodoInicial, dtPeriodoFinal);
         }
+
+
+        public IEnumerable<RegistroE200> GetRegistrosE200()
+        {
+            return ApuracaoRepository.GetRegistrosE200();
+        }
+
+        public RegistroE210 GetRegistroE210(DateTime dtPeriodoInicial, DateTime dtPeriodoFinal, string sUF)
+        {
+            return ApuracaoRepository.GetRegistroE210(dtPeriodoInicial, dtPeriodoFinal, sUF);
+        }
+
+        public IEnumerable<RegistroE250> GetRegistrosE250(DateTime dtPeriodoInicial, DateTime dtPeriodoFinal, string sUF)
+        {
+            return ApuracaoRepository.GetRegistrosE250(dtPeriodoInicial, dtPeriodoFinal, sUF);
+        }
+
     }
+       
 }

@@ -60,6 +60,10 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
 
         public IEnumerable<RegistroC190> GetRegistrosC190(string codChaveNotaFiscal)
         {
+            try
+            {
+
+           
             if (regC190Accessor == null)
             {
                 regC190Accessor =
@@ -72,6 +76,12 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             return regC190Accessor.Execute(
                 UndTrabalho.CodigoEmpresa,
                 codChaveNotaFiscal).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

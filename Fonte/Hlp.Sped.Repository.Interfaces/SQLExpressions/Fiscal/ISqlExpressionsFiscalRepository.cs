@@ -74,5 +74,9 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.Fiscal
         string GetSelectRegistroE110();
         string GetSelectRegistroE111();
         string GetSelectRegistroE116();
+
+        string GetSelectRegistroE200();
+        string GetSelectRegistroE210();
+        string GetSelectRegistroE250();
     }
 }

@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -125,6 +125,8 @@
     <Compile Include="Fiscal\InventarioRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\InventarioLorenzonRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\ParticipantesLorenzonRepository.cs" />
+    <Compile Include="Fiscal\Mappers\FilterByCdEmpresaDtEmi_UF_NfParameterMapper.cs" />
+    <Compile Include="Fiscal\Mappers\FilterByCdEmpresaDtEmi_UF_NfParameterMapper2.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaPeriodoDeclExportParameterMapper.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaPeriodoCodAjApurParameterMapper.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaDocFiscaisUtilizadosParameterMapper.cs" />

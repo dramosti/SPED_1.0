@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -152,6 +152,9 @@
     <Compile Include="Fiscal\RegistroD120.cs" />
     <Compile Include="Fiscal\RegistroD130.cs" />
     <Compile Include="Fiscal\RegistroE116.cs" />
+    <Compile Include="Fiscal\RegistroE200.cs" />
+    <Compile Include="Fiscal\RegistroE210.cs" />
+    <Compile Include="Fiscal\RegistroE250.cs" />
     <Compile Include="ModelConexao.cs" />
     <Compile Include="PisCofins\Registro0400.cs" />
     <Compile Include="PisCofins\Registro0500.cs" />

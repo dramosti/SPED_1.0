@@ -368,6 +368,19 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Fiscal
             return "SELECT * FROM SP_SPED_FISCAL_REGISTROE116(?,?,?)";
         }
 
+        public string GetSelectRegistroE200()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROE200(?,?,?)";
+        }
+        public string GetSelectRegistroE210()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROE210(?,?,?,?)";
+        }
+        public string GetSelectRegistroE250()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROE250(?,?,?,?)";
+        }
+
 
         public string GetSelectRegistro0220()
         {

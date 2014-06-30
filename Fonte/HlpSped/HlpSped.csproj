@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -44,6 +44,7 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.2.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\GeraXml_3.0\DLL\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\..\GeraXml_3.0\DLL\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -227,24 +228,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hlp.Sped.Controllers\Hlp.Sped.Controllers.csproj">
-      <Project>{BB8A0750-6417-4A52-9716-CC5B41E81978}</Project>
-      <Name>Hlp.Sped.Controllers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
-      <Project>{7CE04613-1205-419B-AB92-7FBC4D212CDA}</Project>
-      <Name>Hlp.Sped.Domain.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
-      <Project>{25228165-6A64-476A-8919-2D7D6E06EC12}</Project>
-      <Name>Hlp.Sped.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hlp.Sped.Services.Interface\Hlp.Sped.Services.Interfaces.csproj">
-      <Project>{81EDAD84-B122-4758-A803-A5208F157E72}</Project>
-      <Name>Hlp.Sped.Services.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="1358791109_36500.ico" />
     <Content Include="1358791583_24980.ico" />
     <Content Include="1358792310_7518.ico" />
@@ -268,7 +251,24 @@
     <Content Include="Images\updates.png" />
     <None Include="Resources\Pasta.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Hlp.Sped.Controllers\Hlp.Sped.Controllers.csproj">
+      <Project>{bb8a0750-6417-4a52-9716-cc5b41e81978}</Project>
+      <Name>Hlp.Sped.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Domain.Models\Hlp.Sped.Domain.Models.csproj">
+      <Project>{7ce04613-1205-419b-ab92-7fbc4d212cda}</Project>
+      <Name>Hlp.Sped.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Infrastructure\Hlp.Sped.Infrastructure.csproj">
+      <Project>{25228165-6a64-476a-8919-2d7d6e06ec12}</Project>
+      <Name>Hlp.Sped.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hlp.Sped.Services.Interface\Hlp.Sped.Services.Interfaces.csproj">
+      <Project>{81edad84-b122-4758-a803-a5208f157e72}</Project>
+      <Name>Hlp.Sped.Services.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

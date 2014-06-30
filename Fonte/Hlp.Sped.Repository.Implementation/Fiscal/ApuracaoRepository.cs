@@ -142,5 +142,71 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
+
+
+        public IEnumerable<RegistroE200> GetRegistrosE200()
+        {
+            try
+            {
+
+
+                DataAccessor<RegistroE200> regE111Accessor =
+                   UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                     SqlExpressionsFiscalRepository.GetSelectRegistroE200(),
+                     new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                     MapBuilder<RegistroE200>.MapAllProperties().Build());
+                return regE111Accessor.Execute(
+                   UndTrabalho.CodigoEmpresa,
+                    UndTrabalho.DataInicial,
+                    UndTrabalho.DataFinal).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public RegistroE210 GetRegistroE210(DateTime dtPeriodoInicial, DateTime dtPeriodoFinal, string sUF)
+        {
+            try
+            {
+
+                DataAccessor<RegistroE210> regE111Accessor =
+                   UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                     SqlExpressionsFiscalRepository.GetSelectRegistroE210(),
+                     new FilterByCdEmpresaDtEmi_UF_NfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                     MapBuilder<RegistroE210>.MapAllProperties().Build());
+                return regE111Accessor.Execute(
+                    UndTrabalho.CodigoEmpresa,
+                    UndTrabalho.DataInicial,
+                    UndTrabalho.DataFinal, sUF).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IEnumerable<RegistroE250> GetRegistrosE250(DateTime dtPeriodoInicial, DateTime dtPeriodoFinal, string sUF)
+        {
+            try
+            {
+
+                DataAccessor<RegistroE250> regE250Accessor =
+                   UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                     SqlExpressionsFiscalRepository.GetSelectRegistroE250(),
+                     new FilterByCdEmpresaDtEmi_UF_NfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                     MapBuilder<RegistroE250>.MapAllProperties().Build());
+                return regE250Accessor.Execute(
+                    UndTrabalho.CodigoEmpresa,
+                    UndTrabalho.DataInicial,
+                    UndTrabalho.DataFinal, sUF).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }
