@@ -11,6 +11,7 @@ using Hlp.Sped.Services.Interfaces.Files;
 using Hlp.Sped.Domain.Models.PisCofins;
 using Hlp.Sped.Controllers.IoC.PisCofins;
 using Hlp.Sped.Controllers.Parameters.PisCofins;
+using Hlp.Sped.Infrastructure;
 
 namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 {
@@ -74,6 +75,9 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
         private PisCofinsProcessParameters _parameters;
 
+        [Inject]
+        public UnitOfWorkBase UndTrabalho { get; set; }
+
 
         #region Métodos públicos
 
@@ -131,15 +135,46 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             Registro0110 reg0110 = DadosGeraisService.GetRegistro0110();
             DadosArquivoPisCofinsService.PersistirRegistro(reg0110);
 
-
         }
+
+
+        private void GetEmpresasFiliais(string sEmp)
+        {
+            try
+            {
+                IEnumerable<Registro0140> lreg = DadosGeraisService.GetRegistro0140(sEmp);
+                if (lreg.Count() > 0)
+                {
+                    lreg0140.Add(lreg.FirstOrDefault());
+
+                    string codEmpFilial = DadosGeraisService.GetCodEmpresaAfilial(lreg.FirstOrDefault().COD_EST);
+                    if (codEmpFilial != "")
+                    {
+                        GetEmpresasFiliais(codEmpFilial);    
+                    }
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        List<Registro0140> lreg0140 = new List<Registro0140>();
 
         private void ProcessarDadosGeraisPorEmpresa()
         {
             this.UpdateStatusAsynchronousExecution("Gerando Registro 0140");
-            IEnumerable<Registro0140> lreg0140 = DadosGeraisService.GetRegistro0140();
+            GetEmpresasFiliais(UndTrabalho.CodigoEmpresa);
             foreach (Registro0140 reg0140 in lreg0140)
             {
+                produtos = new List<validacao>();
+                unidades = new List<validacao>();
+                contribuintes = new List<validacao>();
+
+
                 DadosArquivoPisCofinsService.PersistirRegistro(reg0140);
 
                 foreach (validacao validaProd in contribuintes.Where(c => c.codEmp == reg0140.COD_EST))
@@ -177,12 +212,7 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
                 {
                     DadosArquivoPisCofinsService.PersistirRegistro(reg0500);
                 }
-
             }
-
-
-
-
         }
 
         private void ProcessarDocumentosFiscaisServico()
@@ -873,12 +903,10 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
 
         private void PisCofinsProcessController_AsynchronousExecution()
         {
-            produtos = new List<validacao>();
-            unidades = new List<validacao>();
-            contribuintes = new List<validacao>();
-
+            try
+            {
+           
             this.ProcessarDadosGerais();
-
             this.ProcessarDocumentosFiscaisServico();
             this.ProcessarDocumentosFiscaisMercadorias();
             this.ProcessarDocumentosFiscaisServicoICMS();
@@ -892,6 +920,12 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             this.ProcessarControlesEncerramento();
 
             this.ProcessarGravacaoArquivo();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void PisCofinsProcessController_AsynchronousExecutionAborted(Exception ex)

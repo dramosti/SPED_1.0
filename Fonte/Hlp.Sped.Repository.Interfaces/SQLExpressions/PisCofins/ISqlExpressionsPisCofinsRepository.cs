@@ -23,6 +23,7 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.PisCofins
         string GetSelectRegistro0100();
         string GetSelectRegistro0110();
         string GetSelectRegistro0140();
+        string GetCodEmpresaAfilial(string codEmp);
         string GetSelectRegistro0150();
         string GetSelectRegistro0190();
         string GetSelectRegistro0200();

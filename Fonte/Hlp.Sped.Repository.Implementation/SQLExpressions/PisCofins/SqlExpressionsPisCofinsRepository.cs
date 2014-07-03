@@ -13,7 +13,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
             return "{CALL SP_NOVA_SEQUENCIA_SPEDPISCOF}";
         }
 
-        public string GetSelectRegistroD500() 
+        public string GetSelectRegistroD500()
         {
             return "SELECT * FROM SP_SPED_PISCOF_REGISTROD500(?,?,?,?)";
         }
@@ -84,6 +84,11 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
         public string GetSelectRegistro0140()
         {
             return "SELECT * FROM SP_SPED_PISCOF_REGISTRO0140(?)";
+        }
+
+        public string GetCodEmpresaAfilial(string codEmp)
+        {
+            return string.Format("SELECT cd_empresafilialsped FROM EMPRESA WHERE CD_EMPRESA = '{0}'", codEmp);
         }
 
         public string GetSelectRegistro0150()

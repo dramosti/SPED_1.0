@@ -24,7 +24,7 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
         private DataAccessor<RegistroA100> regA100Accessor;
         private DataAccessor<RegistroA170> regA170Accessor;
 
-        public IEnumerable<RegistroA010> GetRegistrosA010()
+        public IEnumerable<RegistroA010> GetRegistrosA010(string codEmp)
         {
             DataAccessor<RegistroA010> regA010Accessor =
                 UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(

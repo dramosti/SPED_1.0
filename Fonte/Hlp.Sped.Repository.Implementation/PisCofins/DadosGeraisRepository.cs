@@ -10,6 +10,7 @@ using Hlp.Sped.Repository.Interfaces.PisCofins;
 using Hlp.Sped.Repository.Interfaces.SQLExpressions.PisCofins;
 using Hlp.Sped.Domain.Models.PisCofins;
 using Hlp.Sped.Repository.Implementation.PisCofins.Mappers;
+using System.Data.Common;
 
 namespace Hlp.Sped.Repository.Implementation.PisCofins
 {
@@ -53,7 +54,7 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
 
             return reg0001;
         }
-        
+
         public Registro0100 GetRegistro0100()
         {
             DataAccessor<Registro0100> reg0100Accessor =
@@ -79,7 +80,7 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                 UndTrabalho.CodigoEmpresa).FirstOrDefault();
         }
 
-        public IEnumerable<Registro0140> GetRegistro0140()
+        public IEnumerable<Registro0140> GetRegistro0140(string codEmp)
         {
             if (reg0140Accessor == null)
             {
@@ -89,8 +90,26 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                      new FilterByCdEmpresaParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                      MapBuilder<Registro0140>.MapAllProperties().Build());
             }
-            return reg0140Accessor.Execute(
-                UndTrabalho.CodigoEmpresa).ToList();
+            IEnumerable<Registro0140> ret = reg0140Accessor.Execute(codEmp).ToList();
+            return ret;
+        }
+
+
+        public string GetCodEmpresaAfilial(string codEmp)
+        {
+            try
+            {
+                DbCommand comm = UndTrabalho.DBArquivoSpedFiscal.GetSqlStringCommand(SqlExpressionsPisCofinsRepository.GetCodEmpresaAfilial(codEmp));
+                object ret = UndTrabalho.DBArquivoSpedFiscal.ExecuteScalar(comm);
+                if (ret == null)
+                    return null;
+                else
+                    return ret.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IEnumerable<Registro0400> GetRegistro0400(string codEmp)
