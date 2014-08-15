@@ -154,19 +154,37 @@ namespace Hlp.Sped.Controllers.Fiscal
 
         private void ProcessarNotasFiscaisMercadorias()
         {
-            IEnumerable<RegistroC100> registrosC100 =
-                NotasFiscaisMercadoriasService.GetRegistrosC100();
-            foreach (RegistroC100 regC100 in registrosC100)
+            try
             {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro C100");
-                DadosArquivoFiscalService.PersistirRegistro(regC100);
+                IEnumerable<RegistroC100> registrosC100 =
+               NotasFiscaisMercadoriasService.GetRegistrosC100();
+                foreach (RegistroC100 regC100 in registrosC100)
+                {
+                    try
+                    {
 
-                // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
-                this.ProcessarParticipante(regC100.COD_PART);
+                        this.UpdateStatusAsynchronousExecution("Gerando Registro C100");
+                        DadosArquivoFiscalService.PersistirRegistro(regC100);
 
-                if (regC100.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
-                    this.ProcessarDetalhesNotasFiscaisMercadorias(regC100);
+                        // Processa informações do cliente ou fornecedor vinculado a uma nota fiscal
+                        this.ProcessarParticipante(regC100.COD_PART);
+
+                        if (regC100.ST_DOC_CANCELADO != "S") // Não persiste registros filhos caso haja cancelamento
+                            this.ProcessarDetalhesNotasFiscaisMercadorias(regC100);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         private void ProcessarDetalhesNotasFiscaisMercadorias(RegistroC100 regC100)

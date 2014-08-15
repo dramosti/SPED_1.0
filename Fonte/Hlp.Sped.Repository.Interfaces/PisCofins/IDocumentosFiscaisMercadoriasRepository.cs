@@ -8,6 +8,6 @@ namespace Hlp.Sped.Repository.Interfaces.PisCofins
 {
     public interface IDocumentosFiscaisMercadoriasRepository
     {
-        IEnumerable<RegistroC010> GetRegistrosC010();
+        IEnumerable<RegistroC010> GetRegistrosC010(string codEmp);
     }
 }

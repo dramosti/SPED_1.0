@@ -63,24 +63,23 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             try
             {
 
-           
-            if (regC190Accessor == null)
-            {
-                regC190Accessor =
-                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
-                    SqlExpressionsFiscalRepository.GetSelectRegistrosC190(),
-                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
-                    MapBuilder<RegistroC190>.MapAllProperties().Build());
-            }
 
-            return regC190Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
-                codChaveNotaFiscal).ToList();
-            }
-            catch (Exception)
-            {
+                if (regC190Accessor == null)
+                {
+                    regC190Accessor =
+                        UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                        SqlExpressionsFiscalRepository.GetSelectRegistrosC190(),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                        MapBuilder<RegistroC190>.MapAllProperties().Build());
+                }
 
-                throw;
+                return regC190Accessor.Execute(
+                    UndTrabalho.CodigoEmpresa,
+                    codChaveNotaFiscal).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Problema encontrado na nota {0} com as casas decimais dos campos VL_OPR e VL_BC_ICMS, ref a PROCEDURE: SP_SPED_FISCAL_REGISTROC190.{1}{2}", codChaveNotaFiscal, Environment.NewLine, ex.Message));
             }
         }
     }

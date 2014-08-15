@@ -14,9 +14,9 @@ namespace Hlp.Sped.Services.Implementation.PisCofins
         [Inject]
         public IDocumentosFiscaisMercadoriasRepository DocumentosFiscaisMercadoriasRepository { get; set; }
 
-        public IEnumerable<RegistroC010> GetRegistrosC010()
+        public IEnumerable<RegistroC010> GetRegistrosC010(string codEmp)
         {
-            return DocumentosFiscaisMercadoriasRepository.GetRegistrosC010();
+            return DocumentosFiscaisMercadoriasRepository.GetRegistrosC010(codEmp);
         }
     }
 }

@@ -84,6 +84,7 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.PisCofins
         public string GetSelectRegistro0140()
         {
             return "SELECT * FROM SP_SPED_PISCOF_REGISTRO0140(?)";
+
         }
 
         public string GetCodEmpresaAfilial(string codEmp)

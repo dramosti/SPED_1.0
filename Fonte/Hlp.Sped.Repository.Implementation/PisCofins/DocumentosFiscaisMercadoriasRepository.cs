@@ -15,13 +15,13 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
 {
     public class DocumentosFiscaisMercadoriasRepository : IDocumentosFiscaisMercadoriasRepository
     {
-         [Inject]
+        [Inject]
         public UnitOfWorkBase UndTrabalho { get; set; }
 
         [Inject]
         public ISqlExpressionsPisCofinsRepository SqlExpressionsPisCofinsRepository { get; set; }
 
-        public IEnumerable<RegistroC010> GetRegistrosC010()
+        public IEnumerable<RegistroC010> GetRegistrosC010(string codEmp)
         {
             DataAccessor<RegistroC010> regC010Accessor =
                 UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
@@ -29,9 +29,9 @@ namespace Hlp.Sped.Repository.Implementation.PisCofins
                   new FilterByCdEmpresaDtEmiNfParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
                   MapBuilder<RegistroC010>.MapAllProperties().Build());
             return regC010Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
+                codEmp,
                 UndTrabalho.DataInicial,
                 UndTrabalho.DataFinal).ToList();
         }
-   }
+    }
 }

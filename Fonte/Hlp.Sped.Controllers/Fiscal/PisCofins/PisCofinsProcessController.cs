@@ -138,43 +138,15 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         }
 
 
-        private void GetEmpresasFiliais(string sEmp)
-        {
-            try
-            {
-                IEnumerable<Registro0140> lreg = DadosGeraisService.GetRegistro0140(sEmp);
-                if (lreg.Count() > 0)
-                {
-                    lreg0140.Add(lreg.FirstOrDefault());
 
-                    string codEmpFilial = DadosGeraisService.GetCodEmpresaAfilial(lreg.FirstOrDefault().COD_EST);
-                    if (codEmpFilial != "")
-                    {
-                        GetEmpresasFiliais(codEmpFilial);    
-                    }
-                    
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        List<Registro0140> lreg0140 = new List<Registro0140>();
 
         private void ProcessarDadosGeraisPorEmpresa()
         {
             this.UpdateStatusAsynchronousExecution("Gerando Registro 0140");
-            GetEmpresasFiliais(UndTrabalho.CodigoEmpresa);
+            // GetEmpresasFiliais(UndTrabalho.CodigoEmpresa);
+            List<Registro0140> lreg0140 = DadosGeraisService.GetRegistro0140(UndTrabalho.CodigoEmpresa).ToList(); // Verificar
             foreach (Registro0140 reg0140 in lreg0140)
             {
-                produtos = new List<validacao>();
-                unidades = new List<validacao>();
-                contribuintes = new List<validacao>();
-
-
                 DadosArquivoPisCofinsService.PersistirRegistro(reg0140);
 
                 foreach (validacao validaProd in contribuintes.Where(c => c.codEmp == reg0140.COD_EST))
@@ -375,16 +347,45 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
             }
         }
 
+        private void GetEmpresasFiliais(string sEmp)
+        {
+            try
+            {
+                IEnumerable<RegistroC010> lreg = DocumentosFiscaisMercadoriasService.GetRegistrosC010(sEmp).ToList();
+                if (lreg.Count() > 0)
+                {
+                    registrosC010.Add(lreg.FirstOrDefault());
+
+                    string codEmpFilial = DadosGeraisService.GetCodEmpresaAfilial(registrosC010.FirstOrDefault().CD_EMP);
+                    if (codEmpFilial != "")
+                    {
+                        GetEmpresasFiliais(codEmpFilial);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        List<RegistroC010> registrosC010 = new List<RegistroC010>();
+
         private void ProcessarDocumentosFiscaisMercadorias()
         {
             this.UpdateStatusAsynchronousExecution("Iniciando processamento de documentos fiscais");
 
 
-            IEnumerable<RegistroC010> registrosC010 =
-                DocumentosFiscaisMercadoriasService.GetRegistrosC010();
+            registrosC010 = DocumentosFiscaisMercadoriasService.GetRegistrosC010(UndTrabalho.CodigoEmpresa).ToList();
 
+            // GetEmpresasFiliais(UndTrabalho.CodigoEmpresa);
+            produtos = new List<validacao>();
+            unidades = new List<validacao>();
+            contribuintes = new List<validacao>();
             foreach (RegistroC010 regC010 in registrosC010)
-            {
+            {              
                 this.UpdateStatusAsynchronousExecution("Gerando Registro C010");
                 DadosArquivoPisCofinsService.PersistirRegistro(regC010);
 
@@ -905,21 +906,21 @@ namespace Hlp.Sped.Controllers.Fiscal.PisCofins
         {
             try
             {
-           
-            this.ProcessarDadosGerais();
-            this.ProcessarDocumentosFiscaisServico();
-            this.ProcessarDocumentosFiscaisMercadorias();
-            this.ProcessarDocumentosFiscaisServicoICMS();
-            this.ProcessarDemaisDocumentosOperacoes();
-            this.ProcessarApuracaoContribuicaoCreditoPIS_PASEP();
-            this.ProcessarApuracaoContribPrevidRecBruta();
-            this.ProcessarComplementoEscrituracao();
-            this.ProcessarDadosGeraisPorEmpresa(); //INICIA EMPRESAS
-            this.ProcessarFinalBloco0990(); // FINALIZA EMPRESAS
 
-            this.ProcessarControlesEncerramento();
+                this.ProcessarDadosGerais();
+                this.ProcessarDocumentosFiscaisServico();
+                this.ProcessarDocumentosFiscaisMercadorias();
+                this.ProcessarDocumentosFiscaisServicoICMS();
+                this.ProcessarDemaisDocumentosOperacoes();
+                this.ProcessarApuracaoContribuicaoCreditoPIS_PASEP();
+                this.ProcessarApuracaoContribPrevidRecBruta();
+                this.ProcessarComplementoEscrituracao();
+                this.ProcessarDadosGeraisPorEmpresa(); //INICIA EMPRESAS
+                this.ProcessarFinalBloco0990(); // FINALIZA EMPRESAS
 
-            this.ProcessarGravacaoArquivo();
+                this.ProcessarControlesEncerramento();
+
+                this.ProcessarGravacaoArquivo();
 
             }
             catch (Exception ex)
