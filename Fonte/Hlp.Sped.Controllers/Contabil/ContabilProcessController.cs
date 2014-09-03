@@ -126,7 +126,7 @@ namespace Hlp.Sped.Controllers.Contabil
             DadosArquivoContabilService.PersistirRegistro(regI010);
 
             this.ProcessarPlanoContas();
-            this.ProcessarSaldosPeriodicos();
+            this.ProcessarSaldosPeriodicos(); // método com problema decimal
             this.ProcessarLancamentosPeriodo();
             this.ProcessarBalancetesPeriodo();
             

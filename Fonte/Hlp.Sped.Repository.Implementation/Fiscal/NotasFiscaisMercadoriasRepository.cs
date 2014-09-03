@@ -38,24 +38,32 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
 
         public IEnumerable<RegistroC170> GetRegistrosC170(string codChaveNotaFiscal)
         {
-            if (regC170Accessor == null)
+            try
             {
-                regC170Accessor =
-                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
-                    SqlExpressionsFiscalRepository.GetSelectRegistrosC170(),
-                    new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
-                    MapBuilder<RegistroC170>.MapAllProperties()
-                    .DoNotMap(p => p.NUM_ITEM)
-                    .Build());
-            }
 
-            List<RegistroC170> resultado = regC170Accessor.Execute(
-                UndTrabalho.CodigoEmpresa,
-                codChaveNotaFiscal).ToList();
-            int numeroItem = 0;
-            foreach (RegistroC170 regC170 in resultado)
-                regC170.NUM_ITEM = ++numeroItem;
-            return resultado;
+                if (regC170Accessor == null)
+                {
+                    regC170Accessor =
+                        UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                        SqlExpressionsFiscalRepository.GetSelectRegistrosC170(),
+                        new FilterByCdEmpresaPkNotaFisParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                        MapBuilder<RegistroC170>.MapAllProperties()
+                        .DoNotMap(p => p.NUM_ITEM)
+                        .Build());
+                }
+
+                List<RegistroC170> resultado = regC170Accessor.Execute(
+                    UndTrabalho.CodigoEmpresa,
+                    codChaveNotaFiscal).ToList();
+                int numeroItem = 0;
+                foreach (RegistroC170 regC170 in resultado)
+                    regC170.NUM_ITEM = ++numeroItem;
+                return resultado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public IEnumerable<RegistroC190> GetRegistrosC190(string codChaveNotaFiscal)

@@ -13,7 +13,7 @@ namespace Hlp.Sped.Domain.Models.Contabil
     public class RegistroI155 : RegistroBase
     {
         [CampoTextoFixo(Ordem = 1)]
-        public override string REG 
+        public override string REG
         {
             get { return "I155"; }
         }
