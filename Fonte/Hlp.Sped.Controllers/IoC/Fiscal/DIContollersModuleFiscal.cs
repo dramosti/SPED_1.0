@@ -39,6 +39,7 @@ namespace Hlp.Sped.Controllers.IoC.Fiscal
             Bind<IUnidadesRepository>().To<UnidadesRepository>();
             Bind<IOutrasInformacoesRepository>().To<OutrasInformacoesRepository>();
             Bind<ISpedFileWriterRepository>().To<SpedFileWriterRepository>();
+            Bind<IProducaoRepository>().To<ProducaoRepository>();
         }
 
         protected override void ResolveServices()
@@ -57,6 +58,7 @@ namespace Hlp.Sped.Controllers.IoC.Fiscal
             Bind<IUnidadesService>().To<UnidadesService>();
             Bind<IOutrasInformacoesService>().To<OutrasInformacoesService>();
             Bind<ISpedFileWriterService>().To<SpedFileWriterService>();
+            Bind<IProducaoService>().To<ProducaoService>();
         }
     }
 }

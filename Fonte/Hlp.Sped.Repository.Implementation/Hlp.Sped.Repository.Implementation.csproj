@@ -12,6 +12,7 @@
     <AssemblyName>Hlp.Sped.Repository.Implementation</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -125,6 +126,8 @@
     <Compile Include="Fiscal\InventarioRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\InventarioLorenzonRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\ParticipantesLorenzonRepository.cs" />
+    <Compile Include="Fiscal\Mappers\FilterByCdEmpresaCd_ProdPrin_ParameterMapper.cs" />
+    <Compile Include="Fiscal\Mappers\FilterByCdEmpresaCd_OS_ParameterMapper.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaDtEmi_UF_NfParameterMapper.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaDtEmi_UF_NfParameterMapper2.cs" />
     <Compile Include="Fiscal\Mappers\FilterByCdEmpresaPeriodoDeclExportParameterMapper.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="Fiscal\NotasFiscaisServComunicacaoRepository.cs" />
     <Compile Include="Fiscal\OutrasInformacoesRepository.cs" />
     <Compile Include="Fiscal\ParticipantesRepository.cs" />
+    <Compile Include="Fiscal\ProducaoRepository.cs" />
     <Compile Include="Fiscal\ProdutosRepository.cs" />
     <Compile Include="Fiscal\UnidadesRepository.cs" />
     <Compile Include="PisCofins\ConsolidacaoNotasFiscaisRepository.cs" />

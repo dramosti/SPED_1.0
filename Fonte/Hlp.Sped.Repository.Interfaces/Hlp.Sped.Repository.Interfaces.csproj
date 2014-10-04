@@ -12,6 +12,7 @@
     <AssemblyName>Hlp.Sped.Repository.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +68,7 @@
     <Compile Include="Fiscal\INotasFiscaisEnergiaAguaGasRepository.cs" />
     <Compile Include="Fiscal\INotasFiscaisServComunicacaoRepository.cs" />
     <Compile Include="Fiscal\IOutrasInformacoesRepository.cs" />
+    <Compile Include="Fiscal\IProducaoRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\IInventarioLorenzonRepository.cs" />
     <Compile Include="Fiscal\Lorenzon\IParticipantesLorenzonRepository.cs" />
     <Compile Include="IConexoesRepository.cs" />

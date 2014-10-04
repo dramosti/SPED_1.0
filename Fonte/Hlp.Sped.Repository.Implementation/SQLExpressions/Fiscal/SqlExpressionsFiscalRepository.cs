@@ -79,6 +79,11 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Fiscal
             return "SELECT * FROM SP_SPED_FISCAL_REGISTRO0200(?, ?)";
         }
 
+        public string GetSelectRegistro0210()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTRO0210(?, ?)";
+        }
+
         public string GetSelectRegistro0400()
         {
             return "SELECT * FROM SP_SPED_FISCAL_REGISTRO0400(?,?, ?)";
@@ -241,6 +246,12 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Fiscal
                      FROM SPEDFISCALDET
                      WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE 'E%'";
         }
+        public string GetSelectRegistroK990()
+        {
+            return @"SELECT 'K990' AS REG, CAST(COUNT(1) + 1 AS INTEGER) AS QTD_LIN_H
+                     FROM SPEDFISCALDET
+                     WHERE NR_ARQUIVO = ? AND TP_REGISTRO LIKE 'E%'";
+        }
 
         public string GetSelectRegistroG990()
         {
@@ -386,5 +397,47 @@ namespace Hlp.Sped.Repository.Implementation.SQLExpressions.Fiscal
         {
              return "SELECT * FROM SP_SPED_FISCAL_REGISTRO0220(?, ?)";
         }
+
+
+        public string GetSelectRegistroK100()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK100(?, ?, ?)"; 
+        }
+
+        public string GetSelectRegistroK200()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK200(?, ?, ?)"; 
+        }
+
+        public string GetSelectRegistroK220()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK220(?, ?, ?)"; 
+        }
+
+        public string GetSelectRegistroK230()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK230(?, ?, ?)"; 
+        }
+
+        public string GetSelectRegistroK235()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK235(?, ?)"; 
+        }
+
+        public string GetSelectRegistroK250()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK250(?, ?, ?)"; 
+        }
+
+        public string GetSelectRegistroK255()
+        {
+            return "SELECT * FROM SP_SPED_FISCAL_REGISTROK255(?, ?)"; 
+        }
+
+
+
+
+
+       
     }
 }

@@ -128,6 +128,9 @@
     <Compile Include="Contmatic\RegistroD590.cs" />
     <Compile Include="Contmatic\RegistroD990.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Fiscal\Registro0210.cs" />
+    <Compile Include="Fiscal\RegistroK230.cs" />
+    <Compile Include="Fiscal\RegistroK255.cs" />
     <Compile Include="Fiscal\Lorenzon\RegistroH005Lorenzon.cs" />
     <Compile Include="Fiscal\Registro0400.cs" />
     <Compile Include="Fiscal\Registro0500.cs" />
@@ -155,6 +158,13 @@
     <Compile Include="Fiscal\RegistroE200.cs" />
     <Compile Include="Fiscal\RegistroE210.cs" />
     <Compile Include="Fiscal\RegistroE250.cs" />
+    <Compile Include="Fiscal\RegistroK001.cs" />
+    <Compile Include="Fiscal\RegistroK100.cs" />
+    <Compile Include="Fiscal\RegistroK200.cs" />
+    <Compile Include="Fiscal\RegistroK220.cs" />
+    <Compile Include="Fiscal\RegistroK235.cs" />
+    <Compile Include="Fiscal\RegistroK250.cs" />
+    <Compile Include="Fiscal\RegistroK990.cs" />
     <Compile Include="ModelConexao.cs" />
     <Compile Include="PisCofins\Registro0400.cs" />
     <Compile Include="PisCofins\Registro0500.cs" />

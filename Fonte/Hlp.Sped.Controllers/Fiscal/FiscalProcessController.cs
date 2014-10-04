@@ -11,6 +11,7 @@ using Hlp.Sped.Services.Interfaces.Files;
 using Hlp.Sped.Domain.Models.Fiscal;
 using Hlp.Sped.Controllers.IoC.Fiscal;
 using Hlp.Sped.Controllers.Parameters.Fiscal;
+using Hlp.Sped.Repository.Interfaces.Fiscal;
 
 namespace Hlp.Sped.Controllers.Fiscal
 {
@@ -57,6 +58,9 @@ namespace Hlp.Sped.Controllers.Fiscal
 
         [Inject]
         public IUnidadesService UnidadesService { get; set; }
+
+        [Inject]
+        public IProducaoService ProducaoService { get; set; }
 
         private FiscalProcessParameters _parameters;
 
@@ -387,6 +391,23 @@ namespace Hlp.Sped.Controllers.Fiscal
             }
         }
 
+        List<string> lProdutosConsumo = null;
+
+        private void ProcessarConsumoEspecifico(string codigoProduto)
+        {
+            if (String.IsNullOrWhiteSpace(codigoProduto))
+                return;
+
+            Registro0210 Reg210 = null;
+            if (!lProdutosConsumo.Contains(codigoProduto))
+            {
+                lProdutosConsumo.Add(codigoProduto);
+                this.UpdateStatusAsynchronousExecution("Gerando Registro 0210");
+                Reg210 = ProducaoService.GetRegistro0210(COD_PROD: codigoProduto);
+                DadosArquivoFiscalService.PersistirRegistro(Reg210);
+            }
+        }
+
         private void ProcessarProduto(string codigoProduto)
         {
             if (String.IsNullOrWhiteSpace(codigoProduto))
@@ -527,6 +548,93 @@ namespace Hlp.Sped.Controllers.Fiscal
                 }
             }
         }
+
+        private void ProcessarProducao()
+        {
+            try
+            {
+
+
+                this.UpdateStatusAsynchronousExecution("Iniciando processamento do bloco K");
+
+                RegistroK100 regK100 = ProducaoService.GetRegistroK100();
+                DadosArquivoFiscalService.PersistirRegistro(regK100);
+
+                this.UpdateStatusAsynchronousExecution("Iniciando processamento do bloco K200");
+                IEnumerable<RegistroK200> reglK200 = ProducaoService.GetRegistrosK200();
+                foreach (var item in reglK200)
+                {
+                    DadosArquivoFiscalService.PersistirRegistro(item);
+                }
+
+                this.UpdateStatusAsynchronousExecution("Iniciando processamento do bloco K220");
+                IEnumerable<RegistroK220> reglK220 = ProducaoService.GetRegistrosK220();
+                foreach (var item in reglK220)
+                {
+                    DadosArquivoFiscalService.PersistirRegistro(item);
+                }
+
+                this.UpdateStatusAsynchronousExecution("Iniciando processamento do bloco K230");
+                IEnumerable<RegistroK230> reglK230 = ProducaoService.GetRegistrosK230();
+                IEnumerable<RegistroK235> reglK235 = null;
+                foreach (var regK230 in reglK230)
+                {
+                    if (regK230.COD_ITEM != "")
+                        this.ProcessarProduto(regK230.COD_ITEM);
+                    DadosArquivoFiscalService.PersistirRegistro(regK230);
+                    reglK235 = ProducaoService.GetRegistrosK235(regK230);
+                    foreach (var regK235 in reglK235)
+                    {
+                        if (regK235.COD_ITEM != "")
+                            this.ProcessarProduto(regK230.COD_ITEM);
+
+                        // FAZER COD_INS_SUBST 
+                        if (regK235.COD_INS_SUBST != "")
+                            this.ProcessarConsumoEspecifico(regK235.COD_INS_SUBST);
+
+                        DadosArquivoFiscalService.PersistirRegistro(regK235);
+                    }
+                }
+
+                this.UpdateStatusAsynchronousExecution("Iniciando processamento do bloco K250");
+                IEnumerable<RegistroK250> reglK250 = ProducaoService.GetRegistrosK250();
+                IEnumerable<RegistroK255> reglK255 = null;
+                foreach (var regk250 in reglK250)
+                {
+                    if (regk250.COD_ITEM != "")
+                        this.ProcessarProduto(regk250.COD_ITEM);
+                    DadosArquivoFiscalService.PersistirRegistro(regk250);
+                    reglK255 = ProducaoService.GetRegistrosK255(regk250);
+
+                    foreach (var regk255 in reglK255)
+                    {
+                        if (regk255.COD_ITEM != "")
+                            this.ProcessarProduto(regk255.COD_ITEM);
+
+                        if (regk255.COD_INS_SUBST != "")
+                            this.ProcessarConsumoEspecifico(regk255.COD_INS_SUBST);
+                        DadosArquivoFiscalService.PersistirRegistro(regk255);
+                    }
+                }
+
+                RegistroK001 regK001 = new RegistroK001();
+                if (DadosArquivoFiscalService.BlocoPossuiRegistros("K"))
+                    regK001.IND_MOV = "0";
+                else
+                    regK001.IND_MOV = "1";
+                DadosArquivoFiscalService.PersistirRegistro(regK001);
+                this.UpdateStatusAsynchronousExecution("Gerando Registro K001");
+
+                RegistroK990 regK990 = DadosArquivoFiscalService.GetRegistroK990();
+                DadosArquivoFiscalService.PersistirRegistro(regK990);
+                this.UpdateStatusAsynchronousExecution("Gerando Registro k990");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         private void ProcessarApuracaoIcmsIPI()
         {
@@ -863,16 +971,21 @@ namespace Hlp.Sped.Controllers.Fiscal
 
         private void FiscalProcessController_AsynchronousExecution()
         {
+            lProdutosConsumo = new List<string>();
             this.ProcessarDadosGerais();
             this.ProcessarDocumentosFiscaisMercadorias();
             this.ProcessarMovimentacoesTransporteComunicacao();
             this.ProcessarApuracaoIcmsIPI();
             this.ProcessarControleCIAP();
             this.ProcessarInventarioFisico();
+
+           // this.ProcessarProducao(); os_30637 - comentado pois ainda não esta habilitado no sped
             this.ProcessarOutrasInformacoes();
             this.ProcessarControlesEncerramento();
             this.ProcessarGravacaoArquivo();
         }
+
+
 
         private void FiscalProcessController_AsynchronousExecutionAborted(Exception ex)
         {

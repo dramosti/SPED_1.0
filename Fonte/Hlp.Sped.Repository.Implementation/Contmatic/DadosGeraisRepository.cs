@@ -92,6 +92,8 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
             return reg0200Accessor.Execute(UndTrabalho.CodigoEmpresa, codigoProduto).ToList();
         }
 
+       
+
         public IEnumerable<Registro0220> GetRegistro0220(string codigoProduto)
         {
             DataAccessor<Registro0220> reg0220Accessor =

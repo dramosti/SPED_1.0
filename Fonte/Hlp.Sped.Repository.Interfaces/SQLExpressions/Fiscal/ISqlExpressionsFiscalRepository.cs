@@ -14,12 +14,21 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.Fiscal
         string GetSelectRegistroJaExistente();
         string GetSelectQuantidadeRegistrosBloco();
 
+        string GetSelectRegistroK100();
+        string GetSelectRegistroK200();
+        string GetSelectRegistroK220();
+        string GetSelectRegistroK230();
+        string GetSelectRegistroK235();
+        string GetSelectRegistroK250();
+        string GetSelectRegistroK255();       
+
         string GetSelectRegistro0000();
         string GetSelectRegistro0005();
         string GetSelectRegistro0100();
         string GetSelectRegistro0150();
         string GetSelectRegistro0190();
         string GetSelectRegistro0200();
+        string GetSelectRegistro0210();
         string GetSelectRegistro0220();
         string GetSelectRegistro0400();
         string GetSelectRegistro0500();
@@ -52,6 +61,7 @@ namespace Hlp.Sped.Repository.Interfaces.SQLExpressions.Fiscal
         string GetSelectRegistroE520();
         string GetSelectRegistrosE530();
         string GetSelectRegistroE990();
+        string GetSelectRegistroK990();
         string GetSelectRegistroG990();
         string GetSelectRegistrosH005();
         string GetSelectRegistrosH010();

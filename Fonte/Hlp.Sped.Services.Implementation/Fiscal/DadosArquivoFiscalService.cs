@@ -44,6 +44,10 @@ namespace Hlp.Sped.Services.Implementation.Fiscal
         {
             return DadosArquivoFiscalRepository.GetRegistroC990();
         }
+        public RegistroK990 GetRegistroK990()
+        {
+            return DadosArquivoFiscalRepository.GetRegistroK990();
+        }
 
         public RegistroD990 GetRegistroD990()
         {
@@ -119,5 +123,8 @@ namespace Hlp.Sped.Services.Implementation.Fiscal
         {
             DadosArquivoFiscalRepository.Finalizar();
         }
+
+
+
     }
 }

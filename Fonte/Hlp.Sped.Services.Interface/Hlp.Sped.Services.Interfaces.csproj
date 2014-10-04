@@ -35,7 +35,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -67,6 +69,7 @@
     <Compile Include="Fiscal\INotasFiscaisEnergiaAguaGasService.cs" />
     <Compile Include="Fiscal\INotasFiscaisServComunicacaoService.cs" />
     <Compile Include="Fiscal\IOutrasInformacoesService.cs" />
+    <Compile Include="Fiscal\IProducaoService.cs" />
     <Compile Include="Fiscal\Lorenzon\IInventarioLorenzonService.cs" />
     <Compile Include="Fiscal\Lorenzon\IParticipantesLorenzonService.cs" />
     <Compile Include="IConexoesService.cs" />

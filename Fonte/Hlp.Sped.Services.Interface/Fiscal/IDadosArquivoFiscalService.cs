@@ -15,6 +15,7 @@ namespace Hlp.Sped.Services.Interfaces.Fiscal
         Registro0990 GetRegistro0990();
         RegistroC990 GetRegistroC990();
         RegistroD990 GetRegistroD990();
+        RegistroK990 GetRegistroK990();
         RegistroE990 GetRegistroE990();
         RegistroG990 GetRegistroG990();
         RegistroH990 GetRegistroH990();

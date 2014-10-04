@@ -12,6 +12,7 @@
     <AssemblyName>Hlp.Sped.Services.Implementation</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,6 +79,7 @@
     <Compile Include="Fiscal\NotasFiscaisServComunicacaoService.cs" />
     <Compile Include="Fiscal\OutrasInformacoesService.cs" />
     <Compile Include="Fiscal\ParticipantesService.cs" />
+    <Compile Include="Fiscal\ProducaoService.cs" />
     <Compile Include="Fiscal\ProdutosService.cs" />
     <Compile Include="Fiscal\UnidadesService.cs" />
     <Compile Include="PisCofins\DemaisDocumentosOperacoesService.cs" />

@@ -15,6 +15,7 @@ namespace Hlp.Sped.Repository.Interfaces.Fiscal
         bool BlocoPossuiRegistros(string identificadorBloco);
         Registro0990 GetRegistro0990();
         RegistroC990 GetRegistroC990();
+        RegistroK990 GetRegistroK990();
         RegistroD990 GetRegistroD990();
         RegistroE990 GetRegistroE990();
         RegistroG990 GetRegistroG990();

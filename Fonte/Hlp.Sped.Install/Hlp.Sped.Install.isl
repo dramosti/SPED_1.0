@@ -339,31 +339,31 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>AC.ExtendedRenderer.Toolkit.dll</td><td>{0258BCC6-D91D-451D-9544-0E324573E2B5}</td><td>BIN</td><td>2</td><td/><td>ac.extendedrenderer.toolkit.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Castle.ActiveRecord.dll</td><td>{1CE4F81E-4FBE-45B6-A6A1-71A0F5C6009C}</td><td>BIN</td><td>2</td><td/><td>castle.activerecord.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Castle.Components.Validator.dll</td><td>{2D994A71-68CD-4860-8E0B-23EAF330EDF0}</td><td>BIN</td><td>2</td><td/><td>castle.components.validator.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Castle.Core.dll</td><td>{90A22509-DD1E-4BD5-906A-A0EB5928CDD7}</td><td>BIN</td><td>2</td><td/><td>castle.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ComponentFactory.Krypton.Toolkit.dll</td><td>{93E0F6EC-0C35-4A73-ABEC-15200755C179}</td><td>BIN</td><td>2</td><td/><td>componentfactory.krypton.too</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Controllers.dll</td><td>{997EB9B8-33B7-42B5-A5E0-5B46224205BC}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.controllers.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Domain.Models.dll</td><td>{289E0E03-5B9D-4341-BEC8-52F26AF9AC65}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.domain.models.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Infrastructure.dll</td><td>{0CFAB738-3F49-4D98-BD9A-F6609BDB82B3}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.infrastructure.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Repository.Implementation.dll</td><td>{0DFCAAD2-D261-411B-BCF6-550782F62BA2}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.repository.implemen</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Repository.Interfaces.dll</td><td>{F50E2075-5172-4067-8B74-47DAE3FC7EDA}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.repository.interfac</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Services.Implementation.dll</td><td>{A2E5BCFF-05BD-4304-9743-B4308D39208B}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.services.implementa</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp.Sped.Services.Interfaces.dll</td><td>{6DA7C749-1F99-4646-A8F1-8641E5DDB592}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.services.interfaces</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp_Sped_1.1.exe</td><td>{C5D22CC5-5055-4479-8F8B-BF855EE236A7}</td><td>BIN</td><td>2</td><td/><td>hlp_sped_1.1.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Hlp_Sped_1.1.vshost.exe</td><td>{EF374A78-E48B-4CC2-8DB1-BE2BA4FD35D8}</td><td>BIN</td><td>2</td><td/><td>hlp_sped_1.1.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ICSharpCode.SharpZipLib.dll</td><td>{9FE52863-3D6F-452F-9526-FA7F5E8E5C2A}</td><td>BIN</td><td>2</td><td/><td>icsharpcode.sharpziplib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT</td><td>{3DDA749C-0D12-4A05-A38D-F71377A89089}</td><td>BIN</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Iesi.Collections.dll</td><td>{B0E0EB2E-8D4D-4E84-9BC5-90353F3DCDC2}</td><td>BIN</td><td>2</td><td/><td>iesi.collections.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Practices.EnterpriseLibrary.Common.dll</td><td>{0CBC65BA-2EEB-474A-97C0-883E4DF064C2}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.enterpri</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Practices.EnterpriseLibrary.Data.dll</td><td>{58657F1B-F4C9-434E-A91D-B5B8C48CAA30}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.enterpri1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Practices.ServiceLocation.dll</td><td>{564FEF98-5398-41E0-BACD-D30557F6D1F5}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.servicel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Practices.Unity.Interception.dll</td><td>{ECBE73F3-89C7-4D4B-8D7C-1A9BFF035C2C}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.unity.in</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Practices.Unity.dll</td><td>{B9366DA5-D66F-4AAB-B3DB-F5ED3C95D82C}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.unity.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NHibernate.ByteCode.Castle.dll</td><td>{AAB42EC2-A9D2-4162-A24A-A3722B8258EE}</td><td>BIN</td><td>2</td><td/><td>nhibernate.bytecode.castle.d</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NHibernate.dll</td><td>{D23DED28-AF6D-476E-AC23-846E2BCCB4CF}</td><td>BIN</td><td>2</td><td/><td>nhibernate.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Ninject.dll</td><td>{F7A2DBAA-568D-4BC8-8971-83EB9CE072F1}</td><td>BIN</td><td>2</td><td/><td>ninject.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>AC.ExtendedRenderer.Toolkit.dll</td><td>{F8EB2DAF-B4D8-4889-9E73-EB9F516941EE}</td><td>BIN</td><td>2</td><td/><td>ac.extendedrenderer.toolkit.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Castle.ActiveRecord.dll</td><td>{3EE261A4-66C6-4C9B-8BB6-0E9661A142FD}</td><td>BIN</td><td>2</td><td/><td>castle.activerecord.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Castle.Components.Validator.dll</td><td>{11AEEB46-810A-4BD2-B549-F43381CFA6E2}</td><td>BIN</td><td>2</td><td/><td>castle.components.validator.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Castle.Core.dll</td><td>{E5AC9EA4-0C36-4D9E-9EED-5E8DB60F7E2B}</td><td>BIN</td><td>2</td><td/><td>castle.core.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ComponentFactory.Krypton.Toolkit.dll</td><td>{A0AB0E0C-42A2-4A44-9AF1-FCCDB6419789}</td><td>BIN</td><td>2</td><td/><td>componentfactory.krypton.too</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Controllers.dll</td><td>{024A53D0-379C-4D8E-ABB1-8E49E5C71632}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.controllers.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Domain.Models.dll</td><td>{464BEF40-5426-42AC-8035-8521886F7D58}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.domain.models.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Infrastructure.dll</td><td>{E6DF05B7-177C-4778-A66F-B349248B6F1C}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.infrastructure.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Repository.Implementation.dll</td><td>{46532A79-4F32-4BD2-8D0F-8C7FB20EABD3}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.repository.implemen</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Repository.Interfaces.dll</td><td>{729A997B-8678-4676-8A12-2C6F15C6B19F}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.repository.interfac</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Services.Implementation.dll</td><td>{F9C318DE-AB36-4430-AF62-4A0F35C15E28}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.services.implementa</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp.Sped.Services.Interfaces.dll</td><td>{C7285BAB-736C-4E92-B2DE-EAB6DC4FC79E}</td><td>BIN</td><td>2</td><td/><td>hlp.sped.services.interfaces</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp_Sped_1.1.exe</td><td>{030A1B7B-BD56-4DAE-869A-595F0948417C}</td><td>BIN</td><td>2</td><td/><td>hlp_sped_1.1.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Hlp_Sped_1.1.vshost.exe</td><td>{D43800DE-E584-49FA-BA40-2A4825F7DA50}</td><td>BIN</td><td>2</td><td/><td>hlp_sped_1.1.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ICSharpCode.SharpZipLib.dll</td><td>{49F2B95F-62C0-4F98-97FD-DDCEE4635D36}</td><td>BIN</td><td>2</td><td/><td>icsharpcode.sharpziplib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{343B2A6F-6B5F-472B-A7FD-B61E3EC7B990}</td><td>BIN</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Iesi.Collections.dll</td><td>{C78C4168-2C71-4065-BC71-62644A445780}</td><td>BIN</td><td>2</td><td/><td>iesi.collections.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Practices.EnterpriseLibrary.Common.dll</td><td>{2D5C8883-AF3C-4848-8CA7-28DCE732F642}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.enterpri</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Practices.EnterpriseLibrary.Data.dll</td><td>{69DC5D8D-47C1-4041-9866-B40BFA9B8F62}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.enterpri1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Practices.ServiceLocation.dll</td><td>{499EB3BD-314F-44BA-8B4A-1A23727DB484}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.servicel</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Practices.Unity.Interception.dll</td><td>{5C343AD4-A83D-415C-98F5-BEB6CB17C19C}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.unity.in</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Practices.Unity.dll</td><td>{0B272B10-2314-4437-867A-029FE951231D}</td><td>BIN</td><td>2</td><td/><td>microsoft.practices.unity.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NHibernate.ByteCode.Castle.dll</td><td>{8D739A3E-F063-40DB-A354-17A604948F96}</td><td>BIN</td><td>2</td><td/><td>nhibernate.bytecode.castle.d</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NHibernate.dll</td><td>{19E521F2-1146-49B8-A9A1-F6C7A54C37AB}</td><td>BIN</td><td>2</td><td/><td>nhibernate.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Ninject.dll</td><td>{8911B5A6-E166-4FFE-B898-84FD5D4DEA2F}</td><td>BIN</td><td>2</td><td/><td>ninject.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1169,7 +1169,7 @@
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>ISYourDataBaseDir</td><td>INSTALLDIR</td><td>Database</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
-		<row><td>MY_PRODUCT_NAME</td><td>HLP_ESTRAT_GIA_EM_SISTEMAS</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
+		<row><td>MY_PRODUCT_NAME</td><td>HLP_ESTRAT_GIA_EM_SISTEMAS</td><td>SPED</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
@@ -2102,31 +2102,31 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>AC.ExtendedRenderer.Toolkit.dll</td><td/><td/><td>_6B6ED7BB_FDB9_49FF_9B5E_7DDB1EC66F28_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Castle.ActiveRecord.dll</td><td/><td/><td>_BD644AE6_49D8_44B1_BE2A_D91472C6E1B2_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Castle.Components.Validator.dll</td><td/><td/><td>_60947450_DD31_4A64_8A2A_A128FE7FAEC1_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Castle.Core.dll</td><td/><td/><td>_228CE5BB_9D55_4D57_99E9_D176B08D1B0A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ComponentFactory.Krypton.Toolkit.dll</td><td/><td/><td>_5FC02568_72B0_4002_820B_B48AAF9B5711_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Controllers.dll</td><td/><td/><td>_CDA28442_70EF_4D10_8CCE_FA95C4545C1B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Domain.Models.dll</td><td/><td/><td>_AFB23981_0060_418E_8694_E0B4C5835F32_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Infrastructure.dll</td><td/><td/><td>_2C4F8A4C_488E_4E64_9468_E18F1B781816_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Repository.Implementation.dll</td><td/><td/><td>_C8819682_2907_4E86_94B9_81AECE49E69D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Repository.Interfaces.dll</td><td/><td/><td>_FC96E065_FCDD_4044_B4F0_01175EF3C8FA_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Services.Implementation.dll</td><td/><td/><td>_25396A0D_60FC_46CF_984A_69F9E800CCEB_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp.Sped.Services.Interfaces.dll</td><td/><td/><td>_14F87F92_6366_413B_8655_4D0F5CDC6302_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp_Sped_1.1.exe</td><td/><td/><td>_69802585_04DC_406B_AFB7_56BAFB46EAAC_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Hlp_Sped_1.1.vshost.exe</td><td/><td/><td>_3A162144_21B7_4343_B21A_7666264AA3CA_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ICSharpCode.SharpZipLib.dll</td><td/><td/><td>_680BA399_3B1D_4CDC_8DB7_749615949A64_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_2CB645D3_F8FA_4E13_A9A5_CC1A1AA9625D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Iesi.Collections.dll</td><td/><td/><td>_F79DBE42_DE3C_475F_8DB5_42E824786A36_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Practices.EnterpriseLibrary.Common.dll</td><td/><td/><td>_44E35F75_0D88_4F7C_837A_DCD64164B9D7_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Practices.EnterpriseLibrary.Data.dll</td><td/><td/><td>_6E713544_08F8_4152_A767_D0E36E7608DF_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Practices.ServiceLocation.dll</td><td/><td/><td>_3903EE53_0130_4F20_9FA5_DFE3A9E2B397_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Practices.Unity.Interception.dll</td><td/><td/><td>_6B608562_7181_48CB_BB65_B331111BF623_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Practices.Unity.dll</td><td/><td/><td>_3480A6E0_007E_4D3C_A5EC_F0CE1D616ECB_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NHibernate.ByteCode.Castle.dll</td><td/><td/><td>_0A21230B_E6F8_4CB3_961D_18FA40BB8009_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NHibernate.dll</td><td/><td/><td>_188EAB02_4954_42F3_8245_0475750CA466_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Ninject.dll</td><td/><td/><td>_4A82A940_3BE2_4D03_81F7_DBEBC3435CAC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>AC.ExtendedRenderer.Toolkit.dll</td><td/><td/><td>_C7957ED4_A9C1_452E_86E0_E1DEF01B41A9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Castle.ActiveRecord.dll</td><td/><td/><td>_328FAD9B_2F6B_4A5D_9AC4_D75E76F97AFB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Castle.Components.Validator.dll</td><td/><td/><td>_F825E58C_27AB_4254_91C5_F70DE9E8CE90_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Castle.Core.dll</td><td/><td/><td>_87D2346A_0E3E_4559_AB6B_D9DB29368154_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ComponentFactory.Krypton.Toolkit.dll</td><td/><td/><td>_B052DAC7_7E5D_4DC7_8658_2EFC4CC50DD7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Controllers.dll</td><td/><td/><td>_75D9FC3D_AE71_436C_8ADD_D41EB933CDB9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Domain.Models.dll</td><td/><td/><td>_83E6DE75_2980_4276_B742_6D0BCBECF43F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Infrastructure.dll</td><td/><td/><td>_C4474ED7_DD6D_4C90_A768_9405D706728C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Repository.Implementation.dll</td><td/><td/><td>_8E145C7E_1EFA_495D_B71F_3EA11978BF5F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Repository.Interfaces.dll</td><td/><td/><td>_F7F3FC4F_438C_41DC_9C6A_ED359CDAA746_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Services.Implementation.dll</td><td/><td/><td>_7AF33208_E510_4B60_AFD3_385C195395C7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp.Sped.Services.Interfaces.dll</td><td/><td/><td>_AB7E75C0_3A5B_4F1E_8CB4_959500C2850D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp_Sped_1.1.exe</td><td/><td/><td>_E69578D8_A062_44BA_A81A_0C18423A1CEB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Hlp_Sped_1.1.vshost.exe</td><td/><td/><td>_610C1B27_ADE0_4BA7_BE32_B52C9486C38E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ICSharpCode.SharpZipLib.dll</td><td/><td/><td>_3D1348DB_AB2B_4128_808B_D5BD289FF3EF_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_2F1842E3_77BD_4D79_BADC_9418099D6B50_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Iesi.Collections.dll</td><td/><td/><td>_9B817A91_6C6B_4267_AD7E_198E26AD3CB9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Practices.EnterpriseLibrary.Common.dll</td><td/><td/><td>_B3CDC52C_033E_467B_B1D3_1C163C3B6EA6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Practices.EnterpriseLibrary.Data.dll</td><td/><td/><td>_1269AEBF_CDDF_4F2E_85E1_CD2949DC8967_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Practices.ServiceLocation.dll</td><td/><td/><td>_80CD6644_8ACB_4B53_A27F_64F7F30DA2AF_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Practices.Unity.Interception.dll</td><td/><td/><td>_2BD87850_AC64_4F60_AC12_CB5AA6F262E8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Practices.Unity.dll</td><td/><td/><td>_7259F107_6BDA_467A_96BA_4FF9FAC6DC98_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NHibernate.ByteCode.Castle.dll</td><td/><td/><td>_32B417F6_595B_49B6_9C80_09DCF0DBEB28_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NHibernate.dll</td><td/><td/><td>_17C1214E_4445_4F1D_9033_08056E71A6EC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Ninject.dll</td><td/><td/><td>_160ACD1D_E323_46F0_AB74_6717BBDF021F_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3557,6 +3557,8 @@
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>-1566413553</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>HLP Sped.exe</td><td>0</td><td/><td>-1566421521</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>LAUNCH~1.EXE|Launch Hlp Sped 1.1.vshost.exe</td><td>0</td><td/><td>-1566409265</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>1033</td><td>Hlp Sped.exe</td><td>0</td><td/><td>1419921865</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME4</td><td>1033</td><td>LAUNCH~1.EXE|Launch Hlp Sped 1.1.vshost.exe</td><td>0</td><td/><td>1419942313</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>-1566413553</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>-1566413553</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-1566413553</td></row>
@@ -3845,9 +3847,11 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1566413553</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1566413553</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1566413553</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.hlp.com.br</td><td>0</td><td/><td>-1566380625</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.hlp.com.br</td><td>0</td><td/><td>1419913321</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>HLP Estratégia em Sistemas</td><td>0</td><td/><td>-1566409457</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>HLP Sped.exe</td><td>0</td><td/><td>-1566413329</td></row>
+		<row><td>ID_STRING4</td><td>1033</td><td>Hlp Sped.exe</td><td>0</td><td/><td>1419945353</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>Hlp Sped.exe</td><td>0</td><td/><td>1419945353</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1566413553</td></row>
 	</table>
 
@@ -3957,6 +3961,8 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>Hlp_Sped_1.1.exe1_98EB2A7F15C542E6BD30CDA58CAB35C3.exe</td><td/><td>D:\GitHub\HLP\SPED_1.0\Fonte\bin\Hlp Sped 1.1.exe</td><td>0</td></row>
+		<row><td>Hlp_Sped_1.1.exe1_E76F517E33B441049D6F5EB964522025.exe</td><td/><td>D:\GitHub\HLP\SPED_1.0\Fonte\bin\Hlp Sped 1.1.exe</td><td>0</td></row>
+		<row><td>Hlp_Sped_1.1.exe_B32DAFA5DBB54B708141C90267C87517.exe</td><td/><td>D:\GitHub\HLP\SPED_1.0\Fonte\bin\Hlp Sped 1.1.exe</td><td>0</td></row>
 		<row><td>Hlp_Sped_1.1.exe_F090C766D6EE4908A4D6BF8792267EDE.exe</td><td/><td>D:\GitHub\HLP\SPED_1.0\Fonte\bin\Hlp Sped 1.1.exe</td><td>0</td></row>
 	</table>
 
@@ -4464,7 +4470,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{B935FFCA-51A1-46D8-8A70-C876899B3D8F}</td><td/></row>
 		<row><td>ProductName</td><td>Hlp.Sped.Install</td><td/></row>
-		<row><td>ProductVersion</td><td>1.0.0.30</td><td/></row>
+		<row><td>ProductVersion</td><td>1.0.0.33</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4540,8 +4546,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>Hlp_Sped_1.1.exe</td><td/><td>hlpest_1_hlp_estrat_gia_em_sistemas</td><td>2</td></row>
-		<row><td>FileKey2</td><td>Hlp_Sped_1.1.exe</td><td/><td>hlpspe_1.ins_hlp.sped.install</td><td>2</td></row>
 		<row><td>Hlp_Sped_1.1.exe</td><td>Hlp_Sped_1.1.exe</td><td/><td>hlpspe_1.ins_hlp.sped.install</td><td>2</td></row>
 	</table>
 
@@ -4628,8 +4632,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Hlp_Sped_1.1.exe</td><td>hlpspe_1.ins_hlp.sped.install</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Hlp_Sped_1.1.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Hlp_Sped_1.1.exe_F090C766D6EE4908A4D6BF8792267EDE.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>Hlp_Sped_1.1.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Hlp_Sped_1.1.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Hlp_Sped_1.1.exe1_98EB2A7F15C542E6BD30CDA58CAB35C3.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Hlp_Sped_1.1.exe</td><td>hlpspe_1.ins_hlp.sped.install</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>Hlp_Sped_1.1.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Hlp_Sped_1.1.exe_B32DAFA5DBB54B708141C90267C87517.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Hlp_Sped_1.1.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>Hlp_Sped_1.1.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Hlp_Sped_1.1.exe1_E76F517E33B441049D6F5EB964522025.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

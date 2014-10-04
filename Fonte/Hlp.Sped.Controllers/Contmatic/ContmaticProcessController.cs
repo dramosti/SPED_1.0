@@ -233,19 +233,26 @@ namespace Hlp.Sped.Controllers.Contmatic
 
         private void ProcessarDetalhesNotasFiscaisMercadorias(RegistroC100 regC100)
         {
-            this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
-
-            // Processsa informações dos itens da nota fiscal
-            this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
-            IEnumerable<RegistroC170> registrosC170 =
-                notasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS);
-            foreach (RegistroC170 regC170 in registrosC170)
+            try
             {
-                this.UpdateStatusAsynchronousExecution("Gerando Registro C170");
-                dadosArquivoContmaticService.PersistirRegistro(regC170);
+                this.UpdateStatusAsynchronousExecution("Processando detalhes de documento fiscal");
 
-                this.ProcessarUnidade(regC170.UNID);
-                this.ProcessarProduto(regC170.COD_ITEM);
+                // Processsa informações dos itens da nota fiscal
+                this.UpdateStatusAsynchronousExecution("Processando itens de documento fiscal");
+                IEnumerable<RegistroC170> registrosC170 =
+                    notasFiscaisMercadoriasService.GetRegistrosC170(regC100.PK_NOTAFIS);
+                foreach (RegistroC170 regC170 in registrosC170)
+                {
+                    this.UpdateStatusAsynchronousExecution("Gerando Registro C170");
+                    dadosArquivoContmaticService.PersistirRegistro(regC170);
+
+                    this.ProcessarUnidade(regC170.UNID);
+                    this.ProcessarProduto(regC170.COD_ITEM);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -537,15 +544,28 @@ namespace Hlp.Sped.Controllers.Contmatic
                 dadosArquivoContmaticService.OpenRegistros();
                 while (dadosArquivoContmaticService.ReadRegistro())
                 {
-                    // ATENÇÃO: Não atualizar o status de execução do form que invocou este
-                    // Controller, uma vez que a manipulação de arquivos tende a levar a estouros
-                    // de memória neste caso. Logo, evitar chamadas ao método "UpdateStatusAsynchronousExecution"
-                    // dentro deste loop.
-                    SpedFileWriterService.WriteLine(
-                        dadosArquivoContmaticService.GetConteudoRegistro());
+                    try
+                    {
+
+
+                        // ATENÇÃO: Não atualizar o status de execução do form que invocou este
+                        // Controller, uma vez que a manipulação de arquivos tende a levar a estouros
+                        // de memória neste caso. Logo, evitar chamadas ao método "UpdateStatusAsynchronousExecution"
+                        // dentro deste loop.
+                        SpedFileWriterService.WriteLine(
+                            dadosArquivoContmaticService.GetConteudoRegistro());
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
                 }
                 dadosArquivoContmaticService.Finalizar();
                 this.UpdateStatusAsynchronousExecution("Gravação em arquivo finalizada");
+            }
+            catch (Exception ex)
+            {
+
             }
             finally
             {

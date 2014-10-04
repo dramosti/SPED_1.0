@@ -58,6 +58,8 @@ namespace Hlp.Sped.Infrastructure.Registro
                     return 600;
                 case 'J':
                     return 700;
+                case 'K':
+                    return 750;
                 case 'M':
                     return 780;
                 case 'P':

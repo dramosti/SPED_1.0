@@ -65,7 +65,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
                 ConfigurationManager.AppSettings["ActiveRecordDialect"]);
             properties.Add("connection.provider",
                 ConfigurationManager.AppSettings["ActiveRecordConnectionProvider"]);
-            properties.Add("connection.connection_string", 
+            properties.Add("connection.connection_string",
                 ConfigurationManager.ConnectionStrings["DBArquivoSpedFiscal"].ConnectionString);
             properties.Add("proxyfactory.factory_class",
                 ConfigurationManager.AppSettings["ActiveRecordProxyFactory"]);
@@ -85,7 +85,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
 
             DbCommand cmd = UndTrabalho.DBArquivoSpedFiscal.GetStoredProcCommand(
                 SqlExpressionsFiscalRepository.GetExpressionNovaSequenciaArquivo());
-            
+
             this._NumeroIdentificacaoArquivo = Convert.ToInt32(
                 UndTrabalho.DBArquivoSpedFiscal.ExecuteScalar(cmd));
             this._informacoesArquivo = this.GetRecordInformacoesArquivo();
@@ -119,15 +119,22 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             }
             else
             {
-                _cmdPersistirRegistro.Parameters["@VL_ORDENACAO_BLOCO"].Value =
-                    RegistroBase.GetValorOrdenacaoBloco(registro.REG);
-                _cmdPersistirRegistro.Parameters["@VL_CHAVE_REGISTRO"].Value = registro.GetKeyValue();
-                _cmdPersistirRegistro.Parameters["@TP_REGISTRO"].Value =
-                    registro.REG;
-                _cmdPersistirRegistro.Parameters["@DS_CONTEUDO_REGISTRO"].Value =
-                    registro.ToString();
-                _cmdPersistirRegistro.Parameters["@CD_ORDENACAO_REGISTRO"].Value =
-                    registro.CODIGO_ORDENACAO;
+                try
+                {
+                    _cmdPersistirRegistro.Parameters["@VL_ORDENACAO_BLOCO"].Value =
+                        RegistroBase.GetValorOrdenacaoBloco(registro.REG);
+                    _cmdPersistirRegistro.Parameters["@VL_CHAVE_REGISTRO"].Value = registro.GetKeyValue();
+                    _cmdPersistirRegistro.Parameters["@TP_REGISTRO"].Value =
+                        registro.REG;
+                    _cmdPersistirRegistro.Parameters["@DS_CONTEUDO_REGISTRO"].Value =
+                        registro.ToString();
+                    _cmdPersistirRegistro.Parameters["@CD_ORDENACAO_REGISTRO"].Value =
+                        registro.CODIGO_ORDENACAO;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
 
             UndTrabalho.DBArquivoSpedFiscal.ExecuteNonQuery(_cmdPersistirRegistro);
@@ -230,6 +237,24 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             return registroE990Accessor.Execute(this._NumeroIdentificacaoArquivo).First();
         }
 
+        public RegistroK990 GetRegistroK990()
+        {
+            try
+            {
+                DataAccessor<RegistroK990> registroK990Accessor =
+                    UndTrabalho.DBArquivoSpedFiscal.CreateSqlStringAccessor(
+                      SqlExpressionsFiscalRepository.GetSelectRegistroK990(),
+                      new FilterByNrArquivoParameterMapper(UndTrabalho.DBArquivoSpedFiscal),
+                      MapBuilder<RegistroK990>.MapAllProperties().Build());
+
+                return registroK990Accessor.Execute(this._NumeroIdentificacaoArquivo).First();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public RegistroG990 GetRegistroG990()
         {
             DataAccessor<RegistroG990> registroG990Accessor =
@@ -281,7 +306,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
 
             List<Registro9900> resultado =
                 registro9900Accessor.Execute(this._NumeroIdentificacaoArquivo).ToList();
-            
+
             resultado.Add(
                 new Registro9900()
                 {
@@ -383,7 +408,7 @@ namespace Hlp.Sped.Repository.Implementation.Fiscal
             ActiveRecordStarter.ResetInitializationFlag();
             this._informacoesArquivo.CaminhoArquivo = UndTrabalho.CaminhoArquivo;
             this._informacoesArquivo.HorarioTerminoGeracaoArquivo = DateTime.Now;
-            this._informacoesArquivo.Save(); 
+            this._informacoesArquivo.Save();
         }
     }
 

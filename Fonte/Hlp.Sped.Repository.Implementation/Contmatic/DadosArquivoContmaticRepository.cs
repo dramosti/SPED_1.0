@@ -188,13 +188,22 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
 
         public void OpenRegistros()
         {
-            DbCommand cmd = UndTrabalho.DBArquivoSpedContabil.GetSqlStringCommand(
-                SqlExpressionsContimaticRepository.GetSelectRegistrosGerados());
+            try
+            {
 
-            UndTrabalho.AddParameterToCommand(cmd, "@NR_ARQUIVO", DbType.Int32,
-                this._NumeroIdentificacaoArquivo);
 
-            this._ReaderRegistros = UndTrabalho.DBArquivoSpedContabil.ExecuteReader(cmd);
+                DbCommand cmd = UndTrabalho.DBArquivoSpedContabil.GetSqlStringCommand(
+                    SqlExpressionsContimaticRepository.GetSelectRegistrosGerados());
+
+                UndTrabalho.AddParameterToCommand(cmd, "@NR_ARQUIVO", DbType.Int32,
+                    this._NumeroIdentificacaoArquivo);
+
+                this._ReaderRegistros = UndTrabalho.DBArquivoSpedContabil.ExecuteReader(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool ReadRegistro()
@@ -309,7 +318,7 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
 
         [Property("DS_EXCECAO")]
         public string Excecao { get; set; }
-               
+
 
         [Property("TP_ARQUIVO")]
         public string TipoArquivo { get; set; }
@@ -317,9 +326,9 @@ namespace Hlp.Sped.Repository.Implementation.Contmatic
         [Property("TP_REMESSA")]
         public string TipoRemessa { get; set; }
 
-        
 
-       
+
+
 
         [Property("DT_INICIAL_INFORMACOES")]
         public DateTime? DataInicial { get; set; }
